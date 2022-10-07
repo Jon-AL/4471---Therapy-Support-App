@@ -6,6 +6,23 @@
 %check
 % Packages
 \usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{xcolor}
+\usepackage{biblatex}
+\usepackage[english]{babel}
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+
+
 \author{Alexander, Yonatan\\
 \texttt{SN: 251097927}
 \and
@@ -62,10 +79,16 @@ Kien Tang Tran, Michael\\
 
 
     \maketitle
-    Cover sheet {Project title, Group members' names and SID}
+%    Cover sheet {Project title, Group members' names and SID}
+
+    \pagebreak
+
+    \tableofcontents
+
+    \pagebreak
 
 
-    \chapter{Problem Definition}\label{ch:problem-definition}
+    \section{Problem Definition}\label{sec:problem-definition}
     Therapists and patients encounter many challenges during the therapeutic process.
     There are a number of small yet persistent problems for therapists revolve around their patients' self-management between sessions.
     This software's intention is to help patients in doing so.
@@ -89,10 +112,9 @@ Kien Tang Tran, Michael\\
     \end{enumerate}
 
 
-    \chapter{Project Objective}\label{ch:project-objective}
+    \section{Project Objective}\label{sec:project-objective}
 
-
-    \section{General objective guidelines}
+    \subsection{General objective guidelines}\label{subsec:general-objective-guidelines}
     Patients should be able to generate a report about their mood and medication for their therapy session in one to three clicks between each therapy session.
 
     Therapists should be able to see their patient's mood and medication reports in one to two clicks between each therapy session.
@@ -103,34 +125,33 @@ Kien Tang Tran, Michael\\
     \end{enumerate}
 
 
-    \chapter{Stakeholders List}\label{ch:stakeholders-list}
+    \section{Stakeholders List}\label{sec:stakeholders-list}
     \begin{itemize}
         \item Patients - Internal stakeholder
         \item Therapists - External stakeholder
     \end{itemize}
 
-
-    \section{Internal Stakeholders}\label{sec:internal-stakeholders}
+    \subsection{Internal Stakeholders}\label{subsec:internal-stakeholders}
 
     \item external - anyone who has an influence\; including people who write certain libraries and so on  (include instructor and TA as external stakeholders)
     \item internal - programmers, maintainable, customers, users, etc [double check this point's list]
 
-
     \begin{enumerate}
-        \item
+        \item Patients (main users)
+        \item Therapists (users by proxy, potential users if a therapist-side interface is implemented)
+    \end{enumerate}
+
+    \subsection{External Stakeholders}\label{subsec:external-stakeholders}
+    \begin{enumerate}
+        \item Legislation and public policy (for example security of medical information)
+        \item Governing bodies (such as the CRPO - The College of Registered Psychotherapists of Ontario)
+        \item Instructor and TA
     \end{enumerate}
 
 
-    \section{External Stakeholders}\label{sec:external-stakeholders}
+    \section{Success/Acceptance Criteria for each Stakeholder}\label{sec:success/acceptance-criteria-for-each-stakeholder}
 
-    \begin{enumerate}
-        \item
-    \end{enumerate}
-
-
-    \chapter{Success/Acceptance Criteria for each Stakeholder}
-
-    \subsection{Patients}
+    \subsection{Patients}\label{subsec:patients}
     \begin{itemize}
         \item As a user, I want to be able to store my mood on a particular day.
         \item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
@@ -141,7 +162,7 @@ Kien Tang Tran, Michael\\
 
     \end{itemize}
 
-    \subsection{Therapist}
+    \subsection{Therapist}\label{subsec:therapist}
     \begin{itemize}
         \item As a user, I want to be able to look at my patient's reports in an organized manner.
         \item As a user, I want to be able to see the medication list stored on the application.
@@ -149,44 +170,51 @@ Kien Tang Tran, Michael\\
     \end{itemize}
 
 
-    \chapter{Use case diagram(s)}
+    \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
 
 
-    \chapter{Selected Use case Descriptions {only two descriptions}}
+    \section{Selected Use case Descriptions {only two descriptions}}\label{sec:selected-use-case-descriptions}
 
 
-    \chapter{Sequence diagram(s) {for the selected use case for descriptions}}
+    \section{Sequence diagram(s) {for the selected use case for descriptions}}\label{sec:sequence-diagram(s)}
 
 
-    \chapter{System Architecture}
+    \section{System Architecture}\label{sec:system-architecture}
 
 
-    \chapter{Detailed Class diagram(s)}
+    \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
 
 
-    \chapter{State-machine diagram {for the whole system, if possible}}
+    \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
 
 
-    \chapter{ER – Diagram (Data modelling)}
+    \section{ER – Diagram (Data modelling)}\label{sec:er--diagram-(data-modelling)}
 
 
-    \chapter{GitHub link to your project source code}
+    \section{GitHub Link}\label{sec:github-link}
 
 
-    \chapter{Conclusion (lesson learned)}
+    \section{Conclusion}\label{sec:conclusion}
 
 
-    \chapter{Reference (if any)}
+    \section{References}\label{sec:reference}
 
+    \begin{enumerate}
+        \item \textbf{MyTherapy (app):} \qq{Your personal pill reminder and medication tracker app}\cite{MyTherapy}
+        \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
+    \end{enumerate}
 
-    \chapter{Project WBS (as an appendix of your report)}
+    \bibliography{main}
 
+    \printbibliography[heading=subbibintoc]
+
+    \appendix{Project WBS}
 
     \appendix{Task Assignment Matrix}
 
     \appendix{Sample of commits on the selected version control system}
 
 
-    \bibliography{main}
-    \bibliographystyle{plain}
+
+
 \end{document}
