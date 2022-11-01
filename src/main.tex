@@ -5,21 +5,45 @@
 \documentclass[11pt]{article}
 %check
 % Packages
+\usepackage{mathrsfs}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym} % additional math symbols
 \usepackage{hyperref}
+\usepackage[table, dvipsnames]{xcolor}
+\definecolor{lightBlue}{RGB}{204, 229, 255}
+\definecolor{hyperColor}{RGB}{5, 99, 183}
 \usepackage{blindtext}
-\usepackage{xcolor}
+\usepackage{titlesec}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={hyperColor},
+    citecolor={blue!50!black},
+    urlcolor={hyperColor}
+}
+\usepackage{tocloft} % Control table of contents, figures, etc
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\providecolors{dvipsnames*}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{amsfonts} %TeX fonts from the American Mathematical Society
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{stmaryrd}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{floatrow}
+%\usepackage{parskip} % normal paragraph structure
+
+
+
 \usepackage{biblatex}
 \usepackage[english]{babel}
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{abbrvnat}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
+
+
 
 
 
@@ -30,7 +54,7 @@ Aziz, Mohammad Yasin\\
 \texttt{SN: .....}
 \and
 Kien Tang Tran, Michael\\
-\texttt{SN: .....}
+\texttt{SN: 250735158}
 }
 \title{Therapy Support App}
 % Document
