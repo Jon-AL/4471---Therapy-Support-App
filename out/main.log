@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  1 NOV 2022 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  1 NOV 2022 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1054,22 +1054,28 @@ Underfull \hbox (badness 10000) detected at line 161
  []
 
 [4]
-./main.tex:234: Undefined control sequence.
-l.234         \item \textbf{MyTherapy (app):} \qq
-                                                 {Your personal pill reminde...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Package natbib Warning: Citation `RefactoringGuru' on page 5 undefined on input
+ line 200.
 
 
-Package natbib Warning: Citation `MyTherapy' on page 5 undefined on input line 
-234.
+Package natbib Warning: Citation `RefactoringGuru' on page 5 undefined on input
+ line 201.
 
-[5]
-./main.tex:235: Undefined control sequence.
-l.235 ...f{Bipolar UK’s Mood Tracker (app):} \qq
+
+Package natbib Warning: Citation `RefactoringGuru' on page 5 undefined on input
+ line 202.
+
+
+Package natbib Warning: Citation `RefactoringGuru' on page 5 undefined on input
+ line 203.
+
+
+Package natbib Warning: Citation `RefactoringGuru' on page 5 undefined on input
+ line 204.
+
+./main.tex:205: Undefined control sequence.
+l.205 ...f{Bipolar UK’s Mood Tracker (app):} \qq
                                                   {Our new Mood Tracker app ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1078,24 +1084,51 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `BiPolUK' on page 6 undefined on input line 23
+Package natbib Warning: Citation `BiPolUK' on page 5 undefined on input line 20
 5.
 
+[5]
+./main.tex:253: Undefined control sequence.
+l.253         \item \textbf{MyTherapy (app):} \qq
+                                                 {Your personal pill reminde...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./main.tex:238: LaTeX Error: Can be used only in preamble.
+
+Package natbib Warning: Citation `MyTherapy' on page 6 undefined on input line 
+253.
+
+./main.tex:254: Undefined control sequence.
+l.254 ...f{Bipolar UK’s Mood Tracker (app):} \qq
+                                                  {Our new Mood Tracker app ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package natbib Warning: Citation `BiPolUK' on page 6 undefined on input line 25
+4.
+
+
+./main.tex:257: LaTeX Error: Can be used only in preamble.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.238     \bibliography
+l.257     \bibliography
                        {main}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Empty bibliography on input line 240.
+LaTeX Warning: Empty bibliography on input line 259.
 
 
 Package natbib Warning: There were undefined citations.
@@ -1103,17 +1136,34 @@ Package natbib Warning: There were undefined citations.
 [6]
 (C:/Users/Yonatan Alexander/OneDrive/University/CompSci 4471A/Group Project/out
 /main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 59F96BAB57CC1DB18406E87301A32F6D;3450.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 59F96BAB57CC1DB18406E87301A32F6D;3450
+(rerunfilecheck)             After:  A235F37D6AC34E848E6D8B154AB528E0;3683.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20923 strings out of 476992
- 355250 string characters out of 5827501
- 1140232 words of memory out of 5000000
- 41727 multiletter control sequences out of 15000+600000
+ 20935 strings out of 476992
+ 355358 string characters out of 5827501
+ 1139219 words of memory out of 5000000
+ 41728 multiletter control sequences out of 15000+600000
  478956 words of font info for 67 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  72i,7n,77p,677b,1801s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1126,10 +1176,10 @@ c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmtt12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095
 .pfb>
 Output written on "C:/Users/Yonatan Alexander/OneDrive/University/CompSci 4471A
-/Group Project/out/main.pdf" (6 pages, 110585 bytes).
+/Group Project/out/main.pdf" (6 pages, 112093 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

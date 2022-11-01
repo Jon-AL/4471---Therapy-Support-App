@@ -60,7 +60,7 @@ Kien Tang Tran, Michael\\
 % Document
 \begin{document}
 
-    TODO:
+     TODO:
 
     \begin{enumerate}
         \item Business requirements related to problem's root cause
@@ -176,68 +176,87 @@ Kien Tang Tran, Michael\\
     \section{Success/Acceptance Criteria for each Stakeholder}\label{sec:success/acceptance-criteria-for-each-stakeholder}
 
     \subsection{Patients}\label{subsec:patients}
-    \begin{itemize}
-        \item As a user, I want to be able to store my mood on a particular day.
-        \item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
-        \item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
-        \item As a user, I want to be able to store when I take my medication.
-        \item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit.
-        \item As a user, I want to be able to create a statistical report about my ratings on moods.
+     \begin{itemize}
+         \item As a user, I want to be able to store my mood on a particular day.
+         \item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
+         \item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
+         \item As a user, I want to be able to store when I take my medication.
+         \item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit.
+         \item As a user, I want to be able to create a statistical report about my ratings on moods.
 
-    \end{itemize}
+     \end{itemize}
 
-    \subsection{Therapist}\label{subsec:therapist}
-    \begin{itemize}
-        \item As a user, I want to be able to look at my patient's reports in an organized manner.
-        \item As a user, I want to be able to see the medication list stored on the application.
+     \subsection{Therapist}\label{subsec:therapist}
+     \begin{itemize}
+         \item As a user, I want to be able to look at my patient's reports in an organized manner.
+         \item As a user, I want to be able to see the medication list stored on the application.
 
-    \end{itemize}
-
-
-    \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
+     \end{itemize}
 
 
-    \section{Selected Use case Descriptions {only two descriptions}}\label{sec:selected-use-case-descriptions}
+     \section{Chosen Design Patterns}\label{sec:chosen-design-patterns}
+
+     \begin{enumerate}
+         \item \textbf{State} Accounts' state\cite{RefactoringGuru}
+         \item \textbf{Visitor} Output formatting\cite{RefactoringGuru}
+         \item \textbf{Strategy} graphs (possibly multiple, first one will be line plot)\cite{RefactoringGuru} %https://www.python-graph-gallery.com/
+         \item \textbf{Singleton} Interface\cite{RefactoringGuru}
+         \item \textbf{Additional creational pattern} for different `screens` (interfaces)\cite{RefactoringGuru}
+         \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
+     \end{enumerate}
 
 
-    \section{Sequence diagram(s) {for the selected use case for descriptions}}\label{sec:sequence-diagram(s)}
+     \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
+
+     \begin{enumerate}
+         \item \textbf{Repository architecture}: For medication database
+         \item \textbf{Event driven architecture}: for reminders
+         \item \textbf{Pipe and filters architecture}: for statistical analysis and graphs
+         \item \textbf{Component based architecture}: for the whole system, especially for the user interface.
+     \end{enumerate}
 
 
-    \section{System Architecture}\label{sec:system-architecture}
-
-    \begin{enumerate}
-        \item \textbf{Repository architecture}: For medication database
-        \item \textbf{Event driven architecture}: for reminders
-        \item \textbf{Pipe and filters architecture}: for statistical analysis and graphs
-        \item \textbf{Component based architecture}: for the whole system, especially for the user interface.
-    \end{enumerate}
+     \section{Selected Use case Descriptions {only two descriptions}}\label{sec:selected-use-case-descriptions}
 
 
-    \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
+     \section{Sequence diagram(s) {for the selected use case for descriptions}}\label{sec:sequence-diagram(s)}
 
 
-    \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
+     \section{System Architecture}\label{sec:system-architecture}
+
+     \begin{enumerate}
+         \item \textbf{Repository architecture}: For medication database
+         \item \textbf{Event driven architecture}: for reminders
+         \item \textbf{Pipe and filters architecture}: for statistical analysis and graphs
+         \item \textbf{Component based architecture}: for the whole system, especially for the user interface.
+     \end{enumerate}
 
 
-    \section{ER – Diagram (Data modelling)}\label{sec:er--diagram-(data-modelling)}
+     \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
 
 
-    \section{GitHub Link}\label{sec:github-link}
+     \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
 
 
-    \section{Conclusion}\label{sec:conclusion}
+     \section{Entity Relationship Diagram (Data modelling)}\label{sec:er--diagram-(data-modelling)}
 
 
-    \section{References}\label{sec:reference}
+     \section{GitHub Link}\label{sec:github-link}
 
-    \begin{enumerate}
-        \item \textbf{MyTherapy (app):} \qq{Your personal pill reminder and medication tracker app}\cite{MyTherapy}
-        \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
-    \end{enumerate}
 
-    \bibliography{main}
+     \section{Conclusion}\label{sec:conclusion}
 
-    \printbibliography[heading=subbibintoc]
+
+     \section{References}\label{sec:reference}
+
+     \begin{enumerate}
+         \item \textbf{MyTherapy (app):} \qq{Your personal pill reminder and medication tracker app}\cite{MyTherapy}
+         \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
+     \end{enumerate}
+
+     \bibliography{main}
+
+     \printbibliography[heading=subbibintoc]
 
     \appendix{Project WBS}
 
