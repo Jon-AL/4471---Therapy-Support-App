@@ -5,7 +5,47 @@
 \documentclass[11pt]{article}
 %check
 % Packages
+\usepackage{mathrsfs}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym} % additional math symbols
+\usepackage{hyperref}
+\usepackage[table, dvipsnames]{xcolor}
+\definecolor{lightBlue}{RGB}{204, 229, 255}
+\definecolor{hyperColor}{RGB}{5, 99, 183}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={hyperColor},
+    citecolor={blue!50!black},
+    urlcolor={hyperColor}
+}
+
+\usepackage{tocloft} % Control table of contents, figures, etc
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\providecolors{dvipsnames*}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{amsfonts} %TeX fonts from the American Mathematical Society
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{stmaryrd}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{floatrow}
+\usepackage[clean]{svg}
+
+%\usepackage{parskip} % normal paragraph structure
+
+\usepackage{titling}
+
+\usepackage{biblatex}
+\usepackage[english]{babel}
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
+
+
 \author{Alexander, Yonatan\\
 \texttt{SN: 251097927}
 \and
@@ -13,11 +53,107 @@ Aziz, Mohammad Yasin\\
 \texttt{SN: .....}
 \and
 Kien Tang Tran, Michael\\
-\texttt{SN: .....}
+\texttt{SN: 250735158}
 }
-\title{Therapy Support App}
+\title{Therapy Support App\\
+\large Group 9}
+
 % Document
 \begin{document}
+
+
+    \begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+        \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+
+        \center % Centre everything on the page
+
+        %------------------------------------------------
+        %	Headings
+        %------------------------------------------------
+
+%        \textsc{\LARGE Western University}\\[1.5cm] % Name of your university/college
+%        \Large Group 9\\[0.5cm] % Major heading such as course name
+%        \large Computer Science 4471 A\\[0.5cm] % Minor heading such as course title
+        \vspace*{1cm}
+        %------------------------------------------------
+        %	Title
+        %------------------------------------------------
+        \HRule \\[0.4cm]
+        { \huge \bfseries \thetitle }\\[0.4cm] % Title of your document
+        \HRule \\[1.5cm]
+
+        %------------------------------------------------
+        %	Author(s)
+        %------------------------------------------------
+        \begin{minipage}{0.3\textwidth}
+%            \begin{flushleft}
+            \Large
+            Yonatan\\
+            \textsc{Alexander}\\ % Your name
+            SN: 251097927
+%            \end{flushleft}
+        \end{minipage}
+        ~
+        \begin{minipage}{0.3\textwidth}
+%            \begin{center}
+            \Large
+            Michael\\
+            \textsc{Kien Tang Tran}\\ % Your name
+            SN: 250735158
+%            \end{center}
+        \end{minipage}
+        ~
+        \begin{minipage}{0.3\textwidth}
+%            \begin{flushright}
+            \Large
+            Mohammad Yasin\\
+            \textsc{Aziz}\\ % Your name
+            SN: ?????????
+%            \end{flushright}
+        \end{minipage}\\[2cm]
+        % end of authors
+
+
+        %------------------------------------------------
+        %	Date
+        %------------------------------------------------
+        \Large \textsc{Computer Science 4471 A}\\ % Major heading such as course name
+        \textsc{Fall - 2022}\\ % Major heading such as course name
+%        \Large Group 9\\[0.5cm] % Major heading such as course name
+%        \large Computer Science 4471 A\\[0.5cm] % Minor heading such as course title
+        %------------------------------------------------
+        %	Logo
+        %------------------------------------------------
+
+        \vfill\vfill
+        \includegraphics[width=0.4\textwidth]{Picture1}
+        \\[1cm]
+
+        \vfill % Position the date 3/4 down the remaining page
+        \vfill
+        {\LARGE\today} % Date, change the \today to a set date if you want to be precise
+
+        %------------------------------------------------
+        %	Logo
+        %------------------------------------------------
+
+%
+%        \includegraphics[width=0.4\textwidth]{Picture1}
+%        \\[1cm]
+
+        %\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+        %----------------------------------------------------------------------------------------
+
+        \vfill % Push the date up 1/4 of the remaining page
+        \vfill
+        \vfill
+        \vfill
+    \end{titlepage}
+
+
+
+
 
     TODO:
 
@@ -60,12 +196,17 @@ Kien Tang Tran, Michael\\
     \end{enumerate}
 
 
+%    \maketitle
+%    Cover sheet {Project title, Group members' names and SID}
 
-    \maketitle
-    Cover sheet {Project title, Group members' names and SID}
+    \pagebreak
+
+    \tableofcontents
+
+    \pagebreak
 
 
-    \chapter{Problem Definition}\label{ch:problem-definition}
+    \section{Problem Definition}\label{sec:problem-definition}
     Therapists and patients encounter many challenges during the therapeutic process.
     There are a number of small yet persistent problems for therapists revolve around their patients' self-management between sessions.
     This software's intention is to help patients in doing so.
@@ -89,77 +230,140 @@ Kien Tang Tran, Michael\\
     \end{enumerate}
 
 
-    \chapter{Project Objective}\label{ch:project-objective}
-    \section{General objective guidelines}
-	Patients should be able to generate a report about their mood and medication for their therapy session in one to three clicks between each therapy session. 
+    \section{Project Objective}\label{sec:project-objective}
 
-Therapists should be able to see their patient's mood and medication reports in one to two clicks between each therapy session.
+    \subsection{General objective guidelines}\label{subsec:general-objective-guidelines}
+    Patients should be able to generate a report about their mood and medication for their therapy session in one to three clicks between each therapy session.
 
+    Therapists should be able to see their patient's mood and medication reports in one to two clicks between each therapy session.
 
-    \chapter{Stakeholders List}\label{ch:stakeholders-list}
-\begin{itemize}
-\item Patients - Internal stakeholder
-\item Therapists - External stakeholder
-\end{itemize}
-
-
-    \chapter{Success/Acceptance Criteria for each Stakeholder}
-\subsection{Patients}
-\begin{itemize}
-\item As a user, I want to be able to store my mood on a particular day.
-\item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
-\item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
-\item As a user, I want to be able to store when I take my medication. 
-\item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit. 
-\item As a user, I want to be able to create a statistical report about my ratings on moods. 
-
-\end{itemize}
-
-\subsection{Therapist}
-\begin{itemize}
-\item As a user, I want to be able to look at my patient's reports in an organized manner.
-\item As a user, I want to be able to see the medication list stored on the application. 
-
-\end{itemize}
-
-    \chapter{Use case diagram(s)}
+    \begin{enumerate}
+        \item Learning the process of project development through application of knowledge acquired during the Computer Science 4471A Course.
+        \item The creation of an intuitive and user friendly self-management mobile app (Android and/or i/OS).
+    \end{enumerate}
 
 
-    \chapter{Selected Use case Descriptions {only two descriptions}}
+    \section{Stakeholders List}\label{sec:stakeholders-list}
+    \begin{itemize}
+        \item Patients - Internal stakeholder
+        \item Therapists - External stakeholder
+    \end{itemize}
+
+    \subsection{Internal Stakeholders}\label{subsec:internal-stakeholders}
+
+    \item external - anyone who has an influence\; including people who write certain libraries and so on  (include instructor and TA as external stakeholders)
+    \item internal - programmers, maintainable, customers, users, etc [double check this point's list]
+
+    \begin{enumerate}
+        \item Patients (main users)
+        \item Therapists (users by proxy, potential users if a therapist-side interface is implemented)
+    \end{enumerate}
+
+    \subsection{External Stakeholders}\label{subsec:external-stakeholders}
+    \begin{enumerate}
+        \item Legislation and public policy (for example security of medical information)
+        \item Governing bodies (such as the CRPO - The College of Registered Psychotherapists of Ontario)
+        \item Instructor and TA
+    \end{enumerate}
 
 
-    \chapter{Sequence diagram(s) {for the selected use case for descriptions}}
+    \section{Success/Acceptance Criteria for each Stakeholder}\label{sec:success/acceptance-criteria-for-each-stakeholder}
+
+    \subsection{Patients}\label{subsec:patients}
+    \begin{itemize}
+        \item As a user, I want to be able to store my mood on a particular day.
+        \item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
+        \item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
+        \item As a user, I want to be able to store when I take my medication.
+        \item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit.
+        \item As a user, I want to be able to create a statistical report about my ratings on moods.
+
+    \end{itemize}
+
+    \subsection{Therapist}\label{subsec:therapist}
+    \begin{itemize}
+        \item As a user, I want to be able to look at my patient's reports in an organized manner.
+        \item As a user, I want to be able to see the medication list stored on the application.
+
+    \end{itemize}
 
 
-    \chapter{System Architecture}
+    \section{Chosen Design Patterns}\label{sec:chosen-design-patterns}
+
+    \begin{enumerate}
+        \item \textbf{State} Accounts' state\cite{RefactoringGuru}
+        \item \textbf{Visitor} Output formatting\cite{RefactoringGuru}
+        \item \textbf{Strategy} graphs (possibly multiple, first one will be line plot)\cite{RefactoringGuru} %https://www.python-graph-gallery.com/
+        \item \textbf{Singleton} Interface\cite{RefactoringGuru}
+        \item \textbf{Additional creational pattern} for different `screens` (interfaces)\cite{RefactoringGuru}
+        \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
+    \end{enumerate}
 
 
-    \chapter{Detailed Class diagram(s)}
+    \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
 
 
-    \chapter{State-machine diagram {for the whole system, if possible}}
+    \section{Selected Use case Descriptions {only two descriptions}}\label{sec:selected-use-case-descriptions}
 
 
-    \chapter{ER – Diagram (Data modelling)}
+    \section{Sequence diagram(s) {for the selected use case for descriptions}}\label{sec:sequence-diagram(s)}
 
 
-    \chapter{GitHub link to your project source code}
+    \section{System Architecture}\label{sec:system-architecture}
+
+    \begin{enumerate}
+        \item \textbf{Repository architecture}: For medication database
+        \item \textbf{Event driven architecture}: for reminders
+        \item \textbf{Pipe and filters architecture}: for statistical analysis and graphs
+        \item \textbf{Component based architecture}: for the whole system, especially for the user interface.
+    \end{enumerate}
 
 
-    \chapter{Conclusion (lesson learned)}
+    \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
 
 
-    \chapter{Reference (if any)}
+    \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
 
 
-    \chapter{Project WBS (as an appendix of your report)}
+    \section{Entity Relationship Diagram (Data modelling)}\label{sec:er--diagram-(data-modelling)}
 
+
+    \section{GitHub Link}\label{sec:github-link}
+    \href{Group Therapy-Support-App}
+    https://github.com/Jon-AL/4471---Therapy-Support-App
+
+
+    \section{Conclusion}\label{sec:conclusion}
+
+
+    \section{References}\label{sec:reference}
+
+    \begin{enumerate}
+        \item \textbf{MyTherapy (app):} \qq{Your personal pill reminder and medication tracker app}\cite{MyTherapy}
+        \item \textbf{Bipolar UK’s Mood Tracker (app):} \qq{Our new Mood Tracker app can make it much easier to record your daily mood, medications, emotions and how much sleep you’ve had}\cite{BiPolUK}
+    \end{enumerate}
+
+    \bibliography{main}
+
+    \printbibliography[heading=subbibintoc]
+
+    \appendix{Project WBS}
 
     \appendix{Task Assignment Matrix}
 
+    \begin{figure}
+        \label{fig:Gant Chart}
+        %GANT CHART
+    \end{figure}
+
     \appendix{Sample of commits on the selected version control system}
+    \appendix{things we want to do}
+    \begin{enumerate}
+        \item docker
+        \item gant chart
+        \item Reminder system
+        \item Privacy
+        \item Minutes
+    \end{enumerate}
 
-
-    \bibliography{main}
-    \bibliographystyle{plain}
 \end{document}
