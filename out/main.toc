@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {4.1}Patients}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Therapist}{4}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Chosen Design Patterns}{4}{section.5}%
-\contentsline {section}{\numberline {6}Use case diagram(s)}{4}{section.6}%
+\contentsline {section}{\numberline {6}Use case diagram(s)}{5}{section.6}%
 \contentsline {section}{\numberline {7}Selected Use case Descriptions {only two descriptions}}{5}{section.7}%
 \contentsline {section}{\numberline {8}Sequence diagram(s) {for the selected use case for descriptions}}{5}{section.8}%
 \contentsline {section}{\numberline {9}System Architecture}{5}{section.9}%
