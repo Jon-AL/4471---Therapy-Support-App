@@ -9,10 +9,10 @@
 \contentsline {subsection}{\numberline {4.1}Patients}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Therapist}{4}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Chosen Design Patterns}{4}{section.5}%
-\contentsline {section}{\numberline {6}Use case diagram(s)}{5}{section.6}%
-\contentsline {section}{\numberline {7}Selected Use case Descriptions {only two descriptions}}{5}{section.7}%
-\contentsline {section}{\numberline {8}Sequence diagram(s) {for the selected use case for descriptions}}{5}{section.8}%
-\contentsline {section}{\numberline {9}System Architecture}{5}{section.9}%
+\contentsline {section}{\numberline {6}Use case diagram(s)}{4}{section.6}%
+\contentsline {section}{\numberline {7}Selected Use case Descriptions {only two descriptions}}{4}{section.7}%
+\contentsline {section}{\numberline {8}Sequence diagram(s) {for the selected use case for descriptions}}{4}{section.8}%
+\contentsline {section}{\numberline {9}System Architecture}{4}{section.9}%
 \contentsline {section}{\numberline {10}Detailed Class diagram(s)}{5}{section.10}%
 \contentsline {section}{\numberline {11}State-machine diagram {for the whole system, if possible}}{5}{section.11}%
 \contentsline {section}{\numberline {12}Entity Relationship Diagram (Data modelling)}{5}{section.12}%
