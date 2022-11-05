@@ -34,7 +34,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
     private static final String inventoryReminder_COL = "inventory_reminder";
     private static final String history_COL = "history";
 
-    public MedicationDBHelper(@Nullable Context context) {
+    public MedicationDBHelper( Context context) {
         super(context, DB_Name, null, DB_version);
     }
 
