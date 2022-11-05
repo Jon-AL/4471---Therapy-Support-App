@@ -9,6 +9,12 @@ import androidx.annotation.Nullable;
  *
  * Medication class.
  *
+ * Base features of creating and adding a database has been created.
+ * Additional functionality will be added.
+ *
+ * @author Michael Tang-Tran
+ * @date: November 5, 2022
+ *
  * The code references two resources:
  * 1. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  * 2. https://www.youtube.com/watch?v=aQAIMY-HzL8
