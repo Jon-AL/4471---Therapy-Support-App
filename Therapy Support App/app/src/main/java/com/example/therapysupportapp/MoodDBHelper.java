@@ -3,12 +3,25 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
+/**
+ *
+ * Mood db class.
+ *
+ * Base features of creating and adding a database has been created.
+ * Additional functionality will be added.
+ *
+ * @author Michael Tang-Tran
+ * @date: November 5, 2022
+ *
+ * The code references two resources:
+ * 1. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
+ * 2. https://www.youtube.com/watch?v=aQAIMY-HzL8
+ * */
 public class MoodDBHelper extends SQLiteOpenHelper{
     private static final String DB_Name = "Mood";
     private static final int DB_version = 3;
 
-    private static final String Table_Name = "symptoms";
+    private static final String Table_Name = "moods";
     private static final String id_col = "id";
     private static final String moodRating_col = "mood_rating";
     private static final String description_col = "description";
