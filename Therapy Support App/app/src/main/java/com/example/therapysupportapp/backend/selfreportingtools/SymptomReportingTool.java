@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 
 class SymptomReportingTool {
     private static SymptomReportingTool instance;
-    private Data data;
+//    private Data data;
 
     private String name;
     private TreeMap<LocalDateTime, Integer> reports; // self reports;  //TODO: change Object to whatever type of date and time object we pick.
 
     private SymptomReportingTool(String value) {
-        this.value = value;
+//        this.value = value;
     }
 
     public static SymptomReportingTool getInstance(String value) {
