@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
  * The code references two resources:
  * 1. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  * 2. https://www.youtube.com/watch?v=aQAIMY-HzL8
+ * 3. https://www.folkstalk.com/2022/09/delete-data-from-database-sqlite-android-with-code-examples.html
+ * 4. https://www.digitalocean.com/community/tutorials/android-sqlite-database-example-tutorial
  * */
 
 
@@ -74,6 +76,16 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    // Sample deletion method. Do not use right now.
+    public void deleteRecord(SQLiteDatabase db, long _id){
+        db.delete(Table_Name, ID_COL + "=" + _id, null);
+    }
+
+    // Drop the table ; needs to be checked.
+    public void dropTable(SQLiteDatabase db) {
+        // context.deleteDatabase(db);
+    }
+    
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // this method is called to check if the table exists already.
