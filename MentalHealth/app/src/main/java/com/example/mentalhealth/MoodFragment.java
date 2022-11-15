@@ -66,7 +66,7 @@ public class MoodFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_mood, container, false);
 
-        rc = view.findViewById(R.id.rc);
+        rc = view.findViewById(R.id.idEdtMoodRating);
         rc.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         adapter=new Adapter(view.getContext());
