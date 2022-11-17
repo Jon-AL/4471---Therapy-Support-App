@@ -70,7 +70,7 @@ public class UpdateMoodActivity extends AppCompatActivity {
                 // calling a method to delete our course.
                 mooddbHandler.deleteMood(moodRating);
                 Toast.makeText(UpdateMoodActivity.this, "Deleted the mood entry", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(UpdateMoodActivity.this, MoodActivity.class);
+                Intent i = new Intent(UpdateMoodActivity.this, MoodFragment.class);
                 startActivity(i);
             }
         });

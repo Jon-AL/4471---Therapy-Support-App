@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MoodActivity extends AppCompatActivity {
+public class MoodFragment extends AppCompatActivity {
 
     // creating variables for our edittext, button and dbhandler
     private EditText moodRatingEdt, moodDescriptionEdt;
@@ -21,6 +21,10 @@ public class MoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_mood);
+
+
+
+
 
         // initializing all our variables.
         moodRatingEdt = findViewById(R.id.idEdtMoodRating);
