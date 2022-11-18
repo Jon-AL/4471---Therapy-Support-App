@@ -52,6 +52,10 @@
             android:layout_margin="10dp"
             android:text="Read All Mood Entries"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/idBtnDeleteAllMoods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <ListView
             android:id="@+id/list"

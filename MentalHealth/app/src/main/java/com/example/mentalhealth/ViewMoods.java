@@ -27,7 +27,7 @@ public class ViewMoods extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.fragment_activity_view_moods);
-        View view=inflater.inflate(R.layout.fragment_mood, container, false);
+        View view=inflater.inflate(R.layout.fragment_activity_view_moods, container, false);
         // initializing our all variables.
         MoodModalArrayList = new ArrayList<>();
         moodDBHelper = new MoodDBHelper(view.getContext());

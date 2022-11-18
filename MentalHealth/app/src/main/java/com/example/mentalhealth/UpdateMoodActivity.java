@@ -27,7 +27,7 @@ public class UpdateMoodActivity extends AppCompatActivity {
         moodRatingEdt = findViewById(R.id.idEdtMoodRating);
         moodDescriptionEdt = findViewById(R.id.idEdtMoodRating);
 
-        updateMoodBtn = findViewById(R.id.idBtnUpdateCourse);
+        updateMoodBtn = findViewById(R.id.idBtnUpdateMood);
         deleteMoodBtn = findViewById(R.id.idBtnDelete);
 
         // on below line we are initialing our dbhandler class.
