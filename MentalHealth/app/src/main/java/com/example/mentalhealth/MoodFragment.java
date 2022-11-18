@@ -35,7 +35,7 @@ public class MoodFragment extends Fragment {
     // creating variables for our edittext, button and dbhandler
     private EditText moodRatingEdt, moodDescriptionEdt;
     private Button addMoodBtn, readMoodBtn;
-    private MoodDBHelper MooddbHelper;
+    public MoodDBHelper MooddbHelper;
 
     RecyclerView rc;
     Adapter adapter;
@@ -132,14 +132,14 @@ public class MoodFragment extends Fragment {
         ListView l;
         // getting our course array
         // list from db handler class.
-        //MoodModalArrayList = MoodDBHelper.readMoods();
-       // l = view.findViewById(R.id.idBtnReadMood);
-       // ArrayAdapter<MoodModal> arr;
-       // arr = new ArrayAdapter<MoodModal>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-       // l.setAdapter(arr);
-       // adapter=new Adapter(view.getContext());
+        MoodModalArrayList = MooddbHelper.readMoods();
+       l = view.findViewById(R.id.list);
+       ArrayAdapter<MoodModal> arr;
+       arr = new ArrayAdapter<MoodModal>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, MoodModalArrayList);
+       l.setAdapter(arr);
+       adapter=new Adapter(view.getContext());
 
-       // moodrc.setAdapter(adapter);
+       //moodrc.setAdapter(adapter);
 
         return view;
     }
