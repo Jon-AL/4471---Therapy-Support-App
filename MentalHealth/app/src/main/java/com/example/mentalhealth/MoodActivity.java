@@ -9,8 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
-public class MoodFragment extends AppCompatActivity {
+public class MoodActivity extends FragmentActivity {
 
     // creating variables for our edittext, button and dbhandler
     private EditText moodRatingEdt, moodDescriptionEdt;
@@ -30,8 +31,8 @@ public class MoodFragment extends AppCompatActivity {
         moodRatingEdt = findViewById(R.id.idEdtMoodRating);
         moodDescriptionEdt = findViewById(R.id.idEdtMoodDescription);
 
-        addMoodBtn = findViewById(R.id.idBtnAddCourse);
-        readMoodBtn = findViewById(R.id.idBtnReadCourse);
+        addMoodBtn = findViewById(R.id.idBtnAddMood);
+        readMoodBtn = findViewById(R.id.idBtnReadMood);
 
         // creating a new dbhandler class
         // and passing our context to it.
@@ -71,6 +72,8 @@ public class MoodFragment extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
 }
 

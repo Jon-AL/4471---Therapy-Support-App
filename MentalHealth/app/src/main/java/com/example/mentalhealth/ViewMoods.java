@@ -1,14 +1,18 @@
 package com.example.mentalhealth;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ViewMoods extends AppCompatActivity {
+public class ViewMoods extends Fragment {
 
     // creating variables for our array list,
     // dbhandler, adapter and recycler view.
@@ -16,26 +20,28 @@ public class ViewMoods extends AppCompatActivity {
     private MoodDBHelper moodDBHelper;
     private MoodAdapter MoodAdapter;
     private RecyclerView moodsRV;
-
+    private ViewGroup container;
+    private LayoutInflater inflater;
+    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_activity_view_moods);
-
+        //setContentView(R.layout.fragment_activity_view_moods);
+        View view=inflater.inflate(R.layout.fragment_mood, container, false);
         // initializing our all variables.
         MoodModalArrayList = new ArrayList<>();
-        moodDBHelper = new MoodDBHelper(ViewMoods.this);
+        moodDBHelper = new MoodDBHelper(view.getContext());
 
         // getting our course array
         // list from db handler class.
         MoodModalArrayList = moodDBHelper.readMoods();
 
         // on below line passing our array lost to our adapter class.
-        MoodAdapter = new MoodAdapter(MoodModalArrayList, ViewMoods.this);
-        moodsRV = findViewById(R.id.idRVCourses);
+        MoodAdapter = new MoodAdapter(MoodModalArrayList, view.getContext());
+        moodsRV = view.findViewById(R.id.idRVMoods);
 
         // setting layout manager for our recycler view.
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewMoods.this, RecyclerView.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), RecyclerView.VERTICAL, false);
         moodsRV.setLayoutManager(linearLayoutManager);
 
         // setting our adapter to recycler view.

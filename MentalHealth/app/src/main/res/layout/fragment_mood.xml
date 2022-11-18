@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView
+<FrameLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,7 +37,7 @@
 
         <!--button for adding new course-->
         <Button
-            android:id="@+id/idBtnAddCourse"
+            android:id="@+id/idBtnAddMood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -46,7 +46,7 @@
 
         <!--new button for opening our course list activity-->
         <Button
-            android:id="@+id/idBtnReadCourse"
+            android:id="@+id/idBtnReadMood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -57,4 +57,4 @@
 
     </LinearLayout>
 
-</androidx.fragment.app.FragmentContainerView>
+</FrameLayout>
