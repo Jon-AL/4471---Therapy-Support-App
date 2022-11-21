@@ -35,6 +35,13 @@
             android:layout_margin="10dp"
             android:hint="Enter a description about your mood" />
 
+        <EditText
+            android:id="@+id/idEdtOldMoodDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter the old description" />
+
         <!--button for adding new course-->
         <Button
             android:id="@+id/idBtnAddMood"
@@ -55,8 +62,21 @@
         <Button
             android:id="@+id/idBtnDeleteAllMoods"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAllCaps="false"
+            android:text="Delete Mood Entries"
+            />
+        <Button
+            android:id="@+id/idBtnUpdateMood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAllCaps="false"
+            android:text="Update Mood Entry"
+            />
 
+`
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"

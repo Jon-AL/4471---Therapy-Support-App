@@ -27,7 +27,7 @@ public class MoodModal {
         this.id = diffid;
     }
 
-    public MoodModal(String moodDescription, String rating){
+    public MoodModal(String rating, String moodDescription){
         this.moodDescription = moodDescription;
         this.moodRating = rating;
     }

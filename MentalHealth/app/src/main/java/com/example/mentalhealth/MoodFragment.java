@@ -34,10 +34,10 @@ public class MoodFragment extends Fragment {
 
 
     // creating variables for our edittext, button and dbhandler
-    private EditText moodRatingEdt, moodDescriptionEdt;
-    private Button addMoodBtn, readMoodBtn, deleteAllMoodsBtn;
+    private EditText moodRatingEdt, moodDescriptionEdt, oldDescriptionEdt;
+    private Button addMoodBtn, readMoodBtn, deleteAllMoodsBtn, updateMoodBtn;
     public MoodDBHelper MooddbHelper;
-
+    public String moodRating;
     RecyclerView rc;
     Adapter adapter;
 
@@ -85,10 +85,12 @@ public class MoodFragment extends Fragment {
         // initializing all our variables.
         moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
         moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
+        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
         addMoodBtn = view.findViewById(R.id.idBtnAddMood);
         readMoodBtn = view.findViewById(R.id.idBtnReadMood);
         deleteAllMoodsBtn = view.findViewById(R.id.idBtnDeleteAllMoods);
+        updateMoodBtn = view.findViewById(R.id.idBtnUpdateMood);
 
         // creating a new dbhandler class
         // and passing our context to it.
@@ -124,20 +126,50 @@ public class MoodFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // opening a new activity via a intent.
-                Intent i = new Intent(v.getContext(), ViewMoods.class);
-                startActivity(i);
+                ListView l;
+                // getting our course array
+                // list from db handler class.
+                ArrayList<MoodModal> MoodModalArrayList;
+                MoodModalArrayList = MooddbHelper.readMoods();
+
+                ArrayList<String >Mood_list_data = new ArrayList<String>();
+                for(MoodModal i: MoodModalArrayList){
+                    String temp = i.getMoodRating() + " " +i.getMoodDescription();
+                    Mood_list_data.add(temp);
+                }
+                // System.out.print(MoodModalArrayList.get(1).toString());
+                l = view.findViewById(R.id.list);
+                ArrayAdapter<String> arr;
+                arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
+                l.setAdapter(arr);
+
+               // Intent i = new Intent(v.getContext(), ViewMoods.class);
+               // startActivity(i);
             }
         });
 
         deleteAllMoodsBtn.setOnClickListener(new View.OnClickListener() {
-            public void deleteDatabase(View v){
-                MooddbHelper.
+            public void onClick(View v){
+                String moodRating = moodRatingEdt.getText().toString();
+                String moodDescription = moodDescriptionEdt.getText().toString();
+                MooddbHelper.deleteMood(moodDescription);
             }
         });
 
+        updateMoodBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                String moodRating = moodRatingEdt.getText().toString();
+                String moodDescription = moodDescriptionEdt.getText().toString();
+                String oldMooddescription = oldDescriptionEdt.getText().toString();
+                MooddbHelper.updateMoods(moodRating, moodDescription, oldMooddescription);
+                moodRatingEdt.setText("");
+                moodDescriptionEdt.setText("");
+                oldDescriptionEdt.setText("");
+            }
+        });
         // initializing our all variables.
         MoodModalArrayList = new ArrayList<>();
-
+/***
         ListView l;
         // getting our course array
         // list from db handler class.
@@ -145,7 +177,7 @@ public class MoodFragment extends Fragment {
 
         ArrayList<String >Mood_list_data = new ArrayList<String>();
         for(MoodModal i: MoodModalArrayList){
-            String temp = i.getId() +" " +i.getMoodDescription();
+            String temp = i.getMoodRating() + " " +i.getMoodDescription();
             Mood_list_data.add(temp);
         }
        // System.out.print(MoodModalArrayList.get(1).toString());
@@ -153,7 +185,7 @@ public class MoodFragment extends Fragment {
        ArrayAdapter<String> arr;
        arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
        l.setAdapter(arr);
-
+***/
        adapter=new Adapter(view.getContext());
 
        //moodrc.setAdapter(adapter);

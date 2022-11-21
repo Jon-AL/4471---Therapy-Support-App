@@ -38,7 +38,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
-                + id_col + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + id_col + "INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + moodRating_col + " TEXT,"
                 + description_col +  " TEXT)";
 
@@ -77,10 +77,12 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // moving our cursor to first position.
         if (cursorMoods.moveToFirst()) {
             do {
+                //System.out.println(cursorMoods.getString(1));
                 // on below line we are adding the data from cursor to our array list.
-                moodModalArrayList.add(new MoodModal(cursorMoods.getString(0),
-                        cursorMoods.getString(1)));
-
+                moodModalArrayList.add(new MoodModal(cursorMoods.getString(1),
+                        cursorMoods.getString(2)));
+                //System.out.println(cursorMoods.getString(1));
+                //System.out.println(cursorMoods.getString(2));
             } while (cursorMoods.moveToNext());
             // moving our cursor to next.
         }
@@ -92,7 +94,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
 
     // below is the method for updating our courses
-    public void updateMoods(String originalCourseName, String courseName, String courseDescription) {
+    public void updateMoods(String moodRating, String moodDescription, String oldDescription) {
 
         // calling a method to get writable database.
         SQLiteDatabase db = this.getWritableDatabase();
@@ -100,14 +102,14 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(moodRating_col, courseName);
+        values.put(moodRating_col, moodRating);
 
-        values.put(description_col, courseDescription);
+        values.put(description_col, moodDescription);
 
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(Table_Name, values, "name=?", new String[]{originalCourseName});
+        db.update(Table_Name, values, "description=?", new String[]{oldDescription});
         db.close();
     }
 
@@ -120,7 +122,8 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
         // on below line we are calling a method to delete our
         // course and we are comparing it with our course name.
-        db.delete(Table_Name, "name=?", new String[]{description});
+        db.delete(Table_Name, "description=?", new String[]{description});
+        System.out.println("here");
         db.close();
     }
 
