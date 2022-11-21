@@ -2,11 +2,19 @@ package com.example.mentalhealth;
 
 public class SymptomModal {
     int id;
-    String name, description;
-    public SymptomModal (String name, String description){
+    String name, description, date;
+    public SymptomModal (String name, String description, String date){
         this.name = name;
         this.description = description;
+        this.date = date;
     }
+    public String getDate(){
+        return this.date;
+    }
+    public void setDate(String date){
+        this.date = date;
+    }
+
     public int getId(){
         return this.id;
     }

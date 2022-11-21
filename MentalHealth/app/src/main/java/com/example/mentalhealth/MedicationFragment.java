@@ -68,12 +68,12 @@ public class MedicationFragment extends Fragment {
 
 
         View view=inflater.inflate(R.layout.fragment_medication, container, false);
-        medicationrc = view.findViewById(R.id.medicationrc);
+       // medicationrc = view.findViewById(R.id.medicationrc);
 
-        medicationrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+       // medicationrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         adapter=new Adapter(view.getContext());
-        medicationrc.setAdapter(adapter);
+      //  medicationrc.setAdapter(adapter);
 
         return view;
     }
