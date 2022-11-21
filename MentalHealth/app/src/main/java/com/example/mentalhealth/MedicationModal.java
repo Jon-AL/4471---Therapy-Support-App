@@ -4,11 +4,11 @@ public class MedicationModal {
     private long id;
     private String brandName;
     private String commonName;
-    private int dosage, frequency;
+    private String dosage, frequency;
     private String dosageUnit;
 
-    public MedicationModal(long id, String brandName, String commonName, int frequency, int dosage, String dosageUnit){
-        this.id = id;
+    public MedicationModal(String brandName, String commonName, String frequency, String dosage, String dosageUnit){
+
         this.brandName =brandName;
         this.commonName = commonName;
         this.frequency = frequency;
@@ -16,19 +16,19 @@ public class MedicationModal {
         this.dosageUnit = dosageUnit;
     }
 
-    public int getDosage() {
+    public String getDosage() {
         return dosage;
     }
 
-    public void setDosage(int dosage) {
+    public void setDosage(String dosage) {
         this.dosage = dosage;
     }
 
-    public int getFrequency() {
+    public String getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(int frequency) {
+    public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
 

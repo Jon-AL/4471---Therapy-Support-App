@@ -2,10 +2,14 @@ package com.example.mentalhealth;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+
 /**
  *
  * Medication class.
@@ -25,17 +29,17 @@ import androidx.annotation.Nullable;
 
 
 public class MedicationDBHelper extends SQLiteOpenHelper {
-    private static final String DB_Name = "Medication";
-    private static final int DB_version = 1;
+    private static final String DB_Name = "moods";
+    private static final int DB_version = 3;
 
     private static final String Table_Name = "medications";
     private static final String ID_COL  = "id";
     private static final String medicationName_COL = "MED_NAME";
-    private static final String dosage_COL = "dosage";
+    private static final String brandName_COL = "brandName";
     private static final String dosageQuantity_COL = "dosage_quantity";
-    private static final String inventory_COL = "inventory";
-    private static final String inventoryReminder_COL = "inventory_reminder";
-    private static final String history_COL = "history";
+    private static final String dosageUnit_COL = "dosageUnit";
+    private static final String frequency_COL = "frequency";
+
 
     public MedicationDBHelper( Context context) {
         super(context, DB_Name, null, DB_version);
@@ -46,18 +50,17 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + Table_Name + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + medicationName_COL + " TEXT,"
-                + dosage_COL + " TEXT,"
+                + brandName_COL + " TEXT,"
                 + dosageQuantity_COL + " TEXT,"
-                + inventory_COL + " Text,"
-                + inventoryReminder_COL + " TEXT,"
-                + history_COL + " TEXT)";
+                + dosageUnit_COL + " Text,"
+                + frequency_COL + " TEXT)";
 
         // at last we are calling a exec sql
         // method to execute above sql query
         sqLiteDatabase.execSQL(query);
     }
 
-    public void addNewMedication(String id, String medName, String dosage, String dosageQuantity, String inventory, String inventoryReminder, String history){
+    public void addNewMedication(String id, String commonName, String medName, String dosageUnit, String dosageQuantity, String frequency){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -65,11 +68,11 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         // Create the values
         values.put(ID_COL, id);
         values.put(medicationName_COL, medName);
-        values.put(dosage_COL, dosage);
+        values.put(brandName_COL, commonName);
         values.put(dosageQuantity_COL, dosageQuantity);
-        values.put(inventory_COL, inventory);
-        values.put(inventoryReminder_COL, inventoryReminder);
-        values.put(history_COL, history);
+        values.put(dosageUnit_COL, dosageUnit);
+        values.put(frequency_COL, frequency);
+
 
         // Store the values into the database table.
         db.insert(Table_Name, null, values);
@@ -78,13 +81,61 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
     }
 
     // Sample deletion method. Do not use right now.
-    public void deleteRecord(SQLiteDatabase db, long _id){
-        db.delete(Table_Name, ID_COL + "=" + _id, null);
+    public void deleteRecord(String medName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Table_Name,  "medicationName=?" , new String[]{medName});
+        db.close();
     }
 
-    // Drop the table ; needs to be checked.
-    public void dropTable(SQLiteDatabase db) {
-        // context.deleteDatabase(db);
+    // below is the method for updating our courses
+    public void updateMedication(String oldName, String medName, String dosage, String dosageUnit, String commonName, String frequency ) {
+
+        // calling a method to get writable database.
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(medicationName_COL, medName);
+        values.put(brandName_COL, commonName);
+        values.put(dosageQuantity_COL, dosage);
+        values.put(dosageUnit_COL, dosageUnit);
+        values.put(frequency_COL, frequency);
+
+
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        db.update(Table_Name, values, "medicationName=?", new String[]{oldName});
+        db.close();
+    }
+
+    public ArrayList<MedicationModal> readMedications() {
+        // on below line we are creating a
+        // database for reading our database.
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // on below line we are creating a cursor with query to read data from database.
+        Cursor cursorMedications = db.rawQuery("SELECT * FROM " + Table_Name, null);
+
+        // on below line we are creating a new array list.
+        ArrayList<MedicationModal> MedicationModalArrayList = new ArrayList<>();
+
+        // moving our cursor to first position.
+        if (cursorMedications.moveToFirst()) {
+            do {
+                //System.out.println(cursorMedications.getString(1));
+                // on below line we are adding the data from cursor to our array list.
+                MedicationModalArrayList.add(new MedicationModal(cursorMedications.getString(1), cursorMedications.getString(2), cursorMedications.getString(3), cursorMedications.getString(4), cursorMedications.getString(5)));
+                //System.out.println(cursorMedications.getString(1));
+                //System.out.println(cursorMedications.getString(2));
+            } while (cursorMedications.moveToNext());
+            // moving our cursor to next.
+        }
+        // at last closing our cursor
+        // and returning our array list.
+        cursorMedications.close();
+        return MedicationModalArrayList;
     }
 
     @Override
