@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +27,7 @@ public class ViewMoods extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.fragment_activity_view_moods);
-        View view=inflater.inflate(R.layout.fragment_activity_view_moods, container, false);
+        View view=inflater.inflate(R.layout.fragment_activity_view_medication, container, false);
         // initializing our all variables.
         MoodModalArrayList = new ArrayList<>();
         moodDBHelper = new MoodDBHelper(view.getContext());

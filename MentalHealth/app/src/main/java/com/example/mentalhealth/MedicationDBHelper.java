@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 
 public class MedicationDBHelper extends SQLiteOpenHelper {
-    private static final String DB_Name = "moods";
+    private static final String DB_Name = "Med";
     private static final int DB_version = 3;
 
     private static final String Table_Name = "medications";
@@ -60,13 +60,12 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(query);
     }
 
-    public void addNewMedication(String id, String commonName, String medName, String dosageUnit, String dosageQuantity, String frequency){
+    public void addNewMedication( String commonName, String medName, String dosageUnit, String dosageQuantity, String frequency){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
         // Create the values
-        values.put(ID_COL, id);
         values.put(medicationName_COL, medName);
         values.put(brandName_COL, commonName);
         values.put(dosageQuantity_COL, dosageQuantity);
