@@ -86,6 +86,7 @@
             android:layout_margin="10dp"
             android:textAllCaps="false"
             android:text="Delete Medication Entries"
+            android:visibility="gone"
             />
         <Button
             android:id="@+id/idBtnUpdateMedication"
@@ -94,6 +95,7 @@
             android:layout_margin="10dp"
             android:textAllCaps="false"
             android:text="Update Medication Entry"
+            android:visibility="gone"
             />
 
         `

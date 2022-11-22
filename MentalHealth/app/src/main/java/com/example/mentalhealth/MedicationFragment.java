@@ -150,7 +150,7 @@ public class MedicationFragment extends Fragment {
                 arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
                 l.setAdapter(arr);
 
-                view.setContentView(R.layout.fragment_activity_view_medication);
+                //view.setContentView(R.layout.fragment_activity_view_medication);
                 // Intent i = new Intent(v.getContext(), ViewMoods.class);
                 // startActivity(i);
             }
