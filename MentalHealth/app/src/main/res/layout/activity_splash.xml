@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
+
     <ImageView
         android:layout_width="match_parent"
-        android:src="@drawable/splash"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_height="wrap_content">
-
-
-    </ImageView>
+        android:src="@drawable/newlogo"
+        android:contentDescription="@string/my_mental_health_app_logo" />
 
 </LinearLayout>
