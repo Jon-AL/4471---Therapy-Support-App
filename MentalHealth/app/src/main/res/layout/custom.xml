@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp">
 
 
     <TextView
@@ -12,45 +12,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:text="Today"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:text="How are You Feeling Today: "
-        />
-
+        android:textSize="25sp" />
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:text="Anger In control :"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mood"
+        android:textSize="20sp" />
 
-        />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="36pt"
+        android:text="TextView" />
+
+    <SeekBar
+        android:id="@+id/moodSeekBar_discrete"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="947dp"
+        android:layout_weight="0.5"
+        android:indeterminate="false"
+        android:max="10"
+        android:progress="5"
+        android:visibility="visible" />
 
     <Spinner
         android:id="@+id/Spinner01"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:text="Choose date : "
-        />
+        android:text="Choose date:"
+        android:textSize="20sp" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:clickable="false"
-        android:cursorVisible="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
         android:id="@+id/date"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:cursorVisible="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false">
 
 
     </EditText>
@@ -62,60 +77,59 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:text="Is this true: "
-        />
+        android:text="Mood"
+        android:textSize="20sp" />
 
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="5" />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:checked="true"
-                    android:layout_height="wrap_content"
-                    android:text="Strongly Disagree"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Disagree"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Neutral"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agree"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Strongly Disagree-Disagree"/>
-            </RadioGroup>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+    </RadioGroup>
 
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:layout_marginTop="10dp"
-        android:text="Summary"
-         />
+        android:text="Notes"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-
-    </EditText>
-
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:contentDescription="In your own words, how are you feeling?"
+        android:inputType="text"></EditText>
 
 </LinearLayout>

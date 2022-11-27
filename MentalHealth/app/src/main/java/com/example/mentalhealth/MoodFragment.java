@@ -1,5 +1,7 @@
 package com.example.mentalhealth;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,11 +26,18 @@ import android.view.ViewGroup;
  */
 public class MoodFragment extends Fragment {
 
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+
+    // creating variables for our edittext, button and dbhandler
+    private EditText moodRatingEdt, moodDescriptionEdt, oldDescriptionEdt;
+    private Button addMoodBtn, readMoodBtn, deleteAllMoodsBtn, updateMoodBtn;
+    public MoodDBHelper MooddbHelper;
+    public String moodRating;
     RecyclerView rc;
     Adapter adapter;
 
@@ -45,34 +61,135 @@ public class MoodFragment extends Fragment {
     public static MoodFragment newInstance(String param1, String param2) {
         MoodFragment fragment = new MoodFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_mood, container, false);
+        super.onCreate(savedInstanceState);
+        ArrayList<MoodModal> MoodModalArrayList;
+        View view=inflater.inflate(R.layout.fragment_mood, container, false);
 
-        rc = view.findViewById(R.id.rc);
-        rc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        //moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
+        //moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
+        //moodrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        // initializing all our variables.
+        moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
+        moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
+        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
-        adapter=new Adapter(view.getContext());
-        rc.setAdapter(adapter);
+        addMoodBtn = view.findViewById(R.id.idBtnAddMood);
+        readMoodBtn = view.findViewById(R.id.idBtnReadMood);
+        deleteAllMoodsBtn = view.findViewById(R.id.idBtnDeleteAllMoods);
+        updateMoodBtn = view.findViewById(R.id.idBtnUpdateMood);
 
-        return  view;
+        // creating a new dbhandler class
+        // and passing our context to it.
+        MooddbHelper = new MoodDBHelper(view.getContext());
 
+        // below line is to add on click listener for our add course button.
+        addMoodBtn.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+
+                                              // below line is to get data from all edit text fields.
+                                              String moodRating = moodRatingEdt.getText().toString();
+                                              String moodDescription = moodDescriptionEdt.getText().toString();
+                                              // validating if the text fields are empty or not.
+                                              if (moodRating.isEmpty() && moodDescription.isEmpty()) {
+                                                  Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                                                  return;
+                                              }
+
+                                              // on below line we are calling a method to add new
+                                              // course to sqlite data and pass all our values to it.
+                                              MooddbHelper.addNewMood(moodRating, moodDescription);
+
+                                              // after adding the data we are displaying a toast message.
+                                              Toast.makeText(view.getContext(), "Mood has been added.", Toast.LENGTH_SHORT).show();
+                                              moodRatingEdt.setText("");
+                                              moodDescriptionEdt.setText("");
+
+                                          }
+                                      });
+
+        readMoodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // opening a new activity via a intent.
+                ListView l;
+                // getting our course array
+                // list from db handler class.
+                ArrayList<MoodModal> MoodModalArrayList;
+                MoodModalArrayList = MooddbHelper.readMoods();
+
+                ArrayList<String >Mood_list_data = new ArrayList<String>();
+                for(MoodModal i: MoodModalArrayList){
+                    String temp = i.getMoodRating() + " " +i.getMoodDescription();
+                    Mood_list_data.add(temp);
+                }
+                // System.out.print(MoodModalArrayList.get(1).toString());
+                l = view.findViewById(R.id.list);
+                ArrayAdapter<String> arr;
+                arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
+                l.setAdapter(arr);
+
+               // Intent i = new Intent(v.getContext(), ViewMoods.class);
+               // startActivity(i);
+            }
+        });
+
+        deleteAllMoodsBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                String moodRating = moodRatingEdt.getText().toString();
+                String moodDescription = moodDescriptionEdt.getText().toString();
+                MooddbHelper.deleteMood(moodDescription);
+            }
+        });
+
+        updateMoodBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                String moodRating = moodRatingEdt.getText().toString();
+                String moodDescription = moodDescriptionEdt.getText().toString();
+                String oldMooddescription = oldDescriptionEdt.getText().toString();
+                MooddbHelper.updateMoods(moodRating, moodDescription, oldMooddescription);
+                moodRatingEdt.setText("");
+                moodDescriptionEdt.setText("");
+                oldDescriptionEdt.setText("");
+            }
+        });
+        // initializing our all variables.
+        MoodModalArrayList = new ArrayList<>();
+/***
+        ListView l;
+        // getting our course array
+        // list from db handler class.
+        MoodModalArrayList = MooddbHelper.readMoods();
+
+        ArrayList<String >Mood_list_data = new ArrayList<String>();
+        for(MoodModal i: MoodModalArrayList){
+            String temp = i.getMoodRating() + " " +i.getMoodDescription();
+            Mood_list_data.add(temp);
+        }
+       // System.out.print(MoodModalArrayList.get(1).toString());
+       l = view.findViewById(R.id.list);
+       ArrayAdapter<String> arr;
+       arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
+       l.setAdapter(arr);
+***/
+       adapter=new Adapter(view.getContext());
+
+       //moodrc.setAdapter(adapter);
+
+        return view;
     }
 }

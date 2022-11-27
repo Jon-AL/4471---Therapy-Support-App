@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }

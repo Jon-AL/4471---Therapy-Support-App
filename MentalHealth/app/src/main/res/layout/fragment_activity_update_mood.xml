@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateMoodActivity">
+
+    <!--Edit text to enter course name-->
+    <EditText
+        android:id="@+id/idEdtMoodRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter a Mood Rating on a scale from 0 to 10" />
+
+
+    <!--edit text for course description-->
+    <EditText
+        android:id="@+id/idEdtMoodDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter a Mood Description" />
+
+    <!--button for updating our course-->
+    <Button
+        android:id="@+id/idBtnUpdateMood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Update Mood Entry"
+        android:textAllCaps="false" />
+
+    <!--button for deleting our course-->
+    <Button
+        android:id="@+id/idBtnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Delete Mood Entry"
+        android:textAllCaps="false" />
+
+</LinearLayout>
