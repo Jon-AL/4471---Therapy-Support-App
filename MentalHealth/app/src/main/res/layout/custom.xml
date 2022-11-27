@@ -27,7 +27,7 @@
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="36pt"
         android:text="TextView" />
@@ -42,6 +42,16 @@
         android:max="10"
         android:progress="5"
         android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/progress_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textSize="24sp"
+        android:gravity="center_horizontal" />
+
 
     <Spinner
         android:id="@+id/Spinner01"

@@ -34,7 +34,7 @@ public class MoodFragment extends Fragment {
 
 
     // creating variables for our edittext, button and dbhandler
-    private EditText moodRatingEdt, moodDescriptionEdt, oldDescriptionEdt;
+    private EditText moodRatingEdt, moodDateEdt, moodDescriptionEdt, oldDescriptionEdt;
     private Button addMoodBtn, readMoodBtn, deleteAllMoodsBtn, updateMoodBtn;
     public MoodDBHelper MooddbHelper;
     public String moodRating;
@@ -85,6 +85,7 @@ public class MoodFragment extends Fragment {
         // initializing all our variables.
         moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
         moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
+        moodDateEdt = view.findViewById(R.id.idDate);
         oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
         addMoodBtn = view.findViewById(R.id.idBtnAddMood);
@@ -112,7 +113,7 @@ public class MoodFragment extends Fragment {
 
                                               // on below line we are calling a method to add new
                                               // course to sqlite data and pass all our values to it.
-                                              MooddbHelper.addNewMood(moodRating, moodDescription);
+                                             // MooddbHelper.addNewMood(moodRating, moodDescription);
 
                                               // after adding the data we are displaying a toast message.
                                               Toast.makeText(view.getContext(), "Mood has been added.", Toast.LENGTH_SHORT).show();
@@ -133,8 +134,12 @@ public class MoodFragment extends Fragment {
                 MoodModalArrayList = MooddbHelper.readMoods();
 
                 ArrayList<String >Mood_list_data = new ArrayList<String>();
+
                 for(MoodModal i: MoodModalArrayList){
-                    String temp = i.getMoodRating() + " " +i.getMoodDescription();
+
+                    //System.out.println("this is the mood rating" + i.getMoodRating());
+                    String temp ="Date: " + i.getDate() + ", Mood Rating: " + i.getMoodRating()+"\n"+  "Description: "+i.getMoodDescription();
+
                     Mood_list_data.add(temp);
                 }
                 // System.out.print(MoodModalArrayList.get(1).toString());
@@ -151,18 +156,27 @@ public class MoodFragment extends Fragment {
         deleteAllMoodsBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 String moodRating = moodRatingEdt.getText().toString();
-                String moodDescription = moodDescriptionEdt.getText().toString();
+                String moodDescription = oldDescriptionEdt.getText().toString();
                 MooddbHelper.deleteMood(moodDescription);
+                oldDescriptionEdt.setText("");
             }
         });
 
         updateMoodBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 String moodRating = moodRatingEdt.getText().toString();
+                String moodDate = moodDateEdt.getText().toString();
                 String moodDescription = moodDescriptionEdt.getText().toString();
                 String oldMooddescription = oldDescriptionEdt.getText().toString();
-                MooddbHelper.updateMoods(moodRating, moodDescription, oldMooddescription);
+
+                if (moodDate.isEmpty() && moodRating.isEmpty() && moodDescription.isEmpty() && oldMooddescription.isEmpty()) {
+                    Toast.makeText(v.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                MooddbHelper.updateMoods(Integer.parseInt(moodRating), moodDate, moodDescription, oldMooddescription);
                 moodRatingEdt.setText("");
+                moodDateEdt.setText("");
                 moodDescriptionEdt.setText("");
                 oldDescriptionEdt.setText("");
             }

@@ -23,14 +23,14 @@ import java.util.ArrayList;
  * 2. https://www.youtube.com/watch?v=aQAIMY-HzL8
  * */
 public class MoodDBHelper extends SQLiteOpenHelper{
-    private static final String DB_Name = "Mood";
+    private static final String DB_Name = "Moodv2";
     private static final int DB_version = 3;
 
     private static final String Table_Name = "moods";
     private static final String id_col = "id";
     private static final String moodRating_col = "mood_rating";
     private static final String description_col = "description";
-
+    private static final String date_col = "date";
     public MoodDBHelper(Context context) {
         super(context, DB_Name, null, DB_version);
     }
@@ -38,8 +38,9 @@ public class MoodDBHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
-                + id_col + "INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + moodRating_col + " TEXT,"
+                + id_col + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + moodRating_col + " INT,"
+                + date_col + " TEXT,"
                 + description_col +  " TEXT)";
 
         // at last we are calling a exec sql
@@ -47,13 +48,15 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(query);
     }
 
-    public void addNewMood(String moodRating, String description){
+    public void addNewMood(int moodRating, String date, String description){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
         // Create the values
         values.put(moodRating_col, moodRating);
+        //System.out.println(moodRating);
+        values.put(date_col, date);
         values.put(description_col, description);
 
         // Store the values into the database table.
@@ -79,8 +82,9 @@ public class MoodDBHelper extends SQLiteOpenHelper{
             do {
                 //System.out.println(cursorMoods.getString(1));
                 // on below line we are adding the data from cursor to our array list.
-                moodModalArrayList.add(new MoodModal(cursorMoods.getString(1),
-                        cursorMoods.getString(2)));
+                moodModalArrayList.add(new MoodModal(cursorMoods.getInt(1),
+                        cursorMoods.getString(2), cursorMoods.getString(3)));
+                //System.out.println("WE are here: " +  cursorMoods.getCount());
                 //System.out.println(cursorMoods.getString(1));
                 //System.out.println(cursorMoods.getString(2));
             } while (cursorMoods.moveToNext());
@@ -94,7 +98,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
 
     // below is the method for updating our courses
-    public void updateMoods(String moodRating, String moodDescription, String oldDescription) {
+    public void updateMoods(int moodRating, String mooddate, String moodDescription, String oldDescription) {
 
         // calling a method to get writable database.
         SQLiteDatabase db = this.getWritableDatabase();
@@ -103,18 +107,18 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // on below line we are passing all values
         // along with its key and value pair.
         values.put(moodRating_col, moodRating);
-
+        values.put(date_col, mooddate);
         values.put(description_col, moodDescription);
 
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(Table_Name, values, "description=?", new String[]{oldDescription});
+        db.update(Table_Name, values, "date=?", new String[]{String.valueOf(oldDescription)});
         db.close();
     }
 
     // below is the method for deleting our course.
-    public void deleteMood(String description) {
+    public void deleteMood(String date) {
 
         // on below line we are creating
         // a variable to write our database.
@@ -122,8 +126,9 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
         // on below line we are calling a method to delete our
         // course and we are comparing it with our course name.
-        db.delete(Table_Name, "description=?", new String[]{description});
-        System.out.println("here");
+        db.delete(Table_Name, "date=?", new String[]{String.valueOf(date)});
+
+        //System.out.println("did we get here");
         db.close();
     }
 

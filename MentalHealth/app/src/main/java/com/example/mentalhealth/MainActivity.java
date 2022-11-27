@@ -23,16 +23,23 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.BreakIterator;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * https://stackoverflow.com/questions/43476261/android-seekbar-coding
+ * */
+
+public class MainActivity<textProgress> extends AppCompatActivity {
 
 
     public DrawerLayout drawerLayout;
@@ -40,8 +47,10 @@ public class MainActivity extends AppCompatActivity {
     NavigationView nv;
 
     final Calendar myCalendar= Calendar.getInstance();
-
-
+    private TextView textProgress, descriptionProgress;
+    private TextView textParagraph;
+    private MoodDBHelper Mooddbhelper;
+    private int moodvalue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
+        int progressChangedValue = 0;
 
         int id=item.getItemId();
         if(id==R.id.action_add) {
@@ -126,6 +135,25 @@ public class MainActivity extends AppCompatActivity {
                     this);
 
             alertDialogBuilder.setView(promptsView);
+
+            SeekBar simpleSeekBar;
+            simpleSeekBar=promptsView.findViewById(R.id.moodSeekBar_discrete);
+            textProgress = promptsView.findViewById(R.id.progress);
+            descriptionProgress = promptsView.findViewById(R.id.progress_description);
+            simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+                public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
+                    updateView( i);
+                    setMoodValue(i);
+                }
+
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    // TODO Auto-generated method stub
+                }
+
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                }
+            });
 
             final EditText userInput = (EditText) promptsView
                     .findViewById(R.id.input);
@@ -164,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-
+            MoodDBHelper MooddbHelper = new MoodDBHelper(MainActivity.this);
 
             // set dialog message
             alertDialogBuilder
@@ -172,6 +200,8 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
+                                    System.out.println(progressChangedValue);
+                                    MooddbHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
                                 }
                             })
                     .setNegativeButton("Cancel",
@@ -193,6 +223,93 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
 
+    }
+
+    public void setMoodValue(int value){
+        this.moodvalue = value;
+    }
+
+    public int getMoodvalue(){
+        return this.moodvalue;
+    }
+
+
+    public void updateView(int moodInt) {
+        String shortDescription, longDescription, colour, chosen;
+        //textProgress.setText("Hello world");
+        chosen = "Slidebar";
+        longDescription = "";
+        switch (moodInt) {
+            case 0:
+                shortDescription = "Severe Depression";
+                longDescription = "Endless suicidal thoughts, no way out, no movement. Everything is bleak and it will always be like this";
+                colour = "red"; /*"Alarm bells red"*/
+                chosen = shortDescription;
+                break;
+            case 1:
+                shortDescription = "Severe Depression";
+                longDescription = "Feelings of hopelessness and guilt. Thoughts of suicide, little movement  and it feels impossible to do anything.";
+                colour = "red"; /*"Alarm bells red"*/
+                chosen = shortDescription;
+                break;
+            case 2:
+                shortDescription = "Mild to Moderate Depression";
+                longDescription = "Slow thinking, no appetite, need to be alone, excessive sleep or disturbed sleep. Everything feels like a struggle.";
+                colour = "orange"; /*"warning orange"*/
+                chosen = shortDescription;
+                break;
+            case 3:
+                shortDescription = "Mild to Moderate Depression";
+                longDescription = "Feelings of panic and anxiety, concentration difficult and memory poor, some comfort in routine.";
+                colour = "orange"; /*"warning orange"*/
+                chosen = shortDescription;
+                break;
+            case 4:
+                shortDescription = "Balanced";
+                longDescription = "Slight withdrawal from social situations, less concentration than usual, slight agitation.";
+                colour = "green"; /*"positive green orange"*/
+                chosen = shortDescription;
+                break;
+            case 5:
+                shortDescription = "Balanced";
+                longDescription = "Mood in balance, making good decisions. Life is going well and the outlook is good.";
+                colour = "green"; /*"positive green orange"*/
+                chosen = shortDescription;
+                break;
+            case 6:
+                shortDescription = "Balanced";
+                longDescription = "Self-esteem is good, optimistic, sociable and articulate. Making good decisions adn getting work done.";
+                colour = "green"; /*"positive green orange"*/
+                chosen = shortDescription;
+                break;
+            case 7:
+                shortDescription = "Hypomania";
+                longDescription = "Very productive, charming and talkative. Doing everything to excess (e.g.: phone calls, writing, smoking, tea).";
+                colour = "orange"; /*"warning orange"*/
+                chosen = shortDescription;
+                break;
+            case 8:
+                shortDescription = "Hypomania";
+                longDescription = "Inflated self-esteem, rapid thoughts and speech. Doing too many things at once and not finishing any tasks";
+                colour = "orange"; /*"warning orange"*/
+                chosen = shortDescription;
+                break;
+            case 9:
+                shortDescription = "Mania";
+                longDescription = "Lost touch with reality, incoherent, no sleep. Feeling paranoid and vindictive. Behaviour is reckless.";
+                colour = "red"; /*"Alarm bells red"*/
+                chosen = shortDescription;
+                break;
+            case 10:
+                shortDescription = "Mania";
+                longDescription = "Total loss of judgement, out-of-control spending, religious delusions and hallucinations.";
+                colour = "red"; /*"Alarm bells red"*/
+                chosen = shortDescription;
+                break;
+        }
+        String finalresult = moodInt + ": " + chosen;
+        textProgress.setText(finalresult);
+        descriptionProgress.setText(longDescription);
     }
 
     @Override
