@@ -47,7 +47,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     NavigationView nv;
 
     final Calendar myCalendar= Calendar.getInstance();
-    private TextView textProgress;
+    private TextView textProgress, descriptionProgress;
     private TextView textParagraph;
     private MoodDBHelper Mooddbhelper;
     private int moodvalue;
@@ -139,6 +139,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             SeekBar simpleSeekBar;
             simpleSeekBar=promptsView.findViewById(R.id.moodSeekBar_discrete);
             textProgress = promptsView.findViewById(R.id.progress);
+            descriptionProgress = promptsView.findViewById(R.id.progress_description);
             simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                 public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
@@ -237,6 +238,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
         String shortDescription, longDescription, colour, chosen;
         //textProgress.setText("Hello world");
         chosen = "Slidebar";
+        longDescription = "";
         switch (moodInt) {
             case 0:
                 shortDescription = "Severe Depression";
@@ -305,9 +307,9 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                 chosen = shortDescription;
                 break;
         }
-        String finalresult = Integer.toString(moodInt) + ": " + chosen;
+        String finalresult = moodInt + ": " + chosen;
         textProgress.setText(finalresult);
-
+        descriptionProgress.setText(longDescription);
     }
 
     @Override
