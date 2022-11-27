@@ -113,7 +113,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(Table_Name, values, "date=?", new String[]{oldDescription});
+        db.update(Table_Name, values, "date=?", new String[]{String.valueOf(oldDescription)});
         db.close();
     }
 
@@ -128,7 +128,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // course and we are comparing it with our course name.
         db.delete(Table_Name, "date=?", new String[]{String.valueOf(date)});
 
-        System.out.println("did we get here");
+        //System.out.println("did we get here");
         db.close();
     }
 

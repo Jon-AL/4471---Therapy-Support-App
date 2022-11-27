@@ -170,11 +170,11 @@ public class MoodFragment extends Fragment {
                 String oldMooddescription = oldDescriptionEdt.getText().toString();
 
                 if (moodDate.isEmpty() && moodRating.isEmpty() && moodDescription.isEmpty() && oldMooddescription.isEmpty()) {
-                    Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                MooddbHelper.updateMoods(Integer.getInteger(moodRating), moodDate, moodDescription, oldMooddescription);
+                MooddbHelper.updateMoods(Integer.parseInt(moodRating), moodDate, moodDescription, oldMooddescription);
                 moodRatingEdt.setText("");
                 moodDateEdt.setText("");
                 moodDescriptionEdt.setText("");
