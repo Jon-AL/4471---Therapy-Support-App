@@ -3,8 +3,8 @@ package com.example.mentalhealth;
 public class MoodModal {
     private int id;
     private String moodDescription;
-    private String moodRating;
-
+    private int moodRating;
+    private String date;
 
 
     public String getMoodDescription(){
@@ -15,7 +15,7 @@ public class MoodModal {
         this.moodDescription = description;
     }
 
-    public String getMoodRating(){
+    public int getMoodRating(){
         return this.moodRating;
     }
 
@@ -27,8 +27,18 @@ public class MoodModal {
         this.id = diffid;
     }
 
-    public MoodModal(String rating, String moodDescription){
+    public String getDate(){
+        return this.date;
+    }
+
+    public void setDate(String date){
+        this.date = date;
+    }
+
+    public MoodModal(int rating, String date, String moodDescription){
         this.moodDescription = moodDescription;
         this.moodRating = rating;
+        this.date = date;
+
     }
 }

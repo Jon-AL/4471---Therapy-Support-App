@@ -27,6 +27,13 @@
             android:layout_margin="10dp"
             android:hint="Enter a Mood Rating between 0 to 10" />
 
+        <EditText
+            android:id="@+id/idDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter the date" />
+
         <!--edit text for course description-->
         <EditText
             android:id="@+id/idEdtMoodDescription"
@@ -40,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Enter the old description" />
+            android:hint="Enter the date that you want deleted" />
 
         <!--button for adding new course-->
         <Button
@@ -50,7 +57,7 @@
             android:layout_margin="10dp"
             android:text="Add Mood Entry"
             android:textAllCaps="false"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
 
         <!--new button for opening our course list activity-->
         <Button

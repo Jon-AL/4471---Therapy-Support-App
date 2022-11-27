@@ -49,7 +49,8 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     final Calendar myCalendar= Calendar.getInstance();
     private TextView textProgress;
     private TextView textParagraph;
-
+    private MoodDBHelper Mooddbhelper;
+    private int moodvalue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,7 +123,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
+        int progressChangedValue = 0;
 
         int id=item.getItemId();
         if(id==R.id.action_add) {
@@ -136,13 +137,13 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             alertDialogBuilder.setView(promptsView);
 
             SeekBar simpleSeekBar;
-            int progressChangedValue = 0;
             simpleSeekBar=promptsView.findViewById(R.id.moodSeekBar_discrete);
             textProgress = promptsView.findViewById(R.id.progress);
             simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                 public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-                    updateView(progressChangedValue + i);
+                    updateView( i);
+                    setMoodValue(i);
                 }
 
                 public void onStartTrackingTouch(SeekBar seekBar) {
@@ -190,7 +191,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                 }
             });
 
-
+            MoodDBHelper MooddbHelper = new MoodDBHelper(MainActivity.this);
 
             // set dialog message
             alertDialogBuilder
@@ -198,6 +199,8 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                     .setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
+                                    System.out.println(progressChangedValue);
+                                    MooddbHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
                                 }
                             })
                     .setNegativeButton("Cancel",
@@ -220,6 +223,16 @@ public class MainActivity<textProgress> extends AppCompatActivity {
 
 
     }
+
+    public void setMoodValue(int value){
+        this.moodvalue = value;
+    }
+
+    public int getMoodvalue(){
+        return this.moodvalue;
+    }
+
+
     public void updateView(int moodInt) {
         String shortDescription, longDescription, colour, chosen;
         //textProgress.setText("Hello world");
