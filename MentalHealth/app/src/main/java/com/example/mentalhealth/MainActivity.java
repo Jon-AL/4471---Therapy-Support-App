@@ -15,6 +15,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -50,6 +51,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     private TextView textProgress, descriptionProgress;
     private TextView textParagraph;
     private MoodDBHelper Mooddbhelper;
+    private int color;
     private int moodvalue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,8 +145,12 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                 public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-                    updateView( i);
+
+                    updateView(i);
+                    setColor(i);
+
                     setMoodValue(i);
+                    seekBar.setBackgroundColor(getColor());
                 }
 
                 public void onStartTrackingTouch(SeekBar seekBar) {
@@ -233,6 +239,19 @@ public class MainActivity<textProgress> extends AppCompatActivity {
         return this.moodvalue;
     }
 
+    public void setColor(int mood_color){
+        if (mood_color == 1 || mood_color ==0 || mood_color == 9 || mood_color == 10 ){
+            this.color = Color.RED;
+        } else if (mood_color == 2 || mood_color == 3 || mood_color == 7 || mood_color == 8) {
+            this.color = Color.rgb(255, 165, 0);
+        } else {
+            this.color = Color.GREEN;
+        }
+    }
+
+    public int getColor(){
+        return this.color;
+    }
 
     public void updateView(int moodInt) {
         String shortDescription, longDescription, colour, chosen;
@@ -307,9 +326,11 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                 chosen = shortDescription;
                 break;
         }
+        setColor(color);
         String finalresult = moodInt + ": " + chosen;
         textProgress.setText(finalresult);
         descriptionProgress.setText(longDescription);
+
     }
 
     @Override
