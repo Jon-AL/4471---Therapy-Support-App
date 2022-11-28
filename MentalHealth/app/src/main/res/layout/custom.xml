@@ -6,9 +6,7 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -27,30 +25,36 @@
 
 
     <TextView
-        android:id="@+id/progress"
+        android:id="@+id/short_description"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/long_description"
         android:layout_width="match_parent"
         android:layout_height="36pt"
-        android:text="TextView" />
+        android:text="" />
 
     <SeekBar
         android:id="@+id/moodSeekBar_discrete"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
-        android:layout_height="947dp"
+        android:layout_height="0dp"
         android:layout_weight="0.5"
         android:indeterminate="false"
         android:max="10"
         android:progress="5"
         android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/progress_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="0"
-        android:textSize="18sp"
-        android:gravity="center_horizontal" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/progress_description"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:text="0"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:gravity="center_horizontal" />-->
 
 
     <Spinner
@@ -58,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
 
@@ -75,71 +79,57 @@
         android:clickable="true"
         android:cursorVisible="true"
         android:focusable="false"
-        android:focusableInTouchMode="false">
+        android:focusableInTouchMode="false" />
 
 
-    </EditText>
-
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Mood"
-        android:textSize="20sp" />
-
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="5" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="3" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1" />
-    </RadioGroup>
-
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Notes"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:contentDescription="In your own words, how are you feeling?"
-        android:inputType="text"></EditText>
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        android:text="Mood"-->
+    <!--        android:textSize="20sp" />-->
+    <!--    <RadioGroup-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="gone">-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:checked="true"-->
+    <!--            android:text="5" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="4" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="3" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="2" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="1" />-->
+    <!--    </RadioGroup>-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:text="Notes"-->
+    <!--        android:textSize="20sp" />-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/input"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:autofillHints=""-->
+    <!--        android:contentDescription="In your own words, how are you feeling?"-->
+    <!--        android:inputType="text" />-->
 
 </LinearLayout>

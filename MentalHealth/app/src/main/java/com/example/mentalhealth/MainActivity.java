@@ -8,13 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,18 +24,16 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.text.BreakIterator;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 /**
  * https://stackoverflow.com/questions/43476261/android-seekbar-coding
- * */
+ */
 
 public class MainActivity<textProgress> extends AppCompatActivity {
 
@@ -47,12 +42,13 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView nv;
 
-    final Calendar myCalendar= Calendar.getInstance();
+    final Calendar myCalendar = Calendar.getInstance();
     private TextView textProgress, descriptionProgress;
     private TextView textParagraph;
     private MoodDBHelper Mooddbhelper;
     private int color;
     private int moodvalue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +56,6 @@ public class MainActivity<textProgress> extends AppCompatActivity {
 
         MoodFragment moodFragment = new MoodFragment();
         setMyFragment(moodFragment);
-
 
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
@@ -71,64 +66,48 @@ public class MainActivity<textProgress> extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nv = (NavigationView)findViewById(R.id.nv);
-
+        nv = (NavigationView) findViewById(R.id.nv);
 
 
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-
-
                 if (id == R.id.moods) {
-
                     MoodFragment moodFragment = new MoodFragment();
                     setMyFragment(moodFragment);
-
-
                 } else if (id == R.id.symptoms) {
-
                     SymptomFragment symptomFragment = new SymptomFragment();
                     setMyFragment(symptomFragment);
-
-
-                }
-
-                else if (id == R.id.reports) {
-
+                } else if (id == R.id.reports) {
                     ReportsFragment reportsFragment = new ReportsFragment();
                     setMyFragment(reportsFragment);
-
-                }
-
-
-                else if (id == R.id.medication) {
-
+                } else if (id == R.id.medication) {
                     MedicationFragment medicationFragment = new MedicationFragment();
                     setMyFragment(medicationFragment);
-
+                } else if (id == R.layout.custom) {
 
                 }
+
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
 
 
-
         });
 
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        int progressChangedValue = 0;
+        int progressChangedValue = -1;
 
-        int id=item.getItemId();
-        if(id==R.id.action_add) {
+        int id = item.getItemId();
+        if (id == R.id.action_add) {
 
             LayoutInflater li = LayoutInflater.from(this);
             View promptsView = li.inflate(R.layout.custom, null);
@@ -139,16 +118,14 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             alertDialogBuilder.setView(promptsView);
 
             SeekBar simpleSeekBar;
-            simpleSeekBar=promptsView.findViewById(R.id.moodSeekBar_discrete);
-            textProgress = promptsView.findViewById(R.id.progress);
-            descriptionProgress = promptsView.findViewById(R.id.progress_description);
+            simpleSeekBar = promptsView.findViewById(R.id.moodSeekBar_discrete);
+            textProgress = promptsView.findViewById(R.id.short_description);
+            descriptionProgress = promptsView.findViewById(R.id.long_description);
             simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                 public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-
                     updateView(i);
                     setColor(i);
-
                     setMoodValue(i);
                     seekBar.setBackgroundColor(getColor());
                 }
@@ -166,12 +143,10 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             final EditText userdate = (EditText) promptsView
                     .findViewById(R.id.date);
 
-            Spinner s = (Spinner)  promptsView.findViewById(R.id.Spinner01);
+            Spinner s = (Spinner) promptsView.findViewById(R.id.Spinner01);
 
 
-
-
-            String[] arraySpinner = new String[] {
+            String[] arraySpinner = new String[]{
                     "High", "Moderate", "Low",
             };
 
@@ -180,21 +155,21 @@ public class MainActivity<textProgress> extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             s.setAdapter(adapter);
 
-            DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int day) {
                     myCalendar.set(Calendar.YEAR, year);
-                    myCalendar.set(Calendar.MONTH,month);
-                    myCalendar.set(Calendar.DAY_OF_MONTH,day);
-                    String myFormat="MM/dd/yy";
-                    SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+                    myCalendar.set(Calendar.MONTH, month);
+                    myCalendar.set(Calendar.DAY_OF_MONTH, day);
+                    String myFormat = "MM/dd/yy";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.US);
                     userdate.setText(dateFormat.format(myCalendar.getTime()));
                 }
             };
             userdate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new DatePickerDialog(MainActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                    new DatePickerDialog(MainActivity.this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
                 }
             });
 
@@ -205,14 +180,14 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                     .setCancelable(false)
                     .setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
+                                public void onClick(DialogInterface dialog, int id) {
                                     System.out.println(progressChangedValue);
                                     MooddbHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
                                 }
                             })
                     .setNegativeButton("Cancel",
                             new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,int id) {
+                                public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
                                 }
                             });
@@ -231,16 +206,16 @@ public class MainActivity<textProgress> extends AppCompatActivity {
 
     }
 
-    public void setMoodValue(int value){
+    public void setMoodValue(int value) {
         this.moodvalue = value;
     }
 
-    public int getMoodvalue(){
+    public int getMoodvalue() {
         return this.moodvalue;
     }
 
-    public void setColor(int mood_color){
-        if (mood_color == 1 || mood_color ==0 || mood_color == 9 || mood_color == 10 ){
+    public void setColor(int mood_color) {
+        if (mood_color == 1 || mood_color == 0 || mood_color == 9 || mood_color == 10) {
             this.color = Color.RED;
         } else if (mood_color == 2 || mood_color == 3 || mood_color == 7 || mood_color == 8) {
             this.color = Color.rgb(255, 165, 0);
@@ -249,7 +224,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
         }
     }
 
-    public int getColor(){
+    public int getColor() {
         return this.color;
     }
 
@@ -340,9 +315,7 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     }
 
 
-
-    private void setMyFragment(Fragment fragment)
-    {
+    private void setMyFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

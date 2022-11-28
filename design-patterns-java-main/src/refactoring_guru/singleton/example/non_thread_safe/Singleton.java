@@ -5,9 +5,6 @@ public final class Singleton {
     public String value;
 
     private Singleton(String value) {
-        // EN: The following code emulates slow initialization.
-        //
-        // RU: Этот код эмулирует медленную инициализацию.
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {

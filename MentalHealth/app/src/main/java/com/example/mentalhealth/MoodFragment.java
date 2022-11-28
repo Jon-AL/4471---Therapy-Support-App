@@ -83,10 +83,10 @@ public class MoodFragment extends Fragment {
         //moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
         //moodrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
         // initializing all our variables.
-        moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
-        moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
-        moodDateEdt = view.findViewById(R.id.idDate);
-        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
+        moodRatingEdt = view.findViewById(R.id.moodSeekBar_discrete);
+//        moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
+        moodDateEdt = view.findViewById(R.id.date);
+//        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
         addMoodBtn = view.findViewById(R.id.idBtnAddMood);
         readMoodBtn = view.findViewById(R.id.idBtnReadMood);
