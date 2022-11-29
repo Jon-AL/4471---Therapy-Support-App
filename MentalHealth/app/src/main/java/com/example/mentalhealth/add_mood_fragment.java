@@ -73,7 +73,7 @@ public class add_mood_fragment extends Fragment {
                              Bundle savedInstanceState) {
         int progressChangedValue = 0;
 
-        View promptsView = inflater.inflate(R.layout.fragment_add_mood_fragment, container, false);
+        View promptsView = inflater.inflate(R.layout.add_mood_fragment, container, false);
         MoodDBHelper moodDBHelper = new MoodDBHelper(promptsView.getContext());
         SeekBar simpleSeekBar;
         simpleSeekBar=promptsView.findViewById(R.id.seekBar);
