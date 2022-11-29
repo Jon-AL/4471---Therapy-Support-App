@@ -36,7 +36,7 @@
         android:id="@+id/moodSeekBar_discrete"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
-        android:layout_height="947dp"
+        android:layout_height="0dp"
         android:layout_weight="0.5"
         android:indeterminate="false"
         android:max="10"
