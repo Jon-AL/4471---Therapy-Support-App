@@ -109,6 +109,9 @@ public class MainActivity<textProgress> extends AppCompatActivity {
                     setMyFragment(medicationFragment);
 
 
+                } else if (id == R.id.add_mood) {
+                    add_mood_fragment addMoodFragment = new add_mood_fragment();
+                    setMyFragment(addMoodFragment);
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;

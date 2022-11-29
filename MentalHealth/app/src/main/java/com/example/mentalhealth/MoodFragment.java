@@ -88,7 +88,7 @@ public class MoodFragment extends Fragment {
         moodDateEdt = view.findViewById(R.id.idDate);
         oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
-        addMoodBtn = view.findViewById(R.id.idBtnAddMood);
+       // addMoodBtn = view.findViewById(R.id.idBtnAddMood);
         readMoodBtn = view.findViewById(R.id.idBtnReadMood);
         deleteAllMoodsBtn = view.findViewById(R.id.idBtnDeleteAllMoods);
         updateMoodBtn = view.findViewById(R.id.idBtnUpdateMood);
@@ -98,30 +98,30 @@ public class MoodFragment extends Fragment {
         MooddbHelper = new MoodDBHelper(view.getContext());
 
         // below line is to add on click listener for our add course button.
-        addMoodBtn.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-
-                                              // below line is to get data from all edit text fields.
-                                              String moodRating = moodRatingEdt.getText().toString();
-                                              String moodDescription = moodDescriptionEdt.getText().toString();
-                                              // validating if the text fields are empty or not.
-                                              if (moodRating.isEmpty() && moodDescription.isEmpty()) {
-                                                  Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
-                                                  return;
-                                              }
-
-                                              // on below line we are calling a method to add new
-                                              // course to sqlite data and pass all our values to it.
-                                             // MooddbHelper.addNewMood(moodRating, moodDescription);
-
-                                              // after adding the data we are displaying a toast message.
-                                              Toast.makeText(view.getContext(), "Mood has been added.", Toast.LENGTH_SHORT).show();
-                                              moodRatingEdt.setText("");
-                                              moodDescriptionEdt.setText("");
-
-                                          }
-                                      });
+//        addMoodBtn.setOnClickListener(new View.OnClickListener() {
+//                                          @Override
+//                                          public void onClick(View v) {
+//
+//                                              // below line is to get data from all edit text fields.
+//                                              String moodRating = moodRatingEdt.getText().toString();
+//                                              String moodDescription = moodDescriptionEdt.getText().toString();
+//                                              // validating if the text fields are empty or not.
+//                                              if (moodRating.isEmpty() && moodDescription.isEmpty()) {
+//                                                  Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+//                                                  return;
+//                                              }
+//
+//                                              // on below line we are calling a method to add new
+//                                              // course to sqlite data and pass all our values to it.
+//                                             // MooddbHelper.addNewMood(moodRating, moodDescription);
+//
+//                                              // after adding the data we are displaying a toast message.
+//                                              Toast.makeText(view.getContext(), "Mood has been added.", Toast.LENGTH_SHORT).show();
+//                                              moodRatingEdt.setText("");
+//                                              moodDescriptionEdt.setText("");
+//
+//                                          }
+//                                      });
 
         readMoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
