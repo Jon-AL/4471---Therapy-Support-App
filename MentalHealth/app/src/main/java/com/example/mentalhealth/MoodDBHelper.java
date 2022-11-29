@@ -132,6 +132,8 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // this method is called to check if the table exists already.

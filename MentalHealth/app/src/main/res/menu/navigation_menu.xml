@@ -28,4 +28,8 @@
     <item
         android:id="@+id/reports"
         android:title="Reports" />
+
+    <item
+        android:id="@+id/Mood_Report"
+        android:title="Mood Report"/>
 </menu>
