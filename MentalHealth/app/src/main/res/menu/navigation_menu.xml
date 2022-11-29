@@ -17,14 +17,13 @@
         android:title="Medication" />
 
     <item
-        android:id="@+id/symptoms"
-        android:title="Symptoms" />
-
-
-    <item
         android:id="@+id/medicationList"
         android:title="Medication List"
         />
+
+    <item
+        android:id="@+id/symptoms"
+        android:title="Symptoms" />
 
     <item
         android:id="@+id/reports"

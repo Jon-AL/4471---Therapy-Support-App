@@ -36,7 +36,7 @@ public class add_mood_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private int progressChangedValue, moodvalue, color;
-    private Button submit_button;
+    private Button submit_button, update_button;
     public add_mood_fragment() {
         // Required empty public constructor
     }
@@ -80,6 +80,8 @@ public class add_mood_fragment extends Fragment {
         textProgress = promptsView.findViewById(R.id.progress);
         descriptionProgress = promptsView.findViewById(R.id.progress_description);
         submit_button = promptsView.findViewById(R.id.button);
+        update_button = promptsView.findViewById(R.id.updatebutton);
+
         simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
@@ -131,6 +133,16 @@ public class add_mood_fragment extends Fragment {
 
             }
         });
+
+        update_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                moodDBHelper.updateMoods(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString(), userdate.getText().toString());
+                userdate.setText("");
+                userInput.setText("");
+            }
+        });
+
+
         return promptsView;
     }
 
