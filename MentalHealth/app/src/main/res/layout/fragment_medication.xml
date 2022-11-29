@@ -78,7 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Read All Medication Entries"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:visibility= "gone"/>
         <Button
             android:id="@+id/idBtnDeleteMedication"
             android:layout_width="match_parent"
@@ -86,7 +87,6 @@
             android:layout_margin="10dp"
             android:textAllCaps="false"
             android:text="Delete Medication Entries"
-            android:visibility="gone"
             />
         <Button
             android:id="@+id/idBtnUpdateMedication"
@@ -95,14 +95,14 @@
             android:layout_margin="10dp"
             android:textAllCaps="false"
             android:text="Update Medication Entry"
-            android:visibility="gone"
             />
 
-        `
+
         <ListView
             android:id="@+id/medlist"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

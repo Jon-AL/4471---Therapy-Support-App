@@ -5,6 +5,10 @@
     tools:ignore="HardcodedText">
 
     <item
+        android:id="@+id/add_mood"
+        android:title="Add mood data"/>
+
+    <item
         android:id="@+id/moods"
         android:title="Moods" />
 
@@ -16,11 +20,13 @@
         android:id="@+id/symptoms"
         android:title="Symptoms" />
 
+
+    <item
+        android:id="@+id/medicationList"
+        android:title="Medication List"
+        />
+
     <item
         android:id="@+id/reports"
         android:title="Reports" />
-
-    <item
-        android:id="@+id/add_mood"
-        android:title="Add mood data"/>
 </menu>
