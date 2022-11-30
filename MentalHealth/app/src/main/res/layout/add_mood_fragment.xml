@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/fragment_container_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".add_mood_fragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,27 +14,36 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/moodentry"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Today"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/Moodentry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mood"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/progress"
             android:layout_width="match_parent"
-            android:layout_height="36pt"
+            android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/progress_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150sp"
             android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
             android:text="0"
-            android:textSize="24sp"
-            android:gravity="center_horizontal" />
+            android:textSize="18sp" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -91,7 +100,7 @@
             android:id="@+id/updatebutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="update"/>
+            android:text="update" />
 
     </LinearLayout>
 
