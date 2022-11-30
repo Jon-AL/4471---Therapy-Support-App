@@ -36,6 +36,15 @@
             android:textSize="24sp"
             android:gravity="center_horizontal" />
 
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="3"
+            android:text="Add Note (optional)" />
+
         <TextView
 
             android:layout_width="wrap_content"
@@ -63,15 +72,6 @@
             android:layout_marginTop="10dp"
             android:text="Note (optional)"
             android:textSize="20sp" />
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="3"
-            android:text="Add Note (optional)" />
 
         <EditText
             android:id="@+id/input"

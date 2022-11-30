@@ -78,9 +78,6 @@ public class MedicationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_medication, container, false);
 
-
-        ArrayList<MoodModal> MedicationModalArrayList;
-
         medicationNameEdt = view.findViewById(R.id.idEdtMedicationName);
         brandNameEdt = view.findViewById(R.id.idEdtBrandName);
         dosageEdt = view.findViewById(R.id.idEdtquantity);
@@ -108,6 +105,7 @@ public class MedicationFragment extends Fragment {
                 String dosage = dosageEdt.getText().toString();
                 String dosageUnit = dosageUnitEdt.getText().toString();
                 String frequency = frequencyEdt.getText().toString();
+
                 // validating if the text fields are empty or not.
                 if (medName.isEmpty() && commonName.isEmpty() && dosage.isEmpty() && dosageUnit.isEmpty() && frequency.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
