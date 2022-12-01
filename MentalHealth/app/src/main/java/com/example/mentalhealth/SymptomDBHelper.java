@@ -23,6 +23,7 @@ import java.util.ArrayList;
  * 2. https://www.youtube.com/watch?v=aQAIMY-HzL8
  * */
 public class SymptomDBHelper extends SQLiteOpenHelper {
+
     private static final String DB_Name = "moods";
     private static final int DB_version = 3;
 
@@ -32,10 +33,18 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
     private static final String symptom_name_col = "symptom_name";
     private static final String description_col = "description";
 
+    /**
+     * Constructor for the db
+     * @param context
+     */
     public SymptomDBHelper(Context context) {
         super(context, DB_Name, null, DB_version);
     }
 
+    /**
+     * Initalizes the table inside the db with the specific attributes.
+     * @param sqLiteDatabase
+     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
@@ -49,6 +58,12 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(query);
     }
 
+    /**
+     * Add a new symptom entry into the app.
+     * @param symptomName
+     * @param datetimeval
+     * @param description
+     */
     public void addNewSymptom(String symptomName, String datetimeval, String description){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -65,7 +80,10 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // below is the method for deleting our course.
+    /**
+     * Delete a specific symptom record
+     * @param symptomName
+     */
     public void deleteSymptom(String symptomName) {
 
         // on below line we are creating
@@ -79,7 +97,13 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // below is the method for updating our courses
+    /**
+     * Update the specific symptom with new entry by finding the entry through its old name.
+     * @param symptomName
+     * @param symptomDate
+     * @param symptomDescription
+     * @param oldName
+     */
     public void updateSymptom(String symptomName, String symptomDate, String symptomDescription, String oldName) {
 
         // calling a method to get writable database.
@@ -99,6 +123,10 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Read the symptoms from the db.
+     * @return
+     */
     public ArrayList<SymptomModal> readSymptoms() {
         // on below line we are creating a
         // database for reading our database.
@@ -113,12 +141,11 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         // moving our cursor to first position.
         if (cursorSymptoms.moveToFirst()) {
             do {
-                //System.out.println(cursorSymptoms.getString(1));
+
                 // on below line we are adding the data from cursor to our array list.
                 SymptomModalArrayList.add(new SymptomModal(cursorSymptoms.getString(1),
                         cursorSymptoms.getString(2), cursorSymptoms.getString(3)));
-                //System.out.println(cursorSymptoms.getString(1));
-                //System.out.println(cursorSymptoms.getString(2));
+
             } while (cursorSymptoms.moveToNext());
             // moving our cursor to next.
         }
@@ -128,6 +155,12 @@ public class SymptomDBHelper extends SQLiteOpenHelper {
         return SymptomModalArrayList;
     }
 
+    /**
+     * check if the db already has a table.
+     * @param sqLiteDatabase
+     * @param i
+     * @param i1
+     */
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // this method is called to check if the table exists already.

@@ -19,7 +19,9 @@ import com.example.mentalhealth.placeholder.PlaceholderContent;
 import java.util.ArrayList;
 
 /**
- * A fragment representing a list of Items.
+ * Medication list fragment
+ * A fragment that will present all the medications inside the database.
+ *
  */
 public class MedicationListFragment extends Fragment {
 
@@ -54,6 +56,13 @@ public class MedicationListFragment extends Fragment {
         }
     }
 
+    /**
+     * Presents all the entries into an array that will displayed on a page.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

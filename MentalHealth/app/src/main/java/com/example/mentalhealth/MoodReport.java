@@ -19,6 +19,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -116,7 +117,6 @@ public class MoodReport extends Fragment {
             entries.add(barEntry);
         }
 
-
     barChart = view.findViewById(R.id.fragment_verticalbarchart_chart);
         // creating a new bar data set.
     barDataSet = new BarDataSet(entries, "Ratings");
@@ -135,6 +135,8 @@ public class MoodReport extends Fragment {
 // setting text color.
     barDataSet.setValueTextColor(Color.BLACK);
 
+    // Set the x-axis to the bottom.
+    barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
 // setting text size
     barDataSet.setValueTextSize(16f);
     barChart.getDescription().setEnabled(false);

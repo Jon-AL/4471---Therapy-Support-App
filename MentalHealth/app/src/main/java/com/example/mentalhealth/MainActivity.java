@@ -8,33 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.SeekBar;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 
-import java.text.BreakIterator;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+;
 
 /**
  * MainActivity is the class that starts the Android app.
@@ -49,12 +28,6 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView nv;
-
-//    final Calendar myCalendar= Calendar.getInstance();
-//    private TextView textProgress, descriptionProgress;
-//    private int moodvalue;
-//    private int color;
-
 
     /**
      * onCreate starts and continues the process of the app state.
@@ -123,213 +96,25 @@ public class MainActivity<textProgress> extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Checks if option is there.
+     * @param item
+     * @return boolean
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-//        int progressChangedValue = 0;
-
-//        int id=item.getItemId();
-//        if(id==R.id.action_add) {
-//
-//            LayoutInflater li = LayoutInflater.from(this);
-//            View promptsView = li.inflate(R.layout.custom, null);
-//
-//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-//                    this);
-//
-//            alertDialogBuilder.setView(promptsView);
-//
-//            SeekBar simpleSeekBar;
-//            simpleSeekBar=promptsView.findViewById(R.id.moodSeekBar_discrete);
-//            textProgress = promptsView.findViewById(R.id.progress);
-//            descriptionProgress = promptsView.findViewById(R.id.progress_description);
-//            simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-//
-//                public void onProgressChanged(SeekBar seekBar, int i, boolean fromUser) {
-//                    updateView( i);
-//                    setColor(i);
-//                    setMoodValue(i);
-//                    seekBar.setBackgroundColor(getColor());
-//                }
-//
-//                public void onStartTrackingTouch(SeekBar seekBar) {
-//                    // TODO Auto-generated method stub
-//                }
-//
-//                public void onStopTrackingTouch(SeekBar seekBar) {
-//                }
-//            });
-//
-//            final EditText userInput = (EditText) promptsView
-//                    .findViewById(R.id.input);
-//            final EditText userdate = (EditText) promptsView
-//                    .findViewById(R.id.date);
-//
-//            Spinner s = (Spinner)  promptsView.findViewById(R.id.Spinner01);
-//
-//            String[] arraySpinner = new String[] {
-//                    "High", "Moderate", "Low",
-//            };
-//
-//            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                    android.R.layout.simple_spinner_item, arraySpinner);
-//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//            s.setAdapter(adapter);
-//
-//            DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
-//                @Override
-//                public void onDateSet(DatePicker view, int year, int month, int day) {
-//                    myCalendar.set(Calendar.YEAR, year);
-//                    myCalendar.set(Calendar.MONTH,month);
-//                    myCalendar.set(Calendar.DAY_OF_MONTH,day);
-//                    String myFormat="MM/dd/yy";
-//                    SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
-//                    userdate.setText(dateFormat.format(myCalendar.getTime()));
-//                }
-//            };
-//            userdate.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    new DatePickerDialog(MainActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-//                }
-//            });
-//
-//            MoodDBHelper MooddbHelper = new MoodDBHelper(MainActivity.this);
-//
-//            // set dialog message
-//            alertDialogBuilder
-//                    .setCancelable(false)
-//                    .setPositiveButton("OK",
-//                            new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog,int id) {
-//                                    System.out.println(progressChangedValue);
-//                                    MooddbHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
-//                                }
-//                            })
-//                    .setNegativeButton("Cancel",
-//                            new DialogInterface.OnClickListener() {
-//                                public void onClick(DialogInterface dialog,int id) {
-//                                    dialog.cancel();
-//                                }
-//                            });
-//
-//            // create alert dialog
-//            AlertDialog alertDialog = alertDialogBuilder.create();
-//
-//            // show it
-//            alertDialog.show();
-//
-//        }
-
-
         return super.onOptionsItemSelected(item);
-
-
     }
 
-//    public void setMoodValue(int value){
-//        this.moodvalue = value;
-//    }
-//
-//    public int getMoodvalue(){
-//        return this.moodvalue;
-//    }
-//
-//    public void setColor(int mood_color) {
-//        if (mood_color == 1 || mood_color == 0 || mood_color == 9 || mood_color == 10) {
-//            this.color = Color.RED;
-//        } else if (mood_color == 2 || mood_color == 3 || mood_color == 7 || mood_color == 8) {
-//            this.color = Color.rgb(255, 165, 0);
-//        } else {
-//            this.color = Color.GREEN;
-//        }
-//    }
-//
-//    public int getColor() {
-//        return this.color;
-//    }
-//
-//    public void updateView(int moodInt) {
-//        String shortDescription, longDescription, colour, chosen;
-//        //textProgress.setText("Hello world");
-//        chosen = "Slidebar";
-//        longDescription = "";
-//        switch (moodInt) {
-//            case 0:
-//                shortDescription = "Severe Depression";
-//                longDescription = "Endless suicidal thoughts, no way out, no movement. Everything is bleak and it will always be like this";
-//                colour = "red"; /*"Alarm bells red"*/
-//                chosen = shortDescription;
-//                break;
-//            case 1:
-//                shortDescription = "Severe Depression";
-//                longDescription = "Feelings of hopelessness and guilt. Thoughts of suicide, little movement  and it feels impossible to do anything.";
-//                colour = "red"; /*"Alarm bells red"*/
-//                chosen = shortDescription;
-//                break;
-//            case 2:
-//                shortDescription = "Mild to Moderate Depression";
-//                longDescription = "Slow thinking, no appetite, need to be alone, excessive sleep or disturbed sleep. Everything feels like a struggle.";
-//                colour = "orange"; /*"warning orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 3:
-//                shortDescription = "Mild to Moderate Depression";
-//                longDescription = "Feelings of panic and anxiety, concentration difficult and memory poor, some comfort in routine.";
-//                colour = "orange"; /*"warning orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 4:
-//                shortDescription = "Balanced";
-//                longDescription = "Slight withdrawal from social situations, less concentration than usual, slight agitation.";
-//                colour = "green"; /*"positive green orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 5:
-//                shortDescription = "Balanced";
-//                longDescription = "Mood in balance, making good decisions. Life is going well and the outlook is good.";
-//                colour = "green"; /*"positive green orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 6:
-//                shortDescription = "Balanced";
-//                longDescription = "Self-esteem is good, optimistic, sociable and articulate. Making good decisions adn getting work done.";
-//                colour = "green"; /*"positive green orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 7:
-//                shortDescription = "Hypomania";
-//                longDescription = "Very productive, charming and talkative. Doing everything to excess (e.g.: phone calls, writing, smoking, tea).";
-//                colour = "orange"; /*"warning orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 8:
-//                shortDescription = "Hypomania";
-//                longDescription = "Inflated self-esteem, rapid thoughts and speech. Doing too many things at once and not finishing any tasks";
-//                colour = "orange"; /*"warning orange"*/
-//                chosen = shortDescription;
-//                break;
-//            case 9:
-//                shortDescription = "Mania";
-//                longDescription = "Lost touch with reality, incoherent, no sleep. Feeling paranoid and vindictive. Behaviour is reckless.";
-//                colour = "red"; /*"Alarm bells red"*/
-//                chosen = shortDescription;
-//                break;
-//            case 10:
-//                shortDescription = "Mania";
-//                longDescription = "Total loss of judgement, out-of-control spending, religious delusions and hallucinations.";
-//                colour = "red"; /*"Alarm bells red"*/
-//                chosen = shortDescription;
-//                break;
-//        }
-//        String finalresult = moodInt + ": " + chosen;
-//        textProgress.setText(finalresult);
-//        descriptionProgress.setText(longDescription);
-//    }
-
+    /**
+     * Create option and return true once it is.
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -337,7 +122,10 @@ public class MainActivity<textProgress> extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Set the fragment container so fragments can be added.
+     * @param fragment
+     */
     private void setMyFragment(Fragment fragment)
     {
 

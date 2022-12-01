@@ -43,6 +43,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
                 + date_col + " TEXT,"
                 + description_col +  " TEXT)";
 
+
         // at last we are calling a exec sql
         // method to execute above sql query
         sqLiteDatabase.execSQL(query);

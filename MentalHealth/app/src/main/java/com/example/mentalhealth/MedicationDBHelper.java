@@ -40,11 +40,18 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
     private static final String dosageUnit_COL = "dosageUnit";
     private static final String frequency_COL = "frequency";
 
-
+    /**
+     * Initalize the sontructor to get a specific database and context.
+     * @param context
+     */
     public MedicationDBHelper( Context context) {
         super(context, DB_Name, null, DB_version);
     }
 
+    /**
+     * Initial the table inside the db with its respective attributes.
+     * @param sqLiteDatabase
+     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
@@ -60,6 +67,14 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(query);
     }
 
+    /**
+     * Add a new medication
+     * @param commonName
+     * @param medName
+     * @param dosageUnit
+     * @param dosageQuantity
+     * @param frequency
+     */
     public void addNewMedication( String commonName, String medName, String dosageUnit, String dosageQuantity, String frequency){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -76,17 +91,29 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         // Store the values into the database table.
         db.insert(Table_Name, null, values);
 
+        // close the database.
         db.close();
     }
 
-    // Sample deletion method. Do not use right now.
+    /**
+     * Delete a record from the db.
+     * @param medName
+     */
     public void deleteRecord(String medName){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Table_Name,  "medicationName=?" , new String[]{medName});
         db.close();
     }
 
-    // below is the method for updating our courses
+    /**
+     * Update the record with the specific information with respect to its old key oldname.
+     * @param oldName
+     * @param medName
+     * @param dosage
+     * @param dosageUnit
+     * @param commonName
+     * @param frequency
+     */
     public void updateMedication(String oldName, String medName, String dosage, String dosageUnit, String commonName, String frequency ) {
 
         // calling a method to get writable database.
@@ -109,6 +136,10 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * Read all medication records from the db and store it inside an arraylist of MedicationModal objects.
+     * @return
+     */
     public ArrayList<MedicationModal> readMedications() {
         // on below line we are creating a
         // database for reading our database.
@@ -123,11 +154,10 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         // moving our cursor to first position.
         if (cursorMedications.moveToFirst()) {
             do {
-                //System.out.println(cursorMedications.getString(1));
+
                 // on below line we are adding the data from cursor to our array list.
                 MedicationModalArrayList.add(new MedicationModal(cursorMedications.getString(1), cursorMedications.getString(2), cursorMedications.getString(3), cursorMedications.getString(4), cursorMedications.getString(5)));
-                //System.out.println(cursorMedications.getString(1));
-                //System.out.println(cursorMedications.getString(2));
+
             } while (cursorMedications.moveToNext());
             // moving our cursor to next.
         }
@@ -137,6 +167,12 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         return MedicationModalArrayList;
     }
 
+    /**
+     * Check if the database has been updated.
+     * @param sqLiteDatabase
+     * @param i
+     * @param i1
+     */
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // this method is called to check if the table exists already.
