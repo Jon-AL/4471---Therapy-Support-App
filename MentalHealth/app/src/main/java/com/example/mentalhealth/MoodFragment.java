@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -122,7 +123,7 @@ public class MoodFragment extends Fragment {
                 // getting our course array
                 // list from db handler class.
                 ArrayList<MoodModal> MoodModalArrayList;
-                MoodModalArrayList = MooddbHelper.readMoods();
+                MoodModalArrayList = MooddbHelper.ReadSortByDate();
 
                 ArrayList<String >Mood_list_data = new ArrayList<String>();
 
@@ -132,7 +133,7 @@ public class MoodFragment extends Fragment {
 
                     Mood_list_data.add(temp);
                 }
-
+                Collections.reverse(Mood_list_data);
                 // Create the view and present the list.
                 l = view.findViewById(R.id.list);
                 ArrayAdapter<String> arr;

@@ -94,6 +94,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // at last closing our cursor
         // and returning our array list.
         cursorMoods.close();
+
         return moodModalArrayList;
     }
 
@@ -133,6 +134,33 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+    public ArrayList<MoodModal> ReadSortByDate(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursorMoods = db.rawQuery("SELECT * FROM " + Table_Name + " ORDER BY date", null);
+
+        // on below line we are creating a new array list.
+        ArrayList<MoodModal> moodModalArrayList = new ArrayList<>();
+
+        // moving our cursor to first position.
+        if (cursorMoods.moveToFirst()) {
+            do {
+                //System.out.println(cursorMoods.getString(1));
+                // on below line we are adding the data from cursor to our array list.
+                moodModalArrayList.add(new MoodModal(cursorMoods.getInt(1),
+                        cursorMoods.getString(2), cursorMoods.getString(3)));
+                //System.out.println("WE are here: " +  cursorMoods.getCount());
+                //System.out.println(cursorMoods.getString(1));
+                //System.out.println(cursorMoods.getString(2));
+            } while (cursorMoods.moveToNext());
+            // moving our cursor to next.
+        }
+        // at last closing our cursor
+        // and returning our array list.
+        cursorMoods.close();
+
+        return moodModalArrayList;
+
+    }
 
 
     @Override

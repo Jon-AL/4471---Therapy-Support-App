@@ -187,7 +187,7 @@ public class SymptomFragment extends Fragment {
 
         updateSymptomBtn.setOnClickListener(new View.OnClickListener() {
             /**
-             * Update the specific entry and then clear the fields. 
+             * Update the specific entry and then clear the fields.
              * @param v
              */
             public void onClick(View v){
@@ -203,9 +203,6 @@ public class SymptomFragment extends Fragment {
                 oldsystemNameEdt.setText("");
             }
         });
-
-
-        adapter=new Adapter(view.getContext());
 
 
         adapter=new Adapter(view.getContext());

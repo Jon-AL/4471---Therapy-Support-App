@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import android.graphics.Color;
@@ -91,35 +92,50 @@ public class MoodReport extends Fragment {
         TextView avgvalue;
         View view = inflater.inflate(R.layout.fragment_mood_report, container, false);
         MoodDBHelper moodDB = new MoodDBHelper(view.getContext());
-        ArrayList<MoodModal> dbData = moodDB.readMoods();
+        ArrayList<MoodModal> dbData = moodDB.ReadSortByDate();
         HashMap<Integer, Integer> ratings = new HashMap<Integer, Integer>();
-
-        for(int i = 0; i<11;i++){
-            ratings.put(i, 0);
-        }
-
-        for(MoodModal i: dbData){
-           sum = i.getMoodRating() + sum;
-           count++;
-           int val = i.getMoodRating();
-           if (ratings.containsKey(val)){
-               int temp = ratings.get(val)+1;
-               ratings.put(val,temp);
-           }
-        }
-        avg = sum/count;
-        avgvalue = view.findViewById(R.id.average);
-        //avgvalue.setText(Integer.toString((int) avg));
         ArrayList<BarEntry> entries = new ArrayList<BarEntry>();
+        int check = 7;
+        for(int i = dbData.size()-1; i >= 0; i--) {
 
-        for (int i: ratings.keySet()){
-            BarEntry barEntry = new BarEntry(i, ratings.get(i));
-            entries.add(barEntry);
+
+            if (check != 0){
+                BarEntry barEntry = new BarEntry(dbData.size()-i, dbData.get(i).getMoodRating());
+                entries.add(barEntry);
+                check--;
+            }
         }
+        Collections.reverse(entries);
+//        for(int i = 0; i<11;i++){
+//            ratings.put(i, 0);
+//        }
+//
+//        for(MoodModal i: dbData){
+//           sum = i.getMoodRating() + sum;
+//           count++;
+//           int val = i.getMoodRating();
+//           if (ratings.containsKey(val)){
+//               int temp = ratings.get(val)+1;
+//               ratings.put(val,temp);
+//           }
+
+//        }
+//        avg = sum/count;
+//        avgvalue = view.findViewById(R.id.average);
+//        //avgvalue.setText(Integer.toString((int) avg));
+//        ArrayList<BarEntry> entries = new ArrayList<BarEntry>();
+//
+//        for (int i: ratings.keySet()){
+//            int check = 0;
+//            if (check < 7){
+//                BarEntry barEntry = new BarEntry(i, ratings.get(i));
+//                entries.add(barEntry);}
+//        }
+
 
     barChart = view.findViewById(R.id.fragment_verticalbarchart_chart);
         // creating a new bar data set.
-    barDataSet = new BarDataSet(entries, "Ratings");
+    barDataSet = new BarDataSet(entries, "Dates");
 
 // creating a new bar data and
 // passing our bar data set.
