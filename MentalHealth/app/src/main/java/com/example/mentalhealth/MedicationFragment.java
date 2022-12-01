@@ -87,7 +87,6 @@ public class MedicationFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_medication, container, false);
-
         // initialize the specific inputs.
         medicationNameEdt = view.findViewById(R.id.idEdtMedicationName);
         brandNameEdt = view.findViewById(R.id.idEdtBrandName);
@@ -131,6 +130,7 @@ public class MedicationFragment extends Fragment {
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
                 MedicationdbHelper.addNewMedication(medName,commonName, dosage, dosageUnit, frequency);
+
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(view.getContext(), "Medication has been added.", Toast.LENGTH_SHORT).show();
@@ -178,12 +178,22 @@ public class MedicationFragment extends Fragment {
 
         deleteMedicationBtn.setOnClickListener(new View.OnClickListener() {
             /**
-             * get the stirng and then delete the record.
+             * get the string and then delete the record.
              * @param v
              */
             public void onClick(View v){
-                String brandName = brandNameEdt.getText().toString();
+                String brandName = oldsystemNameEdt.getText().toString();
+
+                MedicationListAdaptor updateAdaptor = new MedicationListAdaptor(view.getContext(),MedicationdbHelper.readMedications());
+
                 MedicationdbHelper.deleteRecord(brandName);
+
+                oldsystemNameEdt.setText("");
+                medicationNameEdt.setText("");
+                brandNameEdt.setText("");
+                dosageEdt.setText("");
+                dosageUnitEdt.setText("");
+                frequencyEdt.setText("");
             }
         });
 
@@ -201,6 +211,7 @@ public class MedicationFragment extends Fragment {
                 String oldMedicationName = oldsystemNameEdt.getText().toString();
 
                 MedicationdbHelper.updateMedication(oldMedicationName, medName, brandName, dosage, dosageUnit, frequency);
+
                 medicationNameEdt.setText("");
                 brandNameEdt.setText("");
                 dosageEdt.setText("");

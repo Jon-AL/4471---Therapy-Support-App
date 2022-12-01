@@ -61,8 +61,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Enter the old name: " />
-        <!--button for adding new course-->
+            android:hint="Optional: Enter the medication you want deleted " />
+
         <Button
             android:id="@+id/idBtnAddMedication"
             android:layout_width="match_parent"
@@ -71,7 +71,6 @@
             android:text="Add Medication Entry"
             android:textAllCaps="false" />
 
-        <!--new button for opening our course list activity-->
         <Button
             android:id="@+id/idBtnReadMedication"
             android:layout_width="match_parent"

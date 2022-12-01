@@ -22,6 +22,7 @@ public class MedicationListAdaptor extends RecyclerView.Adapter<medViewHolder> {
     }
 
 
+
     @NonNull
     @Override
     public medViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,6 +47,12 @@ public class MedicationListAdaptor extends RecyclerView.Adapter<medViewHolder> {
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public void update(ArrayList<MedicationModal> data){
+        list.clear();
+        list.addAll(data);
+        notifyDataSetChanged();
     }
 
     @Override

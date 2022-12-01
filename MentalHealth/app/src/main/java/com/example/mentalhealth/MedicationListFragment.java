@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.mentalhealth.placeholder.PlaceholderContent;
@@ -31,7 +32,7 @@ public class MedicationListFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     RecyclerView medicationsrc;
-
+    private Button updateData;
     MedicationListAdaptor adapter;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -72,12 +73,15 @@ public class MedicationListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_med_container, container, false);
         MedicationDBHelper medDB = new MedicationDBHelper(view.getContext());
+        updateData = view.findViewById(R.id.button2);
 
         ListView l;
         // getting our course array
         // list from db handler class.
         ArrayList<MedicationModal> MedicationModalArrayList;
         MedicationModalArrayList = medDB.readMedications();
+
+
 
         ArrayList<String> Medication_list_data = new ArrayList<String>();
         for(MedicationModal i: MedicationModalArrayList){
@@ -93,7 +97,22 @@ public class MedicationListFragment extends Fragment {
         medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
         adapter= new MedicationListAdaptor(view.getContext(), MedicationModalArrayList);
        // medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+//        updateData.setOnClickListener(new View.OnClickListener() {
+//            /**
+//             * get the string and then delete the record.
+//             * @param v
+//             */
+//            public void onClick(View v){
+//                ArrayList<MedicationModal> data = medDB.readMedications();
+//                adapter.update(data);
+//            }
+//        });
+
+
         medicationsrc.setAdapter(adapter);
         return view;
     }
+
+
 }

@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 
 /**
@@ -34,7 +32,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
 
     private static final String Table_Name = "medications";
     private static final String ID_COL  = "id";
-    private static final String medicationName_COL = "MED_NAME";
+    private static final String medname_COL = "MED_NAME";
     private static final String brandName_COL = "brandName";
     private static final String dosageQuantity_COL = "dosage_quantity";
     private static final String dosageUnit_COL = "dosageUnit";
@@ -56,7 +54,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + medicationName_COL + " TEXT,"
+                + medname_COL + " TEXT,"
                 + brandName_COL + " TEXT,"
                 + dosageQuantity_COL + " TEXT,"
                 + dosageUnit_COL + " Text,"
@@ -81,7 +79,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         // Create the values
-        values.put(medicationName_COL, medName);
+        values.put(medname_COL, medName);
         values.put(brandName_COL, commonName);
         values.put(dosageQuantity_COL, dosageQuantity);
         values.put(dosageUnit_COL, dosageUnit);
@@ -101,7 +99,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
      */
     public void deleteRecord(String medName){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(Table_Name,  "medicationName=?" , new String[]{medName});
+        db.delete(Table_Name,  "MED_NAME=?" , new String[]{medName});
         db.close();
     }
 
@@ -122,7 +120,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
 
         // on below line we are passing all values
         // along with its key and value pair.
-        values.put(medicationName_COL, medName);
+        values.put(medname_COL, medName);
         values.put(brandName_COL, commonName);
         values.put(dosageQuantity_COL, dosage);
         values.put(dosageUnit_COL, dosageUnit);
@@ -132,7 +130,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
 
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
-        db.update(Table_Name, values, "medicationName=?", new String[]{oldName});
+        db.update(Table_Name, values, "MED_NAME=?", new String[]{oldName});
         db.close();
     }
 
