@@ -22,12 +22,12 @@ import com.google.android.material.navigation.NavigationView;
  * https://stackoverflow.com/questions/43476261/android-seekbar-coding
  * */
 
-public class MainActivity<textProgress> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView nv;
+    public NavigationView nv;
 
     /**
      * onCreate starts and continues the process of the app state.
