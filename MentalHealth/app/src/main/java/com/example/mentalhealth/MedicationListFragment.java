@@ -1,5 +1,6 @@
 package com.example.mentalhealth;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -29,7 +30,9 @@ public class MedicationListFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
+    RecyclerView medicationsrc;
 
+    MedicationListAdaptor adapter;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -63,10 +66,11 @@ public class MedicationListFragment extends Fragment {
      * @param savedInstanceState
      * @return
      */
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_medication_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_med_container, container, false);
         MedicationDBHelper medDB = new MedicationDBHelper(view.getContext());
 
         ListView l;
@@ -77,15 +81,19 @@ public class MedicationListFragment extends Fragment {
 
         ArrayList<String> Medication_list_data = new ArrayList<String>();
         for(MedicationModal i: MedicationModalArrayList){
-            String temp = i.getCommonName() + " " + i.getBrandName()  + " " + i.getDosage()+ " " +i.getDosageUnit() + " " + i.getFrequency();
+            String temp = "Common Name: " + i.getCommonName() + " Brand Name: " + i.getBrandName()  + " Dosage: " + i.getDosage()+ " Dosage Unit:  " +i.getDosageUnit() + " Frequency: " + i.getFrequency();
             Medication_list_data.add(temp);
         }
+        medicationsrc = (RecyclerView) view.findViewById(R.id.medsrc);
+//        l = view.findViewById(R.id.medfraglist);
+//        ArrayAdapter<String> arr;
+//        arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
+//        l.setAdapter(arr);
 
-        l = view.findViewById(R.id.medfraglist);
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
-        l.setAdapter(arr);
-
+        medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        adapter= new MedicationListAdaptor(view.getContext(), MedicationModalArrayList);
+       // medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        medicationsrc.setAdapter(adapter);
         return view;
     }
 }
