@@ -11,18 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
+/**
+ * MedicationListAdaptor deals with the recycler view.
+ * This helps make the lists nicer to deal with.
+ */
 public class MedicationListAdaptor extends RecyclerView.Adapter<medViewHolder> {
     ArrayList<MedicationModal> list = new ArrayList<MedicationModal>();
     Context context;
 
+    /**
+     * Initializes the context.
+     * @param context
+     * @param list
+     */
     public MedicationListAdaptor(Context context, ArrayList<MedicationModal> list){
         this.context = context;
         this.list = list;
     }
 
 
-
+    /**
+     * Creates the fragment view
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public medViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,7 +43,11 @@ public class MedicationListAdaptor extends RecyclerView.Adapter<medViewHolder> {
         return new medViewHolder(view);
     }
 
-
+    /**
+     * Bind the numbers to the views.
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull medViewHolder holder, int position) {
         //View cn = holder.itemView.findViewById(R.id.medCommonName).;
@@ -44,17 +61,29 @@ public class MedicationListAdaptor extends RecyclerView.Adapter<medViewHolder> {
 
     }
 
+    /**
+     * Get the count of the list size
+     * @return list size int
+     */
     @Override
     public int getItemCount() {
         return list.size();
     }
 
+    /**
+     * Update data with new array
+     * @param data
+     */
     public void update(ArrayList<MedicationModal> data){
         list.clear();
         list.addAll(data);
         notifyDataSetChanged();
     }
 
+    /**
+     * Adds to the recycler view
+     * @param recyclerView
+     */
     @Override
     public void onAttachedToRecyclerView(
             RecyclerView recyclerView)

@@ -112,7 +112,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
      * @param commonName
      * @param frequency
      */
-    public void updateMedication(String oldName, String medName, String dosage, String dosageUnit, String commonName, String frequency ) {
+    public void updateMedication(String oldName, String medName, String commonName, String dosage, String dosageUnit,  String frequency ) {
 
         // calling a method to get writable database.
         SQLiteDatabase db = this.getWritableDatabase();
@@ -154,7 +154,7 @@ public class MedicationDBHelper extends SQLiteOpenHelper {
             do {
 
                 // on below line we are adding the data from cursor to our array list.
-                MedicationModalArrayList.add(new MedicationModal(cursorMedications.getString(1), cursorMedications.getString(2), cursorMedications.getString(3), cursorMedications.getString(4), cursorMedications.getString(5)));
+                MedicationModalArrayList.add(new MedicationModal(cursorMedications.getString(2), cursorMedications.getString(1), cursorMedications.getString(5), cursorMedications.getString(3), cursorMedications.getString(4)));
 
             } while (cursorMedications.moveToNext());
             // moving our cursor to next.

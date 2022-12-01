@@ -129,7 +129,7 @@ public class MedicationFragment extends Fragment {
 
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
-                MedicationdbHelper.addNewMedication(medName,commonName, dosage, dosageUnit, frequency);
+                MedicationdbHelper.addNewMedication(commonName, medName, dosageUnit, dosage, frequency );
 
 
                 // after adding the data we are displaying a toast message.
@@ -184,7 +184,6 @@ public class MedicationFragment extends Fragment {
             public void onClick(View v){
                 String brandName = oldsystemNameEdt.getText().toString();
 
-                MedicationListAdaptor updateAdaptor = new MedicationListAdaptor(view.getContext(),MedicationdbHelper.readMedications());
 
                 MedicationdbHelper.deleteRecord(brandName);
 

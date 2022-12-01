@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,8 +33,10 @@ public class MedicationListFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     RecyclerView medicationsrc;
-    private Button updateData;
+
     MedicationListAdaptor adapter;
+    Button value;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -73,8 +76,8 @@ public class MedicationListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_med_container, container, false);
         MedicationDBHelper medDB = new MedicationDBHelper(view.getContext());
-        updateData = view.findViewById(R.id.button2);
-
+        //swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
+        value = view.findViewById(R.id.button3);
         ListView l;
         // getting our course array
         // list from db handler class.
@@ -98,6 +101,16 @@ public class MedicationListFragment extends Fragment {
         adapter= new MedicationListAdaptor(view.getContext(), MedicationModalArrayList);
        // medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
+
+        value.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter= new MedicationListAdaptor(view.getContext(), MedicationModalArrayList);
+
+            }
+
+
+        });
 //        updateData.setOnClickListener(new View.OnClickListener() {
 //            /**
 //             * get the string and then delete the record.
@@ -109,6 +122,14 @@ public class MedicationListFragment extends Fragment {
 //            }
 //        });
 
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+//            @Override
+//            public void onRefresh(){
+//                swipeRefreshLayout.setRefreshing(false);
+//                ArrayList<MedicationModal> difflist = medDB.readMedications();
+//                adapter.update(difflist);
+//            }
+//        });
 
         medicationsrc.setAdapter(adapter);
         return view;
