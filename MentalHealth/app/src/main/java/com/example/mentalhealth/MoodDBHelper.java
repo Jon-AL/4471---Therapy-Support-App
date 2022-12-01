@@ -35,6 +35,10 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         super(context, DB_Name, null, DB_version);
     }
 
+    /**
+     * Initialize the table for mood
+     * @param sqLiteDatabase
+     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String query = "CREATE TABLE " + Table_Name + " ("
@@ -49,6 +53,12 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(query);
     }
 
+    /**
+     * Add a new mood entry into the database
+     * @param moodRating
+     * @param date
+     * @param description
+     */
     public void addNewMood(int moodRating, String date, String description){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -66,7 +76,11 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
-    // we have created a new method for reading all the courses.
+    /**
+     *  Read all mood data and store it inside an array of mood modals.
+     * @return arraylist of moodmodals
+     */
+
     public ArrayList<MoodModal> readMoods() {
         // on below line we are creating a
         // database for reading our database.
@@ -99,6 +113,13 @@ public class MoodDBHelper extends SQLiteOpenHelper{
     }
 
 
+    /**
+     * Update the moods based on the new entry
+     * @param moodRating
+     * @param mooddate
+     * @param moodDescription
+     * @param oldDescription
+     */
     // below is the method for updating our courses
     public void updateMoods(int moodRating, String mooddate, String moodDescription, String oldDescription) {
 
@@ -119,6 +140,10 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+    /**
+     * Delete the desired mood record
+     * @param date
+     */
     // below is the method for deleting our course.
     public void deleteMood(String date) {
 
@@ -134,6 +159,10 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+    /**
+     * Return a sorted list of moodmodals by date
+     * @return arraylist of moodmodals
+     */
     public ArrayList<MoodModal> ReadSortByDate(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursorMoods = db.rawQuery("SELECT * FROM " + Table_Name + " ORDER BY date", null);
@@ -162,7 +191,12 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
     }
 
-
+    /**
+     * Check if the db already exists
+     * @param sqLiteDatabase
+     * @param i
+     * @param i1
+     */
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // this method is called to check if the table exists already.
