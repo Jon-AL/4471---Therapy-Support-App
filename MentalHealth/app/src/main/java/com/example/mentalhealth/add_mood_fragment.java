@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -180,6 +182,13 @@ public class add_mood_fragment extends Fragment {
              */
             @Override
             public void onClick(View view) {
+                if (TextUtils.isEmpty(userdate.getText().toString())&& TextUtils.isEmpty(userInput.getText().toString())) {
+                    Toast.makeText(promptsView.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (TextUtils.isEmpty(userdate.getText().toString())){
+                    Toast.makeText(promptsView.getContext(), "Please choose a date", Toast.LENGTH_SHORT).show();
+                }
+
                 moodDBHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
                 userdate.setText("");
                 userInput.setText("");
@@ -194,7 +203,15 @@ public class add_mood_fragment extends Fragment {
              * Add to the database and then clear the fields.
              * @param view
              */
+            // validating if the text fields are empty or not.
+
             public void onClick(View view){
+                if (TextUtils.isEmpty(userdate.getText().toString())&& TextUtils.isEmpty(userInput.getText().toString())) {
+                    Toast.makeText(promptsView.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (TextUtils.isEmpty(userdate.getText().toString())){
+                    Toast.makeText(promptsView.getContext(), "Please choose a date", Toast.LENGTH_SHORT).show();
+                }
                 moodDBHelper.updateMoods(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString(), userdate.getText().toString());
                 userdate.setText("");
                 userInput.setText("");

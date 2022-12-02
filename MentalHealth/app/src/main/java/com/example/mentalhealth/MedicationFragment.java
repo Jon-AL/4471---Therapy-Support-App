@@ -183,6 +183,10 @@ public class MedicationFragment extends Fragment {
             public void onClick(View v){
                 String brandName = oldsystemNameEdt.getText().toString();
 
+                if (brandName.isEmpty()){
+                    Toast.makeText(view.getContext(), "Failed delete operation: Please enter the last line.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 MedicationdbHelper.deleteRecord(brandName);
 
@@ -207,6 +211,12 @@ public class MedicationFragment extends Fragment {
                 String dosageUnit = dosageUnitEdt.getText().toString();
                 String frequency = frequencyEdt.getText().toString();
                 String oldMedicationName = oldsystemNameEdt.getText().toString();
+
+                // validating if the text fields are empty or not.
+                if (medName.isEmpty() && brandName.isEmpty() && dosage.isEmpty() && dosageUnit.isEmpty() && frequency.isEmpty() && oldMedicationName.isEmpty()) {
+                    Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 MedicationdbHelper.updateMedication(oldMedicationName, medName, brandName, dosage, dosageUnit, frequency);
 

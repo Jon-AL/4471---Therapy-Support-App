@@ -177,6 +177,11 @@ public class SymptomFragment extends Fragment {
              */
             public void onClick(View v){
                 String symptomName = symptomNameEdt.getText().toString();
+
+                if (symptomName.isEmpty()){
+                    Toast.makeText(view.getContext(), "Please enter the symptom name you want deleted", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 SymptomdbHelper.deleteSymptom(symptomName);
                 symptomDateEdt.setText("");
                 symptomDescriptionEdt.setText("");
@@ -196,6 +201,10 @@ public class SymptomFragment extends Fragment {
                 String symptomName = symptomNameEdt.getText().toString();
                 String oldSymptomName = oldsystemNameEdt.getText().toString();
 
+                if (symptomDate.isEmpty() && symptomDescription.isEmpty() && symptomName.isEmpty() && oldSymptomName.isEmpty()) {
+                    Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 SymptomdbHelper.updateSymptom(symptomName, symptomDate, symptomDescription, oldSymptomName);
                 symptomDateEdt.setText("");
                 symptomDescriptionEdt.setText("");

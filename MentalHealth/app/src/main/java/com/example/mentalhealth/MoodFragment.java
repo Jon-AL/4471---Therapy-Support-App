@@ -150,6 +150,12 @@ public class MoodFragment extends Fragment {
             public void onClick(View v){
 
                 String moodDescription = oldDescriptionEdt.getText().toString();
+
+                if (moodDescription.isEmpty()){
+                    Toast.makeText(view.getContext(), "Please add the old date you want deleted", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 MooddbHelper.deleteMood(moodDescription);
                 oldDescriptionEdt.setText("");
             }

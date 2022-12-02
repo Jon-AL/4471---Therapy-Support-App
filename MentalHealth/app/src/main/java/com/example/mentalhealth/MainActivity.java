@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Start the mood fragment as the starting page.
-        MoodFragment moodFragment = new MoodFragment();
-        setMyFragment(moodFragment);
+        add_mood_fragment addMoodFragment = new add_mood_fragment();
+        setMyFragment(addMoodFragment);
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -63,10 +63,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                if (id == R.id.moods) {
-                    MoodFragment moodFragment = new MoodFragment();
-                    setMyFragment(moodFragment);
-
+                if (id == R.id.add_mood) {
+                    add_mood_fragment addMoodFragment = new add_mood_fragment();
+                    setMyFragment(addMoodFragment);
                 } else if (id == R.id.symptoms) {
                     SymptomFragment symptomFragment = new SymptomFragment();
                     setMyFragment(symptomFragment);
@@ -75,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
                     MedicationFragment medicationFragment = new MedicationFragment();
                     setMyFragment(medicationFragment);
 
-                } else if (id == R.id.add_mood) {
-                    add_mood_fragment addMoodFragment = new add_mood_fragment();
-                    setMyFragment(addMoodFragment);
+                } else if (id == R.id.moods) {
+                    MoodFragment moodFragment = new MoodFragment();
+                    setMyFragment(moodFragment);
                 } else if (id == R.id.medicationList){
                     MedicationListFragment medlistfrag = new MedicationListFragment();
                     setMyFragment(medlistfrag);
