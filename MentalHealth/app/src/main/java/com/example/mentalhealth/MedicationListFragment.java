@@ -32,10 +32,10 @@ public class MedicationListFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-    RecyclerView medicationsrc;
+    public RecyclerView medicationsrc;
 
-    MedicationListAdaptor adapter;
-    Button value;
+    public MedicationListAdaptor adapter;
+    public Button value;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -92,10 +92,7 @@ public class MedicationListFragment extends Fragment {
             Medication_list_data.add(temp);
         }
         medicationsrc = (RecyclerView) view.findViewById(R.id.medsrc);
-//        l = view.findViewById(R.id.medfraglist);
-//        ArrayAdapter<String> arr;
-//        arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
-//        l.setAdapter(arr);
+
 
         medicationsrc.setLayoutManager(new LinearLayoutManager(view.getContext()));
         adapter= new MedicationListAdaptor(view.getContext(), MedicationModalArrayList);
@@ -111,25 +108,7 @@ public class MedicationListFragment extends Fragment {
 
 
         });
-//        updateData.setOnClickListener(new View.OnClickListener() {
-//            /**
-//             * get the string and then delete the record.
-//             * @param v
-//             */
-//            public void onClick(View v){
-//                ArrayList<MedicationModal> data = medDB.readMedications();
-//                adapter.update(data);
-//            }
-//        });
 
-//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
-//            @Override
-//            public void onRefresh(){
-//                swipeRefreshLayout.setRefreshing(false);
-//                ArrayList<MedicationModal> difflist = medDB.readMedications();
-//                adapter.update(difflist);
-//            }
-//        });
 
         medicationsrc.setAdapter(adapter);
         return view;

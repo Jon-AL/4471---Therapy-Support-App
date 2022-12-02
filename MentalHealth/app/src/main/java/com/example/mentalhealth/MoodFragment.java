@@ -35,7 +35,7 @@ public class MoodFragment extends Fragment {
 
 
     // creating variables for our edittext, button and dbhandler
-    private EditText moodRatingEdt, moodDateEdt, moodDescriptionEdt, oldDescriptionEdt;
+    private EditText  oldDescriptionEdt;
     private Button  readMoodBtn, deleteAllMoodsBtn;
     public MoodDBHelper MooddbHelper;
 
@@ -96,9 +96,7 @@ public class MoodFragment extends Fragment {
 
 
         // initializing all our variables.
-        moodRatingEdt = view.findViewById(R.id.idEdtMoodRating);
-        moodDescriptionEdt = view.findViewById(R.id.idEdtMoodDescription);
-        moodDateEdt = view.findViewById(R.id.idDate);
+
         oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
 
 
