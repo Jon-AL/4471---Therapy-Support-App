@@ -155,7 +155,7 @@ public class SymptomFragment extends Fragment {
                 // Read the data from the list.
                 ArrayList<String > Symptom_list_data = new ArrayList<String>();
                 for(SymptomModal i: SymptomModalArrayList){
-                    String temp = i.getName() + " " + i.getDate() + " " +i.getDescription();
+                    String temp = " " + i.getName() + ";  " + i.getDate() + "; " +i.getDescription();
                     Symptom_list_data.add(temp);
                 }
 

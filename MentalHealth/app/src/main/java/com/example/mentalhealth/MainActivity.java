@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         // Start the navigation menu
         nv = (NavigationView)findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            /**
+             * Naviagation screen
+             * @param item
+             * @return the user will choose the desired topic that they want.
+             */
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
@@ -67,11 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.symptoms) {
                     SymptomFragment symptomFragment = new SymptomFragment();
                     setMyFragment(symptomFragment);
-                }
-
-                else if (id == R.id.reports) {
-                    ReportsFragment reportsFragment = new ReportsFragment();
-                    setMyFragment(reportsFragment);
                 }
                 else if (id == R.id.medication) {
                     MedicationFragment medicationFragment = new MedicationFragment();

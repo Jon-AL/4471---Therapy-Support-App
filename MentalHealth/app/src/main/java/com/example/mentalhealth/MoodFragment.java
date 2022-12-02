@@ -127,7 +127,7 @@ public class MoodFragment extends Fragment {
 
                 // store it inside an arraylist.
                 for(MoodModal i: MoodModalArrayList){
-                    String temp ="Date: " + i.getDate() + ", Mood Rating: " + i.getMoodRating()+"\n"+  "Description: "+i.getMoodDescription();
+                    String temp ="Date: " + i.getDate() + "; Mood Rating: " + i.getMoodRating()+"; "+  "Description: "+i.getMoodDescription();
 
                     Mood_list_data.add(temp);
                 }

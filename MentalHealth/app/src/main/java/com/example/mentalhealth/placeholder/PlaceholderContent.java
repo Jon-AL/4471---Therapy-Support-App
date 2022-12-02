@@ -14,6 +14,7 @@ import java.util.Map;
 public class PlaceholderContent {
 
     /**
+     *
      * An array of sample (placeholder) items.
      */
     public static final List<PlaceholderItem> ITEMS = new ArrayList<PlaceholderItem>();
@@ -32,15 +33,29 @@ public class PlaceholderContent {
         }
     }
 
+    /**
+     *
+     * @param item
+     */
     private static void addItem(PlaceholderItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
+    /**
+     * hold the item in place.
+     * @param position
+     * @return create a placeholder which contains the string's position.
+     */
     private static PlaceholderItem createPlaceholderItem(int position) {
         return new PlaceholderItem(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
+    /**
+     * Append information for the string
+     * @param position
+     * @return
+     */
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
         builder.append("Details about Item: ").append(position);
@@ -58,12 +73,22 @@ public class PlaceholderContent {
         public final String content;
         public final String details;
 
+        /**
+         * Container for the placeholder item data
+         * @param id
+         * @param content
+         * @param details
+         */
         public PlaceholderItem(String id, String content, String details) {
             this.id = id;
             this.content = content;
             this.details = details;
         }
 
+        /**
+         * Return a content string
+         * @return content string
+         */
         @Override
         public String toString() {
             return content;

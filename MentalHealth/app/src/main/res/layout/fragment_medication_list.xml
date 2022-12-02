@@ -27,33 +27,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:id="@+id/commonname"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Common name" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/medbrandName"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="TextView" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/meddosage"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/meddosageunit"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/medfrequency"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="TextView" />-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/medicationsrc"
@@ -63,22 +36,7 @@
 
     </LinearLayout>
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/textView3"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_weight="1"-->
-    <!--        android:text="Medication List"-->
-    <!--        android:textSize="25sp"-->
-    <!--        />-->
 
-    <!--    <ListView-->
-    <!--        android:id="@+id/medfraglist"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:singleLine="true"-->
-    <!--        android:ellipsize="end"-->
-    <!--        />-->
 
 </LinearLayout>
 

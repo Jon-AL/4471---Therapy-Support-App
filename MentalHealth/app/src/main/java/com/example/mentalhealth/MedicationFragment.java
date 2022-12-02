@@ -97,7 +97,6 @@ public class MedicationFragment extends Fragment {
 
         // Initialize all the buttons.
         addMedicationBtn = view.findViewById(R.id.idBtnAddMedication);
-        readMedicationBtn = view.findViewById(R.id.idBtnReadMedication);
         deleteMedicationBtn = view.findViewById(R.id.idBtnDeleteMedication);
         updateMedicationBtn = view.findViewById(R.id.idBtnUpdateMedication);
 
@@ -143,38 +142,38 @@ public class MedicationFragment extends Fragment {
             }
         });
 
-        readMedicationBtn.setOnClickListener(new View.OnClickListener() {
-
-            /**
-             * Read all the entries inside the read function.
-             * @param v
-             */
-            @Override
-            public void onClick(View v) {
-                // opening a new activity via a intent.
-                ListView l;
-                // getting our course array
-                // list from db handler class.
-                ArrayList<MedicationModal> MedicationModalArrayList;
-                MedicationModalArrayList = MedicationdbHelper.readMedications();
-
-                // Store all of our db entries into the arraylist.
-                ArrayList<String> Medication_list_data = new ArrayList<String>();
-                for(MedicationModal i: MedicationModalArrayList){
-                    String temp = i.getCommonName() + " " + i.getBrandName()  + " " + i.getDosage()+ " " +i.getDosageUnit() + " " + i.getFrequency();
-                    Medication_list_data.add(temp);
-                }
-
-                // Establish the connection to the xml file
-                l = view.findViewById(R.id.medlist);
-
-                // Present the arraylist into the view with an adapter.
-                ArrayAdapter<String> arr;
-                arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
-                l.setAdapter(arr);
-
-            }
-        });
+//        readMedicationBtn.setOnClickListener(new View.OnClickListener() {
+//
+//            /**
+//             * Read all the entries inside the read function.
+//             * @param v
+//             */
+//            @Override
+//            public void onClick(View v) {
+//                // opening a new activity via a intent.
+//                ListView l;
+//                // getting our course array
+//                // list from db handler class.
+//                ArrayList<MedicationModal> MedicationModalArrayList;
+//                MedicationModalArrayList = MedicationdbHelper.readMedications();
+//
+//                // Store all of our db entries into the arraylist.
+//                ArrayList<String> Medication_list_data = new ArrayList<String>();
+//                for(MedicationModal i: MedicationModalArrayList){
+//                    String temp = i.getCommonName() + " " + i.getBrandName()  + " " + i.getDosage()+ " " +i.getDosageUnit() + " " + i.getFrequency();
+//                    Medication_list_data.add(temp);
+//                }
+//
+//                // Establish the connection to the xml file
+//                l = view.findViewById(R.id.medlist);
+//
+//                // Present the arraylist into the view with an adapter.
+//                ArrayAdapter<String> arr;
+//                arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
+//                l.setAdapter(arr);
+//
+//            }
+//        });
 
         deleteMedicationBtn.setOnClickListener(new View.OnClickListener() {
             /**
