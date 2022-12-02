@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/add_mood"
+        android:title="Add mood data"/>
 
     <item
         android:id="@+id/moods"
@@ -12,10 +17,16 @@
         android:title="Medication" />
 
     <item
+        android:id="@+id/medicationList"
+        android:title="Medication List"
+        />
+
+    <item
         android:id="@+id/symptoms"
         android:title="Symptoms" />
 
+
     <item
-        android:id="@+id/reports"
-        android:title="Reports" />
+        android:id="@+id/Mood_Report"
+        android:title="Mood Report"/>
 </menu>

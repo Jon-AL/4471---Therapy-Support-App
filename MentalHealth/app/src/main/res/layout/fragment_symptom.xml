@@ -17,15 +17,14 @@
         android:orientation="vertical"
         >
 
-        <!--Edit text to enter course name-->
         <EditText
             android:id="@+id/idEdtSymptomdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Enter the date of symptom" />
+            android:hint="Enter the date of symptom as mm/dd/yy (Example: 12/01/22)" />
 
-        <!--Edit text to enter course name-->
+
         <EditText
             android:id="@+id/idEdtSymptomName"
             android:layout_width="match_parent"
@@ -33,7 +32,7 @@
             android:layout_margin="10dp"
             android:hint="Enter the name of symptom" />
 
-        <!--edit text for course description-->
+
         <EditText
             android:id="@+id/idEdtSymptomDescription"
             android:layout_width="match_parent"
@@ -46,9 +45,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:hint="Enter the old symptom description" />
+            android:hint="Enter the symptom name you want deleted or updated" />
 
-        <!--button for adding new course-->
+
         <Button
             android:id="@+id/idBtnAddSymptom"
             android:layout_width="match_parent"
@@ -57,7 +56,6 @@
             android:text="Add Symptom Entry"
             android:textAllCaps="false" />
 
-        <!--new button for opening our course list activity-->
         <Button
             android:id="@+id/idBtnReadSymptom"
             android:layout_width="match_parent"
@@ -82,7 +80,13 @@
             android:text="Update Symptom Entry"
             />
 
-        `
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The fields are given as: name; description; date."
+            android:textStyle="bold"/>
 
         <ListView
             android:id="@+id/symptomlist"

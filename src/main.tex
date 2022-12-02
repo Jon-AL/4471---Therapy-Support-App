@@ -5,15 +5,23 @@
 \documentclass[11pt]{article}
 %check
 % Packages
-\usepackage{mathrsfs}
+\usepackage[letterpaper, margin=1in]{geometry}
+
+
 \usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{marvosym} % additional math symbols
-\usepackage{hyperref}
-\usepackage[table, dvipsnames]{xcolor}
-\definecolor{hyperColor}{RGB}{5, 99, 183}
+\usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{titlesec}
+\usepackage{hyperref}
+
+
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{marvosym} % additional math symbols
+\usepackage[table, dvipsnames]{xcolor}
+\definecolor{hyperColor}{RGB}{5, 99, 183}
+
 \hypersetup{
     colorlinks=true,
     linkcolor={hyperColor},
@@ -25,23 +33,22 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \providecolors{dvipsnames*}
 \usepackage{wrapfig}
-\usepackage{graphicx}
 \usepackage{amsfonts} %TeX fonts from the American Mathematical Society
 \usepackage[usenames,dvipsnames]{color}
-\usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{stmaryrd}
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{floatrow}
 \usepackage[clean]{svg}
 
-%\usepackage{parskip} % normal paragraph structure
+\usepackage{parskip} % normal paragraph structure
 
 \usepackage{titling}
 
 \usepackage{biblatex}
 \usepackage[english]{babel}
 \usepackage[square,numbers]{natbib}
+\usepackage{ulem}
 \bibliographystyle{abbrvnat}
 
 
@@ -61,138 +68,102 @@ Kien Tang Tran, Michael\\
 \begin{document}
 
 
-    \begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
-        \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+    \begin{titlepage}
+        \begin{center}
 
-        \center % Centre everything on the page
+            \phantom{.\\}
+            \vspace{1cm}
 
-        %------------------------------------------------
-        %	Headings
-        %------------------------------------------------
-
-%        \textsc{\LARGE Western University}\\[1.5cm] % Name of your university/college
-%        \Large Group 9\\[0.5cm] % Major heading such as course name
-%        \large Computer Science 4471 A\\[0.5cm] % Minor heading such as course title
-        \vspace*{1cm}
-        %------------------------------------------------
-        %	Title
-        %------------------------------------------------
-        \HRule \\[0.4cm]
-        { \huge \bfseries \thetitle }\\[0.4cm] % Title of your document
-        \HRule \\[1.5cm]
-
-        %------------------------------------------------
-        %	Author(s)
-        %------------------------------------------------
-        \begin{minipage}{0.3\textwidth}
-%            \begin{flushleft}
-            \Large
-            Yonatan\\
-            \textsc{Alexander}\\ % Your name
-            SN: 251097927
-%            \end{flushleft}
-        \end{minipage}
-        ~
-        \begin{minipage}{0.3\textwidth}
-%            \begin{center}
-            \Large
-            Michael\\
-            \textsc{Kien Tang Tran}\\ % Your name
-            SN: 250735158
-%            \end{center}
-        \end{minipage}
-        ~
-        \begin{minipage}{0.3\textwidth}
-%            \begin{flushright}
-            \Large
-            Mohammad Yasin\\
-            \textsc{Aziz}\\ % Your name
-            SN: ?????????
-%            \end{flushright}
-        \end{minipage}\\[2cm]
-        % end of authors
+            \begin{Huge}
+                \textbf{My Mental Health App}
+            \end{Huge}
 
 
-        %------------------------------------------------
-        %	Date
-        %------------------------------------------------
-        \Large \textsc{Computer Science 4471 A}\\ % Major heading such as course name
-        \textsc{Fall - 2022}\\ % Major heading such as course name
-%        \Large Group 9\\[0.5cm] % Major heading such as course name
-%        \large Computer Science 4471 A\\[0.5cm] % Minor heading such as course title
-        %------------------------------------------------
-        %	Logo
-        %------------------------------------------------
+            \vfill
 
-        \vfill\vfill
-        \includegraphics[width=0.4\textwidth]{Picture1}
-        \\[1cm]
+            \begin{Large}
+                \textbf{Group 9}\\
+            \end{Large}
 
-        \vfill % Position the date 3/4 down the remaining page
-        \vfill
-        {\LARGE\today} % Date, change the \today to a set date if you want to be precise
+            \vspace{10pt}
 
-        %------------------------------------------------
-        %	Logo
-        %------------------------------------------------
+            \begin{table*}[h]
+                \centering
+                \begin{tabular}{lrr}
+                    \textbf{Alexander, Yonatan}      & \textbf{SN: 251097927} \\
+                    \textbf{Kien Tang Tran, Michael} & \textbf{SN: 250735158} \\
+                    \textbf{Aziz, Mohammad Yasin}    & \textbf{SN: 251282726} \\
+                \end{tabular}
+            \end{table*}
 
-%
-%        \includegraphics[width=0.4\textwidth]{Picture1}
-%        \\[1cm]
 
-        %\includegraphics[width=0.2\textwidth]{placeholder.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+%            \textbf{
+%                Alexander, Yonatan          (SN: 251097927)   \\
+%                Kien Tang Tran, Michael       (SN: 250735158)                \\
+%                Aziz, Mohammad Yasin     (SN: 251282726)}
 
-        %----------------------------------------------------------------------------------------
+            \vfill
 
-        \vfill % Push the date up 1/4 of the remaining page
-        \vfill
-        \vfill
-        \vfill
+            \includegraphics[width=0.4\textwidth]{NewLogoEPS}   % App Logo
+
+
+            \vfill
+
+
+            Computer Science 4470A\\
+            \textsl{The Department of Computer Science\\
+            The University of Western Ontario}
+
+            \vspace{5pt}
+            \includegraphics[width=0.1\textwidth]{Stacked_CMYK}   % Western Logo
+            \vspace{5pt}
+
+            \today\\
+            \textbf{Please do NOT post our group's video to the course's YouTube Channel.}
+
+        \end{center}
     \end{titlepage}
 
 
-
-
-
-    TODO:
-
-    \begin{enumerate}
-        \item Business requirements related to problem's root cause
-        \item Examples:
-        \begin{enumerate}
-            \item Accurate monthly sales forecast which will help us increase our sales
-            \item need to generate monthly report that indicates sales
-            \item notifications to account executives when a customer opens a problem ticket
-        \end{enumerate}
-        \item Varies based on process model
-        \item Expected:
-        \begin{enumerate}
-            \item Shippable product
-            \item some documentation
-            \item lessons learned
-            \item Why we chose one thing and not another
-            \item If we switched from one platform to another (if we switched)
-        \end{enumerate}
-        \item stakeholders:
-        \begin{enumerate}
-            \item identify asap
-            \item anyone who has any relation to the project
-            \item external - anyone who has an influence\; including people who write certain libraries and so on  (include instructor and TA as external stakeholders)
-            \item internal - programmers, maintainable, customers, users, etc [double check this point's list]
-        \end{enumerate}
-        \item success/acceptance criteria:
-        \begin{enumerate}
-            \item measurable terms of the project's outcome for the end user, customer, stakeholders, etc.
-            \item cost
-            \item timeline
-            \item Business requirements
-            \item scope
-            \item acceptance criteria: (can be only a few)
-            \begin{enumerate}
-                \item conditions the software must fulfill
-            \end{enumerate}
-        \end{enumerate}
-    \end{enumerate}
+%
+%
+%    \begin{enumerate}
+%        \item Business requirements related to problem's root cause
+%        \item Examples:
+%        \begin{enumerate}
+%            \item Accurate monthly sales forecast which will help us increase our sales
+%            \item need to generate monthly report that indicates sales
+%            \item notifications to account executives when a customer opens a problem ticket
+%        \end{enumerate}
+%        \item Varies based on process model
+%        \item Expected:
+%        \begin{enumerate}
+%            \item Shippable product
+%            \item some documentation
+%            \item lessons learned
+%            \item Why we chose one thing and not another
+%            \item If we switched from one platform to another (if we switched)
+%        \end{enumerate}
+%        \item stakeholders:
+%        \begin{enumerate}
+%            \item identify asap
+%            \item anyone who has any relation to the project
+%            \item external - anyone who has an influence\; including people who write certain libraries and so on  (include instructor and TA as external stakeholders)
+%            \item internal - programmers, maintainable, customers, users, etc [double check this point's list]
+%        \end{enumerate}
+%        \item success/acceptance criteria:
+%        \begin{enumerate}
+%            \item measurable terms of the project's outcome for the end user, customer, stakeholders, etc.
+%            \item cost
+%            \item timeline
+%            \item Business requirements
+%            \item scope
+%            \item acceptance criteria: (can be only a few)
+%            \begin{enumerate}
+%                \item conditions the software must fulfill
+%            \end{enumerate}
+%        \end{enumerate}
+%    \end{enumerate}
 
 
 %    \maketitle
@@ -206,96 +177,139 @@ Kien Tang Tran, Michael\\
 
 
     \section{Problem Definition}\label{sec:problem-definition}
-    Therapists and patients encounter many challenges during the therapeutic process.
-    There are a number of small yet persistent problems for therapists revolve around their patients' self-management between sessions.
-    This software's intention is to help patients in doing so.
-    Among the many problems, the following stand out (in the order of important:)
-    \begin{enumerate}
-        \item mood tracking between sessions
-        \begin{enumerate}
-            \item numerical (including descriptions of the numeric values, to increase clarity)
-            \item statistical (based on numerical inputs)
-            \item descriptive (``gloomy``, ``sad``, etc)
-        \end{enumerate}
+    Therapists and patients encounter many small yet persistent challenges during the therapeutic process concerning the patients' ability to self-manage between sessions.
+
+    While this project`s scope is not large enough to address them all, the following stood out to us:
+
+    \begin{itemize}
+        \item Mood tracking between sessions.
+        \begin{itemize}
+            \item Usually, at the start of a session therapists ask for an update about the time since the last session.
+            However, self-reporting bias usually means that if the patient is having a bad day or is in a bad mood, their view on the time since the last session is skewed, sometimes heavily.
+            Further, memory can be corrupted and events can easily be forgotten.
+%            \begin{itemize}
+%                \item numerical (including descriptions of the numeric values, to increase clarity)
+%                \item statistical (based on numerical inputs)
+%                \item descriptive (``gloomy``, ``sad``, etc)
+%            \end{itemize}
+        \end{itemize}
         \item Medication management
         \begin{itemize}
-            \item Inventory
-            \item Persistence (taking medications as required)
+            \item Inventory (to not run out of important medications, mood stabilizers are a good example in the context of mental health especially)
+            \item Persistence (taking medications as required and without missing a day)
         \end{itemize}
         \item Symptoms
         \begin{itemize}
             \item Medical (unrelated to the patients diagnosed )
         \end{itemize}
-    \end{enumerate}
+        \item Other self care aspects, such as sleeping, eating, etc.
+    \end{itemize}
+%
+%    \begin{enumerate}
+%        \item mood tracking between sessions
+%        \begin{enumerate}
+%            \item numerical (including descriptions of the numeric values, to increase clarity)
+%            \item statistical (based on numerical inputs)
+%            \item descriptive (``gloomy``, ``sad``, etc)
+%        \end{enumerate}
+%        \item Medication management
+%        \begin{itemize}
+%            \item Inventory
+%            \item Persistence (taking medications as required)
+%        \end{itemize}
+%        \item Symptoms
+%        \begin{itemize}
+%            \item Medical (unrelated to the patients diagnosed )
+%        \end{itemize}
+%    \end{enumerate}
 
 
     \section{Project Objective}\label{sec:project-objective}
 
     \subsection{General objective guidelines}\label{subsec:general-objective-guidelines}
-    Patients should be able to generate a report about their mood and medication for their therapy session in one to three clicks between each therapy session.
 
-    Therapists should be able to see their patient's mood and medication reports in one to two clicks between each therapy session.
-
-    \begin{enumerate}
+    \begin{enumerate}[label=O\arabic*]
+%        \item User can add new entries, view existing entries, delete (remove) existing entries, to:
+%        \begin{enumerate}
+%            \item Mood.
+%            \item Medications.
+%            \item Symptoms.
+%        \end{enumerate}
+%        \item User will be able to view the entries from the past week, at a glance, in a dedicated view.
+%        \item User can update new entries to:
+%        \item The system will keep track of past entries.
+%        \item Patients should be able to generate a report about their mood and medication for their therapy session in one to three clicks between each therapy session.
+%        Therapists should be able to see their patient's mood and medication reports in one to two clicks between each therapy session.
+        \item Patients can add new entries.
+        \item Patients can view existing entries.
+        \item Patients can delete existing entries.
+        \item User will be able to view the entries from the past week, at a glance, in a dedicated view.
         \item Learning the process of project development through application of knowledge acquired during the Computer Science 4471A Course.
-        \item The creation of an intuitive and user friendly self-management mobile app (Android and/or i/OS).
+        \item The creation of an intuitive and user friendly self-management mobile app (Android ). %and/or i/OS
     \end{enumerate}
 
 
     \section{Stakeholders List}\label{sec:stakeholders-list}
     \begin{itemize}
         \item Patients - Internal stakeholder
-        \item Therapists - External stakeholder
     \end{itemize}
 
     \subsection{Internal Stakeholders}\label{subsec:internal-stakeholders}
-
+    \item Therapists - External stakeholder
     \item external - anyone who has an influence\; including people who write certain libraries and so on  (include instructor and TA as external stakeholders)
     \item internal - programmers, maintainable, customers, users, etc [double check this point's list]
 
     \begin{enumerate}
-        \item Patients (main users)
-        \item Therapists (users by proxy, potential users if a therapist-side interface is implemented)
+        \item Patients (main users and the target audience).
     \end{enumerate}
 
     \subsection{External Stakeholders}\label{subsec:external-stakeholders}
+
     \begin{enumerate}
+        \item Therapists
         \item Legislation and public policy (for example security of medical information)
         \item Governing bodies (such as the CRPO - The College of Registered Psychotherapists of Ontario)
-        \item Instructor and TA
+        \item Instructor
+        \item TA
+        \item Libraries:
+        \begin{enumerate}
+            \item Android.
+            \item Google.
+            \item MPAndroid (to create the graphs).
+            \item JetBrains (makers of Android Studio).
+            \item Java Libraries
+        \end{enumerate}
     \end{enumerate}
 
 
     \section{Success/Acceptance Criteria for each Stakeholder}\label{sec:success/acceptance-criteria-for-each-stakeholder}
 
-    \subsection{Patients}\label{subsec:patients}
+%    \subsection{Patients}\label{subsec:patients}
     \begin{itemize}
         \item As a user, I want to be able to store my mood on a particular day.
-        \item As a user, I want to be able to rate my mood on a particular day on a scale of 1 to 10.
+        \item As a user, I want to be able to rate my mood on a particular day on a scale of 0 to 10.
         \item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
-        \item As a user, I want to be able to store when I take my medication.
+%        \item As a user, I want to be able to store when I take my medication.
         \item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit.
-        \item As a user, I want to be able to create a statistical report about my ratings on moods.
-
+        \item As a user, I want to be able to create a visual representation of my recent self reported mood values.
     \end{itemize}
 
-    \subsection{Therapist}\label{subsec:therapist}
-    \begin{itemize}
-        \item As a user, I want to be able to look at my patient's reports in an organized manner.
-        \item As a user, I want to be able to see the medication list stored on the application.
+%    \subsection{Therapist}\label{subsec:therapist}
+%    \begin{itemize}
+%        \item As a user, I want to be able to look at my patient's reports in an organized manner.
+%        \item As a user, I want to be able to see the medication list stored on the application.
+%    \end{itemize}
 
-    \end{itemize}
 
-
-    \section{Chosen Design Patterns}\label{sec:chosen-design-patterns}
-
-    \begin{enumerate}
-        \item \textbf{State} Accounts' state\cite{RefactoringGuru}
-        \item \textbf{Visitor} Output formatting\cite{RefactoringGuru}
-        \item \textbf{Strategy} graphs (possibly multiple, first one will be line plot)\cite{RefactoringGuru} %https://www.python-graph-gallery.com/
-        \item \textbf{Singleton} Interface\cite{RefactoringGuru}
-        \item \textbf{Additional creational pattern} for different `screens` (interfaces)\cite{RefactoringGuru}
-    \end{enumerate}
+%    \section{Chosen Design Patterns}\label{sec:chosen-design-patterns}
+%
+%    \begin{enumerate}
+%        \item \textbf{State} Accounts' state\cite{RefactoringGuru}
+%        \item \textbf{Visitor} Output formatting\cite{RefactoringGuru}
+%        \item \textbf{Strategy} graphs (possibly multiple, first one will be line plot)\cite{RefactoringGuru} %https://www.python-graph-gallery.com/
+%        \item \textbf{Singleton} Interface\cite{RefactoringGuru}
+%        \item \textbf{Additional creational pattern} for different `screens` (interfaces)\cite{RefactoringGuru}
+%    \end{enumerate}
 
 
     \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
@@ -309,12 +323,9 @@ Kien Tang Tran, Michael\\
 
     \section{System Architecture}\label{sec:system-architecture}
 
-    \begin{enumerate}
-        \item \textbf{Repository architecture}: For medication database
-        \item \textbf{Event driven architecture}: for reminders
-        \item \textbf{Pipe and filters architecture}: for statistical analysis and graphs
-        \item \textbf{Component based architecture}: for the whole system, especially for the user interface.
-    \end{enumerate}
+    Unfortunately, writing the code in Java meant that our chosen architecture (Model-View-ViewModel) was not feasible, resulting in needing to change the System Architecture to Model View Controller very late in development.
+
+    \textbf{System Architecture: Model View Controller}.
 
 
     \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
@@ -327,11 +338,17 @@ Kien Tang Tran, Michael\\
 
 
     \section{GitHub Link}\label{sec:github-link}
+
+    \textbf{You MUST ask Yonatan Alexander for access, as this repository is set to private.}\\
+
     \href{Group Therapy-Support-App}
     https://github.com/Jon-AL/4471---Therapy-Support-App
 
 
     \section{Conclusion}\label{sec:conclusion}
+
+    Our project, in many ways, did not go according to plan.
+    We made a number of mistakes, but we believe the biggest was not making the project in Kotlin.
 
 
     \section{References}\label{sec:reference}
@@ -350,12 +367,16 @@ Kien Tang Tran, Michael\\
     \appendix{Task Assignment Matrix}
 
     \begin{figure}
-        \label{fig:Gant Chart}
-        %GANT CHART
+        \label{fig:Gant Chart} %GANT CHART
     \end{figure}
 
     \appendix{Sample of commits on the selected version control system}
+
+
     \appendix{Wants}
+
+    The following were not added to the system.
+
     \begin{enumerate}
         \item docker
         \item gant chart
@@ -363,8 +384,324 @@ Kien Tang Tran, Michael\\
         \item Privacy
         \item Minutes
         \item Encryption for data (including for local storage)
+        \begin{itemize}
+            \item Was implemented as part of Android since Android 11.
+        \end{itemize}
         \item Login system
         \item Therapist interface
     \end{enumerate}
+
+    \appendix{Minutes}
+
+    \subsection{26-Sep-’22}\label{subsec:26-sep-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+
+    \begin{itemize}
+        \item  Development proposal and development details.
+        \item  The project will be a therapy application that helps users gather, store and present their information to be used by patients.
+        \item Suggested so far:
+        \begin{itemize}
+            \item Incremental development.
+            \item Smartphone app.
+            \item Web app.
+        \end{itemize}
+        \item  Suggested Programming languages:
+        \begin{itemize}
+            \item Dart.
+            \item Python.
+            \item Javascript.
+            \item C++.
+            \item Java.
+        \end{itemize}
+        \item Stakeholders:
+        \begin{itemize}
+            \item Clients.
+            \item Therapists and other mental health professionals.
+        \end{itemize}
+        \item Features:
+        \begin{itemize}
+            \item Mood self-reported values.
+            \item Medication tracking.
+        \end{itemize}
+
+    \end{itemize}
+
+    \subsection{30-Sep-’22}\label{subsec:30-sep-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+
+    \begin{itemize}
+        \item Project proposal was accepted.
+        \item Instructor mentioned a number of points during lecture in the context of our project:
+        \begin{itemize}
+            \item Patient data requirements with respect to privacy.
+            \item Identifying the stakeholders with who should be able to access data.
+            \item We need to identify the use cases carefully of what we are able to do.
+            \item We have to be able to clearly define the project objective and description.
+        \end{itemize}
+        \item An aggressive timeline has been suggested to keep with coursework.
+        This timeline is subject to change due to other courses requiring our attention.
+        \item Github was setup by Yonatan.
+        \item Report is in progress.
+    \end{itemize}
+
+    \subsection{04-Oct-’22 and 05-Oct-’22}
+
+    \textbf{Discussed:}
+
+    A timeline has been suggested to be finishing up to the user acceptance criteria.
+    QT has been suggested as a platform to build an Android app.
+
+    The report has been started in LaTex by Yonatan.
+    Proposed statements will be made by the group once we reviewed the work.
+
+    \subsection{14-Oct-’22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+
+    Debate about the code is that we have no firm agreements on project libraries and frameworks.
+    Suggestions include: salesforce as the backend.
+    Flutter or ReactNative has also been suggested.
+    Qt.
+
+    \subsection{21-Oct-’22 to 28-Oct-’22}\label{subsec:21-oct-22-to-28-oct-22}
+
+
+    A lot of project will be developed on the reading week.
+    Professor wants us to use Docker, and create a Gantt chart.
+    He explicitly states that he wants us to assign backup roles to our task assignment matrix.
+
+    \subsection{01-Nov-’22}\label{subsec:01-nov-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+
+    \item    Planned architecture:
+    \begin{itemize}
+        \begin{itemize}
+            \item repository style for the databases.
+            \item Event-driven for reminders.
+            \item Component-based.
+        \end{itemize}
+        \item Today's objective:
+        \begin{itemize}
+            \item Architecture and design patterns were discussed.
+            \item Get the backend done behind the scenes.
+            \item Another meeting: 9:30 am to 11:30 am tomorrow (November 2nd, 2022), want to start writing code.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection{02-Nov-’22}\label{subsec:02-nov-222}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+    \begin{itemize}
+        \item We are switching the development process from incremental to a hybrid agile-iterative method.
+        \item Scope and requirements changed significantly throughout the process.
+        \item We are also incorporating agile methods to respond to changes over time.
+        \item Kanban board has been created inside GitHub repository.
+        \item User stories will be created for UI to make the interface clearer to write components and understand the problems.
+        \item Drafts have been started but significant changes need to be created.
+        \item An Android application will be created.
+        \item The data will be stored locally with some encryption to get us started.
+        \item Yonatan wants to push simple skeleton code, will require approval from Michael and Yassine.
+        \item We want to finish baseline features executed and finished by November 6th.
+        \item The list of things we want executed:
+        \begin{itemize}
+            \item A basic UI - covered by Yassine
+            \item Basic backend - covered by Yonatan
+            \item Database integration - covered by Michael
+        \end{itemize}
+        \item Significant research must be implemented for any implementation to occur.
+        \item No meeting will be scheduled for tomorrow.
+        \item A few mini-meetings between Friday to Sunday.
+    \end{itemize}
+
+    \subsection{02-Nov-’22}\label{subsec:02-nov-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+    \begin{itemize}
+        \item Backend talk
+        \item Significant modifications need to be executed for medication.
+        \item We will have to split this into 3 main Tables:
+        \begin{enumerate}
+            \item Medication info
+            \item Medication inventory history
+            \item Medication intake history
+        \end{enumerate}
+        \item Mood will be generated next.
+        \item Symptoms will be generated last.
+        \item Backend sample is expected to be done by Sunday late afternoon.
+        \item Yassine will present a frontend demo on November 6th.
+    \end{itemize}
+
+    \subsection{14-Nov-’22}\label{subsec:14-nov-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+    \begin{itemize}
+        \item  Front end and back end are being implemented.
+        We are integrating today.
+        \item  Our approach has changed.
+        We have recognized that the Model-View-ViewModel (MVVM) pattern was the best representation.
+        \item Things to do:
+        \begin{itemize}
+            \item Integrate front-end and back-end.
+            \item Revise databases.
+            \item Check on scope and extra features.
+            \item Testing and presentation notes to build.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection{24-Nov-’22}\label{subsec:24-nov-22}
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+
+    \begin{itemize}
+        \item
+        \item Presentation is being worked on.
+        \item Yonatan changed color scheme and logo.
+        \item Things to do:
+        \begin{enumerate}
+            \item  He wants a better option for moods.
+            A better option would be spinner or radio button.
+            A perfect solution would be adding a slider [Seek bar].
+            \item  We need to focus more on accessibility.
+            \item  Add statistics.
+        \end{enumerate}
+    \end{itemize}
+
+    \subsection{27-Nov-’22}\label{subsec:27-nov-22}
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+    \begin{itemize}
+        \item Code must refactored to meet architectural standards.
+        \item Code will be redone to the exact standard to the specified report
+        \item Mood will be the focus.
+        \item Medication and Symptoms are not the primary objective.
+        \item Deadline to finish the code is tomorrow night.
+        \item Deadline should be finished by Wednesday night.
+        \item Deadline to finish the document components is Thursday.
+    \end{itemize}
+
+    \subsection{28-Nov-’22}\label{subsec:28-nov-22}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    \textbf{Discussed:}
+    \begin{itemize}
+        \item Multiple meetings today.
+        \item We have to go with MVC. MVVM was not feasible given the circumstances.
+        \item Code is being redone to make the sections better.
+        \item We want to get the code ready for deployment soon.
+        \item Things to do:
+        \begin{itemize}
+            \item Clean up redundant code
+            \item add comments
+            \item fix anything that seems broken.
+            \item Deploy on Docker.
+            \item Another addition of report documents and diagrams.
+        \end{itemize}
+    \end{itemize}
+
 
 \end{document}
