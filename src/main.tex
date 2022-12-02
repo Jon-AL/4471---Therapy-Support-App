@@ -7,7 +7,6 @@
 % Packages
 \usepackage[letterpaper, margin=1in]{geometry}
 
-
 \usepackage{amsmath}
 \usepackage{enumitem}
 \usepackage{graphicx}
@@ -173,6 +172,8 @@ Kien Tang Tran, Michael\\
 
     \tableofcontents
 
+    \listoffigures
+
     \pagebreak
 
 
@@ -225,8 +226,6 @@ Kien Tang Tran, Michael\\
 
 
     \section{Project Objective}\label{sec:project-objective}
-
-    \subsection{General objective guidelines}\label{subsec:general-objective-guidelines}
 
     \begin{enumerate}[label=O\arabic*]
 %        \item User can add new entries, view existing entries, delete (remove) existing entries, to:
@@ -329,6 +328,58 @@ Kien Tang Tran, Michael\\
 
 
     \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method)}
+        \caption{Class Diagram: Relationships.}
+        \label{fig:figure}
+    \end{figure}
+
+    Contains \textbf{all} classes in the system, and the relationships between them.
+    The other class diagrams contain the respective methods.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Class Diagrams/Class Diagram-Medication Classes}
+        \caption{Class Diagram: Medication}
+        \label{fig:figure1}
+    \end{figure}
+
+    Contains \textbf{all} classes relating directly Medications.
+    Relationships included only as part of \textit{Class Diagram: Medication}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Class Diagrams/Class Diagram-Mood Classes}
+        \caption{Class Diagram: Mood}
+        \label{fig:figure2}
+    \end{figure}
+
+    Contains \textbf{all} classes relating directly Mood.
+    Relationships included only as part of \textit{Class Diagram: Medication}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Class Diagrams/Class Diagram-Symptoms Classes}
+        \caption{Class Diagram: Symptoms}
+        \label{fig:figure3}
+    \end{figure}
+
+    Contains \textbf{all} classes relating directly Symptoms.
+    Relationships included only as part of \textit{Class Diagram: Medication}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Class Diagrams/Class Diagram-Other Classes}
+        \caption{Class Diagram: Other}
+        \label{fig:figure4}
+    \end{figure}
+
+    Contains all classes \textbf{not} already included in the other diagrams above.
+    Relationships included only as part of \textit{Class Diagram: Medication}.
+
+
 
 
     \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
