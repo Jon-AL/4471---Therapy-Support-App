@@ -27,7 +27,7 @@
             android:layout_margin="10dp"
             android:hint="Enter the medication name: " />
 
-        <!--edit text for course description-->
+
         <EditText
             android:id="@+id/idEdtBrandName"
             android:layout_width="match_parent"
@@ -71,14 +71,7 @@
             android:text="Add Medication Entry"
             android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/idBtnReadMedication"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Read All Medication Entries"
-            android:textAllCaps="false"
-            android:visibility= "gone"/>
+
         <Button
             android:id="@+id/idBtnDeleteMedication"
             android:layout_width="match_parent"

@@ -66,7 +66,7 @@ public class MoodDBHelper extends SQLiteOpenHelper{
 
         // Create the values
         values.put(moodRating_col, moodRating);
-        //System.out.println(moodRating);
+
         values.put(date_col, date);
         values.put(description_col, description);
 
@@ -95,13 +95,11 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // moving our cursor to first position.
         if (cursorMoods.moveToFirst()) {
             do {
-                //System.out.println(cursorMoods.getString(1));
+
                 // on below line we are adding the data from cursor to our array list.
                 moodModalArrayList.add(new MoodModal(cursorMoods.getInt(1),
                         cursorMoods.getString(2), cursorMoods.getString(3)));
-                //System.out.println("WE are here: " +  cursorMoods.getCount());
-                //System.out.println(cursorMoods.getString(1));
-                //System.out.println(cursorMoods.getString(2));
+
             } while (cursorMoods.moveToNext());
             // moving our cursor to next.
         }
@@ -173,13 +171,11 @@ public class MoodDBHelper extends SQLiteOpenHelper{
         // moving our cursor to first position.
         if (cursorMoods.moveToFirst()) {
             do {
-                //System.out.println(cursorMoods.getString(1));
+
                 // on below line we are adding the data from cursor to our array list.
                 moodModalArrayList.add(new MoodModal(cursorMoods.getInt(1),
                         cursorMoods.getString(2), cursorMoods.getString(3)));
-                //System.out.println("WE are here: " +  cursorMoods.getCount());
-                //System.out.println(cursorMoods.getString(1));
-                //System.out.println(cursorMoods.getString(2));
+
             } while (cursorMoods.moveToNext());
             // moving our cursor to next.
         }
