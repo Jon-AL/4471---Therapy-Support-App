@@ -19,7 +19,6 @@
         android:orientation="vertical"
         >
 
-        <!--Edit text to enter course name-->
         <EditText
             android:id="@+id/idEdtMedicationName"
             android:layout_width="match_parent"

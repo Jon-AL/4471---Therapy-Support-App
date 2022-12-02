@@ -121,7 +121,7 @@ public class MedicationFragment extends Fragment {
                 String frequency = frequencyEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (medName.isEmpty() && commonName.isEmpty() && dosage.isEmpty() && dosageUnit.isEmpty() && frequency.isEmpty()) {
+                if (medName.isEmpty() || commonName.isEmpty() || dosage.isEmpty() || dosageUnit.isEmpty() || frequency.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -213,7 +213,7 @@ public class MedicationFragment extends Fragment {
                 String oldMedicationName = oldsystemNameEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (medName.isEmpty() && brandName.isEmpty() && dosage.isEmpty() && dosageUnit.isEmpty() && frequency.isEmpty() && oldMedicationName.isEmpty()) {
+                if (medName.isEmpty() || brandName.isEmpty() || dosage.isEmpty() || dosageUnit.isEmpty() || frequency.isEmpty() || oldMedicationName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }

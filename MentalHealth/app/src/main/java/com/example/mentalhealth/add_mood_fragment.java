@@ -187,6 +187,7 @@ public class add_mood_fragment extends Fragment {
                     return;
                 } else if (TextUtils.isEmpty(userdate.getText().toString())){
                     Toast.makeText(promptsView.getContext(), "Please choose a date", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 moodDBHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
@@ -211,6 +212,7 @@ public class add_mood_fragment extends Fragment {
                     return;
                 } else if (TextUtils.isEmpty(userdate.getText().toString())){
                     Toast.makeText(promptsView.getContext(), "Please choose a date", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 moodDBHelper.updateMoods(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString(), userdate.getText().toString());
                 userdate.setText("");

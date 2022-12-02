@@ -117,7 +117,7 @@ public class SymptomFragment extends Fragment {
                 String symptomName = symptomNameEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (symptomDate.isEmpty() && symptomDescription.isEmpty() && symptomName.isEmpty()) {
+                if (symptomDate.isEmpty() || symptomName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -176,7 +176,7 @@ public class SymptomFragment extends Fragment {
              * @param v
              */
             public void onClick(View v){
-                String symptomName = symptomNameEdt.getText().toString();
+                String symptomName = oldsystemNameEdt.getText().toString();
 
                 if (symptomName.isEmpty()){
                     Toast.makeText(view.getContext(), "Please enter the symptom name you want deleted", Toast.LENGTH_SHORT).show();
@@ -201,7 +201,7 @@ public class SymptomFragment extends Fragment {
                 String symptomName = symptomNameEdt.getText().toString();
                 String oldSymptomName = oldsystemNameEdt.getText().toString();
 
-                if (symptomDate.isEmpty() && symptomDescription.isEmpty() && symptomName.isEmpty() && oldSymptomName.isEmpty()) {
+                if (symptomDate.isEmpty() || symptomDescription.isEmpty() || symptomName.isEmpty() || oldSymptomName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
