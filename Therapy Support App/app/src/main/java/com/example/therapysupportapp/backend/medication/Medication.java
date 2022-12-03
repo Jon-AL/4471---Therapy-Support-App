@@ -1,4 +1,4 @@
-package com.backend.medication;
+package com.example.therapysupportapp.backend.medication;
 /*
 Author: Jonathan Alexander
  */

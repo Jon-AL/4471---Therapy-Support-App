@@ -17,9 +17,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
+ * Medication fragment deals with the add, delete, and update methods.
+ * It controls the data as best as possible.
+ *
  * A simple {@link Fragment} subclass.
  * Use the {@link MedicationFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * References:
+ * https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  */
 public class MedicationFragment extends Fragment {
 
@@ -121,7 +126,7 @@ public class MedicationFragment extends Fragment {
                 String frequency = frequencyEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (medName.isEmpty() && commonName.isEmpty() && dosage.isEmpty() && dosageUnit.isEmpty() && frequency.isEmpty()) {
+                if (medName.isEmpty() || commonName.isEmpty() || dosage.isEmpty() || dosageUnit.isEmpty() || frequency.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -142,39 +147,7 @@ public class MedicationFragment extends Fragment {
             }
         });
 
-//        readMedicationBtn.setOnClickListener(new View.OnClickListener() {
-//
-//            /**
-//             * Read all the entries inside the read function.
-//             * @param v
-//             */
-//            @Override
-//            public void onClick(View v) {
-//                // opening a new activity via a intent.
-//                ListView l;
-//                // getting our course array
-//                // list from db handler class.
-//                ArrayList<MedicationModal> MedicationModalArrayList;
-//                MedicationModalArrayList = MedicationdbHelper.readMedications();
-//
-//                // Store all of our db entries into the arraylist.
-//                ArrayList<String> Medication_list_data = new ArrayList<String>();
-//                for(MedicationModal i: MedicationModalArrayList){
-//                    String temp = i.getCommonName() + " " + i.getBrandName()  + " " + i.getDosage()+ " " +i.getDosageUnit() + " " + i.getFrequency();
-//                    Medication_list_data.add(temp);
-//                }
-//
-//                // Establish the connection to the xml file
-//                l = view.findViewById(R.id.medlist);
-//
-//                // Present the arraylist into the view with an adapter.
-//                ArrayAdapter<String> arr;
-//                arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Medication_list_data);
-//                l.setAdapter(arr);
-//
-//            }
-//        });
-
+        // Delete the medication once the field is full.
         deleteMedicationBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * get the string and then delete the record.
@@ -183,6 +156,10 @@ public class MedicationFragment extends Fragment {
             public void onClick(View v){
                 String brandName = oldsystemNameEdt.getText().toString();
 
+                if (brandName.isEmpty()){
+                    Toast.makeText(view.getContext(), "Failed delete operation: Please enter the last line.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 MedicationdbHelper.deleteRecord(brandName);
 
@@ -207,6 +184,12 @@ public class MedicationFragment extends Fragment {
                 String dosageUnit = dosageUnitEdt.getText().toString();
                 String frequency = frequencyEdt.getText().toString();
                 String oldMedicationName = oldsystemNameEdt.getText().toString();
+
+                // validating if the text fields are empty or not.
+                if (medName.isEmpty() || brandName.isEmpty() || dosage.isEmpty() || dosageUnit.isEmpty() || frequency.isEmpty() || oldMedicationName.isEmpty()) {
+                    Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 MedicationdbHelper.updateMedication(oldMedicationName, medName, brandName, dosage, dosageUnit, frequency);
 

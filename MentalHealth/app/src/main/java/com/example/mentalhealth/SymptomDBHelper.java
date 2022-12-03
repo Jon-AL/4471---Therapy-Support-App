@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Symptom db class.
  *
  * Base features of creating and adding a database has been created.
- * Additional functionality will be added.
+ * SymptomDBHelper is the helper function that allows the system to use SQLite to execute tasks.
  *
  * @author Michael Tang-Tran
  * @date: November 5, 2022

@@ -27,7 +27,8 @@ import java.util.ArrayList;
 
 
 public class MedicationDBHelper extends SQLiteOpenHelper {
-    private static final String DB_Name = "Med";
+    private static final String DB_Name = "Med" +
+            "";
     private static final int DB_version = 3;
 
     private static final String Table_Name = "medications";

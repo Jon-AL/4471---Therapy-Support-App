@@ -1,9 +1,11 @@
 package com.example.mentalhealth;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.widget.*;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,16 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Locale;
 
 /**
+ * The MoodFragment class will handle the controller and mood for the data.
+ *
+ * MoodFragment will also delete the appropriate data where necessary.
+ * MoodFragment will control and present the view for the mood data.
+ *
  * A simple {@link Fragment} subclass.
  * Use the {@link MoodFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -35,10 +40,9 @@ public class MoodFragment extends Fragment {
 
 
     // creating variables for our edittext, button and dbhandler
-    private EditText  oldDescriptionEdt;
     private Button  readMoodBtn, deleteAllMoodsBtn;
     public MoodDBHelper MooddbHelper;
-
+    private final Calendar myCalendar= Calendar.getInstance();
 
     Adapter adapter;
 
@@ -94,12 +98,42 @@ public class MoodFragment extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_mood, container, false);
 
+        final EditText userdate = (EditText) view.findViewById(R.id.date1);
+        // Users can set a specific date that they want.
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
 
+            /**
+             * Set the specific date that the user wants.
+             * @param view
+             * @param year
+             * @param month
+             * @param day
+             */
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+
+
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                String myFormat="MM/dd/yy";
+                SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+                userdate.setText(dateFormat.format(myCalendar.getTime()));
+            }
+        };
+
+        // users can choose the specific date that they want.
+        userdate.setOnClickListener(new View.OnClickListener() {
+            /**
+             * A view is presented to the user.
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(view.getContext(),date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
         // initializing all our variables.
-
-        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
-
-
         readMoodBtn = view.findViewById(R.id.idBtnReadMood);
         deleteAllMoodsBtn = view.findViewById(R.id.idBtnDeleteAllMoods);
 
@@ -108,7 +142,7 @@ public class MoodFragment extends Fragment {
         // and passing our context to it.
         MooddbHelper = new MoodDBHelper(view.getContext());
 
-
+        // Respond to the user clicking the button.
         readMoodBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Read all the data from the mood.
@@ -116,13 +150,13 @@ public class MoodFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                // opening a new activity via a intent.
+
                 ListView l;
+
                 // getting our course array
                 // list from db handler class.
                 ArrayList<MoodModal> MoodModalArrayList;
                 MoodModalArrayList = MooddbHelper.ReadSortByDate();
-
                 ArrayList<String >Mood_list_data = new ArrayList<String>();
 
                 // store it inside an arraylist.
@@ -131,17 +165,19 @@ public class MoodFragment extends Fragment {
 
                     Mood_list_data.add(temp);
                 }
+
+                // Reverse the list order.
                 Collections.reverse(Mood_list_data);
+
                 // Create the view and present the list.
                 l = view.findViewById(R.id.list);
                 ArrayAdapter<String> arr;
                 arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
                 l.setAdapter(arr);
-
-
             }
         });
 
+        // Delete the desired mood.;
         deleteAllMoodsBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * delete the specific mood entry.
@@ -149,16 +185,23 @@ public class MoodFragment extends Fragment {
              */
             public void onClick(View v){
 
-                String moodDescription = oldDescriptionEdt.getText().toString();
+                String moodDescription = userdate.getText().toString();
+
+                // Check if the mooddescription is empty.
+                if (moodDescription.isEmpty()){
+                    Toast.makeText(view.getContext(), "Please add the old date you want deleted", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // delete the mood from the database
                 MooddbHelper.deleteMood(moodDescription);
-                oldDescriptionEdt.setText("");
+
+                // clear the fields.
+                userdate.setText("");
             }
         });
 
-
-
-
-       adapter=new Adapter(view.getContext());
+        // Update the adaptor
+        adapter=new Adapter(view.getContext());
 
 
 

@@ -1,7 +1,7 @@
 /*
 Author: Jonathan Alexander
  */
-package com.backend.mood;
+package com.example.therapysupportapp.backend.mood;
 
 
 public class NumericMoodCheckIn {

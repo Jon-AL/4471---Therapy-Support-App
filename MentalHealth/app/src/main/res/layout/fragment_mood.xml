@@ -20,22 +20,23 @@
         tools:context=".MoodActivity">
 
 
-        <EditText
-            android:id="@+id/idEdtMoodRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Enter a Mood Rating between 0 to 10"
-            android:visibility="gone"/>
+
+        <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Choose date:"
+                android:textSize="20sp"/>
 
         <EditText
-            android:id="@+id/idDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Enter the date"
-            android:visibility="gone"/>
-
+                android:id="@+id/date1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
 
         <EditText
             android:id="@+id/idEdtMoodDescription"
@@ -45,22 +46,8 @@
             android:hint="Enter a description about your mood"
             android:visibility="gone"/>
 
-        <EditText
-            android:id="@+id/idEdtOldMoodDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Enter the date that you want deleted" />
 
 
-        <Button
-            android:id="@+id/idBtnAddMood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Add Mood Entry"
-            android:textAllCaps="false"
-            android:visibility="gone"/>
 
 
         <Button
@@ -79,15 +66,7 @@
             android:textAllCaps="false"
             android:text="Delete Mood Entries"
             />
-        <Button
-            android:id="@+id/idBtnUpdateMood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textAllCaps="false"
-            android:text="Update Mood Entry"
-            android:visibility="gone"
-            />
+
 
         <ListView
             android:id="@+id/list"

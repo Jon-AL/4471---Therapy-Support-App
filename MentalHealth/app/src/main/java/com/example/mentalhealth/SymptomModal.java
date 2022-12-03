@@ -2,6 +2,9 @@ package com.example.mentalhealth;
 
 /**
  * SymptomModal is a class that will contain and get the information for symptoms.
+ *
+ * This class is the model that will store and get the appropriate information from the container.
+ *
  */
 
 public class SymptomModal {

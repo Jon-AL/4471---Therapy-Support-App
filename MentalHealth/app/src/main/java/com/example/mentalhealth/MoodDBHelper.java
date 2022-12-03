@@ -12,8 +12,9 @@ import java.util.ArrayList;
  *
  * Mood db class.
  *
- * Base features of creating and adding a database has been created.
- * Additional functionality will be added.
+ *
+ * The MoodDBHelper class controls the SQLite Database. It will provide functions
+ * where mood classes will access its data to do their methods.
  *
  * @author Michael Tang-Tran
  * @date: November 5, 2022

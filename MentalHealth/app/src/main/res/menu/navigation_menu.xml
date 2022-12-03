@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/add_mood"
-        android:title="Add mood data"/>
+        android:title="Homepage: Add mood data"/>
 
     <item
         android:id="@+id/moods"

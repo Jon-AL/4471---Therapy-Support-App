@@ -13,14 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
-;
+
 
 /**
  * MainActivity is the class that starts the Android app.
  * It sets up the navigation menu and continues the app progress.
- *
+ * References:
  * https://stackoverflow.com/questions/43476261/android-seekbar-coding
- * */
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Start the mood fragment as the starting page.
-        MoodFragment moodFragment = new MoodFragment();
-        setMyFragment(moodFragment);
+        add_mood_fragment addMoodFragment = new add_mood_fragment();
+        setMyFragment(addMoodFragment);
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -63,12 +63,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-
-                if (id == R.id.moods) {
-
-                    MoodFragment moodFragment = new MoodFragment();
-                    setMyFragment(moodFragment);
-
+                if (id == R.id.add_mood) {
+                    add_mood_fragment addMoodFragment = new add_mood_fragment();
+                    setMyFragment(addMoodFragment);
                 } else if (id == R.id.symptoms) {
                     SymptomFragment symptomFragment = new SymptomFragment();
                     setMyFragment(symptomFragment);
@@ -77,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
                     MedicationFragment medicationFragment = new MedicationFragment();
                     setMyFragment(medicationFragment);
 
-                } else if (id == R.id.add_mood) {
-                    add_mood_fragment addMoodFragment = new add_mood_fragment();
-                    setMyFragment(addMoodFragment);
+                } else if (id == R.id.moods) {
+                    MoodFragment moodFragment = new MoodFragment();
+                    setMyFragment(moodFragment);
                 } else if (id == R.id.medicationList){
                     MedicationListFragment medlistfrag = new MedicationListFragment();
                     setMyFragment(medlistfrag);
@@ -87,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
                     MoodReport moodreport = new MoodReport();
                     setMyFragment(moodreport);
                 }
+
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
-
 
 
         });
