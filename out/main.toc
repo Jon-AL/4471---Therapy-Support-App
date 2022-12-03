@@ -20,20 +20,22 @@
 \contentsline {section}{\numberline {13}Conclusion}{21}{section.13}%
 \contentsline {section}{\numberline {14}References}{22}{section.14}%
 \contentsline {section}{Appendices}{23}{section*.1}%
-\contentsline {section}{\numberline {A}Project WBS}{23}{appendix.A}%
-\contentsline {section}{\numberline {B}Task Assignment Matrix}{29}{appendix.B}%
-\contentsline {section}{\numberline {C}Sample of commits on the selected version control system}{30}{appendix.C}%
-\contentsline {section}{\numberline {D}Minutes}{31}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}26-Sep-’22}{31}{subsection.D.1}%
-\contentsline {subsection}{\numberline {D.2}30-Sep-’22}{31}{subsection.D.2}%
-\contentsline {subsection}{\numberline {D.3}04-Oct-’22 and 05-Oct-’22}{32}{subsection.D.3}%
-\contentsline {subsection}{\numberline {D.4}14-Oct-’22}{32}{subsection.D.4}%
-\contentsline {subsection}{\numberline {D.5}21-Oct-’22 to 28-Oct-’22}{32}{subsection.D.5}%
-\contentsline {subsection}{\numberline {D.6}01-Nov-’22}{33}{subsection.D.6}%
-\contentsline {subsection}{\numberline {D.7}02-Nov-’22}{33}{subsection.D.7}%
-\contentsline {subsection}{\numberline {D.8}02-Nov-’22}{34}{subsection.D.8}%
-\contentsline {subsection}{\numberline {D.9}14-Nov-’22}{34}{subsection.D.9}%
-\contentsline {subsection}{\numberline {D.10}24-Nov-’22}{35}{subsection.D.10}%
-\contentsline {subsection}{\numberline {D.11}27-Nov-’22}{35}{subsection.D.11}%
-\contentsline {subsection}{\numberline {D.12}28-Nov-’22}{36}{subsection.D.12}%
-\contentsline {subsection}{\numberline {D.13}29-Nov-’22 until completion}{36}{subsection.D.13}%
+\contentsline {section}{\numberline {A}Project WBS and Gantt Chart}{23}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Project WBS}{23}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Project Gantt Chart}{25}{subsection.A.2}%
+\contentsline {section}{\numberline {B}Task Assignment Matrix}{26}{appendix.B}%
+\contentsline {section}{\numberline {C}Sample of commits on the selected version control system}{27}{appendix.C}%
+\contentsline {section}{\numberline {D}Minutes}{28}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}26-Sep-’22}{28}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}30-Sep-’22}{28}{subsection.D.2}%
+\contentsline {subsection}{\numberline {D.3}04-Oct-’22 and 05-Oct-’22}{29}{subsection.D.3}%
+\contentsline {subsection}{\numberline {D.4}14-Oct-’22}{29}{subsection.D.4}%
+\contentsline {subsection}{\numberline {D.5}21-Oct-’22 to 28-Oct-’22}{29}{subsection.D.5}%
+\contentsline {subsection}{\numberline {D.6}01-Nov-’22}{30}{subsection.D.6}%
+\contentsline {subsection}{\numberline {D.7}02-Nov-’22}{30}{subsection.D.7}%
+\contentsline {subsection}{\numberline {D.8}02-Nov-’22}{31}{subsection.D.8}%
+\contentsline {subsection}{\numberline {D.9}14-Nov-’22}{31}{subsection.D.9}%
+\contentsline {subsection}{\numberline {D.10}24-Nov-’22}{32}{subsection.D.10}%
+\contentsline {subsection}{\numberline {D.11}27-Nov-’22}{32}{subsection.D.11}%
+\contentsline {subsection}{\numberline {D.12}28-Nov-’22}{33}{subsection.D.12}%
+\contentsline {subsection}{\numberline {D.13}29-Nov-’22 until completion}{33}{subsection.D.13}%

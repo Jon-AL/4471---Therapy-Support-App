@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  3 DEC 2022 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.26)  3 DEC 2022 02:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1219,7 +1219,7 @@ Package epstopdf Info: Source file: <NewLogoEPS.eps>
 o.pdf NewLogoEPS.eps>
 (epstopdf)             \includegraphics on input line 106.
 Package epstopdf Info: Output file is already uptodate.
-<NewLogoEPS-eps-converted-to.pdf, id=159, 431.6125pt x 431.6125pt>
+<NewLogoEPS-eps-converted-to.pdf, id=167, 431.6125pt x 431.6125pt>
 File: NewLogoEPS-eps-converted-to.pdf Graphic file (type pdf)
 <use NewLogoEPS-eps-converted-to.pdf>
 Package pdftex.def Info: NewLogoEPS-eps-converted-to.pdf  used on input line 10
@@ -1235,7 +1235,7 @@ Package epstopdf Info: Source file: <Stacked_CMYK.eps>
 -to.pdf Stacked_CMYK.eps>
 (epstopdf)             \includegraphics on input line 117.
 Package epstopdf Info: Output file is already uptodate.
-<Stacked_CMYK-eps-converted-to.pdf, id=160, 320.19624pt x 340.27126pt>
+<Stacked_CMYK-eps-converted-to.pdf, id=168, 320.19624pt x 340.27126pt>
 File: Stacked_CMYK-eps-converted-to.pdf Graphic file (type pdf)
 <use Stacked_CMYK-eps-converted-to.pdf>
 Package pdftex.def Info: Stacked_CMYK-eps-converted-to.pdf  used on input line 
@@ -1251,7 +1251,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...ine {D.8}02-Nov-’22}{34}{subsection.D.8}
+l.34 ...ine {D.6}01-Nov-’22}{30}{subsection.D.6}
                                                   % [1])
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -1335,7 +1335,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
                                                   \__shipout_drop_firstpage_...
 l.386 
       ]
-<Diagrams/Use Case Diagrams/Sequence diagram 1.png, id=292, 1409.265pt x 929.47
+<Diagrams/Use Case Diagrams/Sequence diagram 1.png, id=315, 1409.265pt x 929.47
 25pt>
 File: Diagrams/Use Case Diagrams/Sequence diagram 1.png Graphic file (type png)
 
@@ -1343,7 +1343,7 @@ File: Diagrams/Use Case Diagrams/Sequence diagram 1.png Graphic file (type png)
 Package pdftex.def Info: Diagrams/Use Case Diagrams/Sequence diagram 1.png  use
 d on input line 393.
 (pdftex.def)             Requested size: 469.75502pt x 309.81868pt.
-<Diagrams/Use Case Diagrams/Sequence diagram 2.png, id=294, 1007.765pt x 527.97
+<Diagrams/Use Case Diagrams/Sequence diagram 2.png, id=317, 1007.765pt x 527.97
 25pt>
 File: Diagrams/Use Case Diagrams/Sequence diagram 2.png Graphic file (type png)
 
@@ -1371,7 +1371,7 @@ sen ar-chi-tec-ture (Model-View-ViewModel)
 
 [12]
 <Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method).png, id=
-311, 1527.7075pt x 1078.0275pt>
+333, 1527.7075pt x 1078.0275pt>
 File: Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method).png
  Graphic file (type png)
 <use Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method).png>
@@ -1379,7 +1379,7 @@ File: Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method).png
 Package pdftex.def Info: Diagrams/Class Diagrams/Class Diagram-Class Relationsh
 ips (No Method).png  used on input line 423.
 (pdftex.def)             Requested size: 469.75502pt x 331.47093pt.
-<Diagrams/Class Diagrams/Class Diagram-Medication Classes.png, id=312, 1226.582
+<Diagrams/Class Diagrams/Class Diagram-Medication Classes.png, id=334, 1226.582
 5pt x 1457.445pt>
 File: Diagrams/Class Diagrams/Class Diagram-Medication Classes.png Graphic file
  (type png)
@@ -1395,7 +1395,7 @@ s been already used, duplicate ignored
 l.437 
        <./Diagrams/Class Diagrams/Class Diagram-Class Relationships (No Method)
 .png>]
-<Diagrams/Class Diagrams/Class Diagram-Mood Classes.png, id=318, 1228.59pt x 13
+<Diagrams/Class Diagrams/Class Diagram-Mood Classes.png, id=340, 1228.59pt x 13
 87.1825pt>
 File: Diagrams/Class Diagrams/Class Diagram-Mood Classes.png Graphic file (type
  png)
@@ -1410,7 +1410,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.447 
        <./Diagrams/Class Diagrams/Class Diagram-Medication Classes.png>]
-<Diagrams/Class Diagrams/Class Diagram-Symptoms Classes.png, id=325, 1216.545pt
+<Diagrams/Class Diagrams/Class Diagram-Symptoms Classes.png, id=347, 1216.545pt
  x 714.67pt>
 File: Diagrams/Class Diagrams/Class Diagram-Symptoms Classes.png Graphic file (
 type png)
@@ -1426,7 +1426,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.457 
        <./Diagrams/Class Diagrams/Class Diagram-Mood Classes.png>]
-<Diagrams/Class Diagrams/Class Diagram-Other Classes.png, id=331, 1126.2075pt x
+<Diagrams/Class Diagrams/Class Diagram-Other Classes.png, id=353, 1126.2075pt x
  995.72pt>
 File: Diagrams/Class Diagrams/Class Diagram-Other Classes.png Graphic file (typ
 e png)
@@ -1447,7 +1447,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.471 
        <./Diagrams/Class Diagrams/Class Diagram-Other Classes.png>]
-<Diagrams/State Diagram/State Diagram.png, id=342, 1575.8875pt x 720.6925pt>
+<Diagrams/State Diagram/State Diagram.png, id=364, 1575.8875pt x 720.6925pt>
 File: Diagrams/State Diagram/State Diagram.png Graphic file (type png)
 <use Diagrams/State Diagram/State Diagram.png>
 Package pdftex.def Info: Diagrams/State Diagram/State Diagram.png  used on inpu
@@ -1460,7 +1460,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.488 
        <./Diagrams/State Diagram/State Diagram.png>]
-<Diagrams/Entity Relationship Diagram.png, id=350, 905.3825pt x 1045.9075pt>
+<Diagrams/Entity Relationship Diagram.png, id=372, 905.3825pt x 1045.9075pt>
 File: Diagrams/Entity Relationship Diagram.png Graphic file (type png)
 <use Diagrams/Entity Relationship Diagram.png>
 Package pdftex.def Info: Diagrams/Entity Relationship Diagram.png  used on inpu
@@ -1521,174 +1521,156 @@ or  <return>  to continue without it.
 LaTeX Warning: Empty bibliography on input line 534.
 
 [22]
-<ProjectLibre/My Mental Health App WBS.pdf, id=371, 794.97pt x 614.295pt>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf  used on inp
-ut line 543.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf  used on inp
-ut line 543.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-<ProjectLibre/My Mental Health App WBS.pdf, id=374, page=1, 794.97pt x 614.295p
-t>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 1>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page1 used
- on input line 543.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 1>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page1 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [23]
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 1>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page1 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 1>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page1 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 1>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page1 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [24 <./ProjectLibre/My Mental Health App WBS.pdf>]
-<ProjectLibre/My Mental Health App WBS.pdf, id=387, page=2, 794.97pt x 614.295p
-t>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 2>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page2 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 2>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page2 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 2>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page2 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [25 <./ProjectLibre/My Mental Health App WBS.pdf>]
-<ProjectLibre/My Mental Health App WBS.pdf, id=392, page=3, 794.97pt x 614.295p
-t>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 3>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page3 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 3>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page3 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 3>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page3 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [26 <./ProjectLibre/My Mental Health App WBS.pdf>]
-<ProjectLibre/My Mental Health App WBS.pdf, id=397, page=4, 794.97pt x 614.295p
-t>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 4>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page4 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 4>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page4 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 4>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page4 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [27 <./ProjectLibre/My Mental Health App WBS.pdf>]
-<ProjectLibre/My Mental Health App WBS.pdf, id=402, page=5, 794.97pt x 614.295p
-t>
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 5>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page5 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 5>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page5 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
-File: ProjectLibre/My Mental Health App WBS.pdf Graphic file (type pdf)
-<use ProjectLibre/My Mental Health App WBS.pdf, page 5>
-Package pdftex.def Info: ProjectLibre/My Mental Health App WBS.pdf , page5 used
- on input line 543.
-(pdftex.def)             Requested size: 615.04005pt x 475.25821pt.
- [28 <./ProjectLibre/My Mental Health App WBS.pdf>] [29
+<ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_1.png, id=3
+93, 731.73375pt x 129.00195pt>
+File: ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_1.png 
+Graphic file (type png)
+<use ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_1.png>
+Package pdftex.def Info: ProjectLibre/WBS as PNG/Pages from My Mental Health Ap
+p WBS-5_Page_1.png  used on input line 549.
+(pdftex.def)             Requested size: 469.75502pt x 82.81685pt.
+<ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_2.png, id=3
+94, 794.97pt x 129.00195pt>
+File: ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_2.png 
+Graphic file (type png)
+<use ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_2.png>
+Package pdftex.def Info: ProjectLibre/WBS as PNG/Pages from My Mental Health Ap
+p WBS-5_Page_2.png  used on input line 556.
+(pdftex.def)             Requested size: 469.75502pt x 76.23055pt.
+<ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_3.png, id=3
+95, 794.97pt x 168.02776pt>
+File: ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_3.png 
+Graphic file (type png)
+<use ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_3.png>
+Package pdftex.def Info: ProjectLibre/WBS as PNG/Pages from My Mental Health Ap
+p WBS-5_Page_3.png  used on input line 563.
+(pdftex.def)             Requested size: 469.75502pt x 99.2919pt.
+<ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_4.png, id=3
+96, 794.97pt x 129.00195pt>
+File: ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_4.png 
+Graphic file (type png)
+<use ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_4.png>
+Package pdftex.def Info: ProjectLibre/WBS as PNG/Pages from My Mental Health Ap
+p WBS-5_Page_4.png  used on input line 570.
+(pdftex.def)             Requested size: 469.75502pt x 76.23055pt.
+ [23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.574 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.574 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.574 
+       <./ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_1.
+png (PNG copy)> <./ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-
+5_Page_2.png (PNG copy)> <./ProjectLibre/WBS as PNG/Pages from My Mental Health
+ App WBS-5_Page_3.png (PNG copy)>]
+<ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_5.png, id=4
+01, 647.5392pt x 129.00195pt>
+File: ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_5.png 
+Graphic file (type png)
+<use ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_5.png>
+Package pdftex.def Info: ProjectLibre/WBS as PNG/Pages from My Mental Health Ap
+p WBS-5_Page_5.png  used on input line 577.
+(pdftex.def)             Requested size: 469.75502pt x 93.58403pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./ProjectLibre/My Mental Health App Gantt.pd
+f): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<ProjectLibre/My Mental Health App Gantt.pdf, id=402, 740.55528pt x 419.93187pt
+>
+File: ProjectLibre/My Mental Health App Gantt.pdf Graphic file (type pdf)
+<use ProjectLibre/My Mental Health App Gantt.pdf>
+Package pdftex.def Info: ProjectLibre/My Mental Health App Gantt.pdf  used on i
+nput line 588.
+(pdftex.def)             Requested size: 740.55347pt x 419.93083pt.
+[24
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.593 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.593 
+       <./ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-5_Page_4.
+png (PNG copy)> <./ProjectLibre/WBS as PNG/Pages from My Mental Health App WBS-
+5_Page_5.png (PNG copy)>] [25
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.595 
+       <./ProjectLibre/My Mental Health App Gantt.pdf>] [26
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.586 
-      ] [30] [31] [32]
+l.636 
+      ] [27] [28] [29]
 
-./main.tex:742: LaTeX Error: Lonely \item--perhaps a missing list environment.
+./main.tex:793: LaTeX Error: Lonely \item--perhaps a missing list environment.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.742     \item    P
+l.793     \item    P
                     lanned architecture:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 742
+Underfull \hbox (badness 10000) detected at line 793
 [][]
  []
 
 
-./main.tex:745: LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.tex:796: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.745             \item
+l.796             \item
                         repository style for the databases.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[33] [34] [35]
+[30] [31] [32]
 
 Package natbib Warning: There were undefined citations.
 
-[36]
+[33]
 (C:/Users/Yonatan Alexander/OneDrive/University/CompSci 4471A/re-import2/out/ma
 in.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 40100D17715CE7DCD053B4AA1F08EABE;6360.
+(rerunfilecheck)             Checksum: 8A64015358A4AC25944EB26EB43D9E54;6726.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24728 strings out of 476992
- 437841 string characters out of 5827501
- 1234959 words of memory out of 5000000
- 45339 multiletter control sequences out of 15000+600000
+ 24783 strings out of 476992
+ 441271 string characters out of 5827501
+ 1235329 words of memory out of 5000000
+ 45384 multiletter control sequences out of 15000+600000
  478889 words of font info for 65 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 94i,17n,92p,1193b,2187s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,11n,92p,1193b,2187s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
@@ -1698,10 +1680,10 @@ ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm10
 95.pfb>
 Output written on "C:/Users/Yonatan Alexander/OneDrive/University/CompSci 4471A
-/re-import2/out/main.pdf" (37 pages, 943279 bytes).
+/re-import2/out/main.pdf" (34 pages, 961193 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 422 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 500000)
- 412 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 432 compressed objects within 5 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 

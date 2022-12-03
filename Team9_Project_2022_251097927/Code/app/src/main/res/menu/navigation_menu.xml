@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/add_mood"
+        android:title="Homepage: Add mood data"/>
+
+    <item
+        android:id="@+id/moods"
+        android:title="Moods" />
+
+    <item
+        android:id="@+id/medication"
+        android:title="Medication" />
+
+    <item
+        android:id="@+id/medicationList"
+        android:title="Medication List"
+        />
+
+    <item
+        android:id="@+id/symptoms"
+        android:title="Symptoms" />
+
+
+    <item
+        android:id="@+id/Mood_Report"
+        android:title="Mood Report"/>
+</menu>
