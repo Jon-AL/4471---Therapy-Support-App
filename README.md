@@ -10,7 +10,7 @@
 
 **My Mental Health App** is an android app, made to help users between therapy sessions.
 
-## Project build details.
+## Project build details:
 
 1. clone the project:
    1. git clone https://github.com/Jon-AL/4471---Therapy-Support-App.git
