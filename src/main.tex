@@ -6,15 +6,14 @@
 %check
 % Packages
 \usepackage[letterpaper, margin=1in]{geometry}
-
+\usepackage[page,toc,titletoc,title]{appendix}
 \usepackage{amsmath}
 \usepackage{enumitem}
+\usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{titlesec}
 \usepackage{hyperref}
-
-
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{marvosym} % additional math symbols
@@ -39,7 +38,7 @@
 \usepackage{float}
 \usepackage{floatrow}
 \usepackage[clean]{svg}
-
+\usepackage{pdfpages}
 \usepackage{parskip} % normal paragraph structure
 
 \usepackage{titling}
@@ -62,6 +61,7 @@ Kien Tang Tran, Michael\\
 }
 \title{Therapy Support App\\
 \large Group 9}
+
 
 % Document
 \begin{document}
@@ -174,6 +174,9 @@ Kien Tang Tran, Michael\\
 
     \listoffigures
 
+
+    \listoftables
+
     \pagebreak
 
 
@@ -223,6 +226,7 @@ Kien Tang Tran, Michael\\
 %            \item Medical (unrelated to the patients diagnosed )
 %        \end{itemize}
 %    \end{enumerate}
+    \pagebreak
 
 
     \section{Project Objective}\label{sec:project-objective}
@@ -246,6 +250,7 @@ Kien Tang Tran, Michael\\
         \item Learning the process of project development through application of knowledge acquired during the Computer Science 4471A Course.
         \item The creation of an intuitive and user friendly self-management mobile app (Android ). %and/or i/OS
     \end{enumerate}
+    \pagebreak
 
 
     \section{Stakeholders List}\label{sec:stakeholders-list}
@@ -280,44 +285,127 @@ Kien Tang Tran, Michael\\
         \end{enumerate}
     \end{enumerate}
 
+    \pagebreak
+
 
     \section{Success/Acceptance Criteria for each Stakeholder}\label{sec:success/acceptance-criteria-for-each-stakeholder}
 
-%    \subsection{Patients}\label{subsec:patients}
+
     \begin{itemize}
-        \item As a user, I want to be able to store my mood on a particular day.
-        \item As a user, I want to be able to rate my mood on a particular day on a scale of 0 to 10.
-        \item As a user, I want to be able to store my medication details such as the medication, dosage, date, and doctor.
-%        \item As a user, I want to be able to store when I take my medication.
-        \item As a user, I want to be able to have an organized collection of mood and medication reports for my therapy visit.
-        \item As a user, I want to be able to create a visual representation of my recent self reported mood values.
+        \item As a user, I want to be able to store my mood on a particular day, on a scale of 0 to 10.
+        \item As a user, I want to be able to store my medication details such as the medication, dosage, etc.
+        \item As a user, I want to be able to store my symptom details on a particular day.
+        \item As a user, I want to be able to view my past mood reports for my therapy visit.
+        \item As a user, I want to be able to view my past symptoms for my therapy visit.
+        \item As a user, I want to be able to view my past medications for my therapy visit.
     \end{itemize}
 
-%    \subsection{Therapist}\label{subsec:therapist}
-%    \begin{itemize}
-%        \item As a user, I want to be able to look at my patient's reports in an organized manner.
-%        \item As a user, I want to be able to see the medication list stored on the application.
-%    \end{itemize}
-
-
-%    \section{Chosen Design Patterns}\label{sec:chosen-design-patterns}
-%
-%    \begin{enumerate}
-%        \item \textbf{State} Accounts' state\cite{RefactoringGuru}
-%        \item \textbf{Visitor} Output formatting\cite{RefactoringGuru}
-%        \item \textbf{Strategy} graphs (possibly multiple, first one will be line plot)\cite{RefactoringGuru} %https://www.python-graph-gallery.com/
-%        \item \textbf{Singleton} Interface\cite{RefactoringGuru}
-%        \item \textbf{Additional creational pattern} for different `screens` (interfaces)\cite{RefactoringGuru}
-%    \end{enumerate}
+    \pagebreak
 
 
     \section{Use case diagram(s)}\label{sec:use-case-diagram(s)}
 
+    \pagebreak
 
-    \section{Selected Use case Descriptions {only two descriptions}}\label{sec:selected-use-case-descriptions}
+
+    \section{Use case Descriptions}\label{sec:use-case-descriptions}
+
+    \subsection{Use case Description: Add Medication}\label{subsec:use-case-description:-add-medication}
+
+    \textbf{Use Case Name:} Add Medication\\
+    \textbf{Scenario:} Add medication entry to database.\\
+    \textbf{Brief Description:} When a Patient (User) enters information for a new medication entry and presses ``Submit'', add the information to the medications' table in the database.\\
+    \textbf{Triggering Event:} Patient (User) enters the ``Medication'' view.\\
+    \textbf{Actors:} Patient (User)\\
+    \textbf{Related Use cases:} Update Medication, Delete Medication, Browse Medication History\\
+    \textbf{Stakeholders:} Patient\\
+    \textbf{Preconditions:} App is open on the ``Medications'' Screen.\\
+    \textbf{PostConditions:} A new entry was added to the medications' table in the database.\\
+    \textbf{Flow of Activities:}
+
+    \begin{table}[H]
+        \begin{tabularx}{\textwidth} {
+            | >{\raggedright\arraybackslash}X
+            | >{\raggedright\arraybackslash}X |  }
+            \toprule
+            \textbf{Actor}                                                            & \textbf{System}                                \\
+            \midrule
+            1. User opens ``Medications'' screen                                      &                                                \\
+            \hline
+            2. User fills the ``Enter the medication name'' field                     &                                                \\
+            \hline
+            3. (Optional) User fills the ``Enter the brand name'' field               &                                                \\
+            \hline
+
+            4. (Optional) User fills the ``Enter the medication quantity'' field      &                                                \\
+            \hline
+
+            5. (Optional) User fills the ``Enter the medication quantity unit'' field &                                                \\
+            \hline
+
+            6. (Optional) User fills the ``Enter the medication frequency'' field     &                                                \\
+            \hline
+
+            7. User pressed ``Add Medication Entry''                                  & 7.1 System confirms step 2 was completed       \\
+            \phantom{0}                                                               & 7.2 System updates the database with new entry \\
+            \bottomrule
+        \end{tabularx}
+        \caption{Use case Description: Add Medication, Flow of Activities}\label{tab:table2}
+    \end{table}
+
+    \textbf{Exception conditions:}
+
+    The user did not fulfill step 2.
+
+    \subsection{Use case Description: Browse Medication History}\label{subsec:use-case-description:-browse-medication-history}
+
+    \textbf{Use Case Name:} Browse Medication History\\
+    \textbf{Scenario:} The user wants to view the medication entries.\\
+    \textbf{Brief Description:} When a Patient (User) enters opens the ``Medication List'' view, the list of medications should appear.\\
+    \textbf{Triggering Event:} Patient (User) enters the ``Medication List'' view.\\
+    \textbf{Actors:} Patient (User)\\
+    \textbf{Related Use cases:} Update Medication, Delete Medication, Add Medication\\
+    \textbf{Stakeholders:} Patient\\
+    \textbf{Preconditions:} App is open on any non-``Medications List'' Screen.\\
+    \textbf{PostConditions:} None (can be empty).\\
+    \textbf{Flow of Activities:}
+
+    \begin{table}[H]
+        \begin{tabularx}{\textwidth} {
+            | >{\raggedright\arraybackslash}X
+            | >{\raggedright\arraybackslash}X |  }
+            \toprule
+            \textbf{Actor}                               & \textbf{System}                                                          \\
+            \midrule
+            1. User opens the ``Medication List'' screen & 1.1 The system propagates past entries into the view (if there are any). \\
+            \bottomrule
+        \end{tabularx}
+        \caption{Use case Description: Browse Medication History, Flow of Activities}\label{tab:table3}
+    \end{table}
+
+    \pagebreak
 
 
     \section{Sequence diagram(s) {for the selected use case for descriptions}}\label{sec:sequence-diagram(s)}
+
+    \subsection{Sequence Diagram 1: Add Medication}\label{subsec:sequence-diagram-1:-add-medication}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Use Case Diagrams/Sequence diagram 1}
+        \caption{Class Diagram: Relationships.}
+        \label{fig:Sequence Diagram 1: Add Medication}
+    \end{figure}
+
+    \subsection{Sequence Diagram 2: Browse Medication History}\label{subsec:sequence-diagram-2:-browse-medication-history}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Use Case Diagrams/Sequence diagram 2}
+        \caption{Class Diagram: Relationships.}
+        \label{fig:Sequence Diagram 2: Browse Medication History}
+    \end{figure}
+
+
+    \pagebreak
 
 
     \section{System Architecture}\label{sec:system-architecture}
@@ -325,6 +413,8 @@ Kien Tang Tran, Michael\\
     Unfortunately, writing the code in Java meant that our chosen architecture (Model-View-ViewModel) was not feasible, resulting in needing to change the System Architecture to Model View Controller very late in development.
 
     \textbf{System Architecture: Model View Controller}.
+
+    \pagebreak
 
 
     \section{Detailed Class diagram(s)}\label{sec:detailed-class-diagram(s)}
@@ -378,28 +468,59 @@ Kien Tang Tran, Michael\\
 
     Contains all classes \textbf{not} already included in the other diagrams above.
     Relationships included only as part of \textit{Class Diagram: Medication}.
+    \pagebreak
 
 
+    \section{State-machine diagram}\label{sec:state-machine-diagram}
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/State Diagram/State Diagram}
+        \caption{State Diagram: Whole System}
+        \label{fig:figure5}
+    \end{figure}
 
-    \section{State-machine diagram {for the whole system, if possible}}\label{sec:state-machine-diagram}
+    Contains the state diagram of the whole system.
+    Each specific screen in the UI interface being its own composite state.
+    Each composite state has substrates, however they all follow the user interaction $\rightarrow$ system reaction pattern.
+
+    %for the whole system if possible
+    \pagebreak
 
 
     \section{Entity Relationship Diagram (Data modelling)}\label{sec:er--diagram-(data-modelling)}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{Diagrams/Entity Relationship Diagram}
+        \caption{Entity Relationship Diagram}
+        \label{fig:figure6}
+    \end{figure}
+
+    The entity relationship diagram (Data modelling) for the system.
+
+    \pagebreak
 
 
     \section{GitHub Link}\label{sec:github-link}
 
     \textbf{You MUST ask Yonatan Alexander for access, as this repository is set to private.}\\
 
-    \href{Group Therapy-Support-App}
-    https://github.com/Jon-AL/4471---Therapy-Support-App
+    \href{Group Therapy-Support-App}{https://github.com/Jon-AL/4471---Therapy-Support-App}
+
+    \pagebreak
 
 
     \section{Conclusion}\label{sec:conclusion}
 
-    Our project, in many ways, did not go according to plan.
+    In many ways, the project did not go according to plan.
     We made a number of mistakes, but we believe the biggest was not making the project in Kotlin.
+    Making the project in Kotlin would have allowed us to make the app's UI programmatically, which would have been a huge improvement.
+    Additionally, this project turned out to be far larger in scope than we anticipated, simply because we were learning as we went.
+
+    In summary, many mistakes were made, but making such mistakes in a project where the intention is learning is exactly the right time to make them - and therefore we believe that those mistakes were (overall, at least) a positive.
+
+    \pagebreak
 
 
     \section{References}\label{sec:reference}
@@ -412,37 +533,86 @@ Kien Tang Tran, Michael\\
     \bibliography{main}
 
     \printbibliography[heading=subbibintoc]
+    \pagebreak
 
-    \appendix{Project WBS}
+    \appendix
+    \appendixpage
 
-    \appendix{Task Assignment Matrix}
+    \section{Project WBS}\label{sec:project-wbs}
+    (Spread over a number of pages due to Project Libre's many limitations)
+
+    \includepdf[pages=-]{ProjectLibre/My Mental Health App WBS.pdf}
+    \pagebreak
+
+
+    \section{Task Assignment Matrix}\label{sec:task-assignment-matrix}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{lll}
+            \toprule
+            \textbf{Task}                      & \textbf{Task Owner} & \textbf{Support} \\
+            \midrule
+            Basic UI User Interfaces           & Yassine             & Yonatan, Michael \\
+            Advanced UI User Interfaces        & Michael             & Yonatan          \\
+            Front end (UI) completion          & Michael             & Yonatan          \\
+            WBS                                & Yonatan, Michael    &                  \\
+            Gantt Chart                        & Michael             & Yonatan          \\
+            Task Assignment Matrix             & Yonatan, Michael    &                  \\
+            Testing Matrix                     & Yonatan, Michael    &                  \\
+            User Stories for Project UI        & Yassine             & Yonatan, Michael \\
+            Skeleton Code                      & Yonatan             & Michael, Yassine \\
+            Database Integration with Backend  & Yonatan, Michael    &                  \\
+            Database Execution                 & Michael             & Yonatan          \\
+            Front end Integration with Backend & Michael             & Yonatan          \\
+            Use Case Diagrams                  & Yonatan, Michael    &                  \\
+            Use Case Descriptions              & Michael             & Yonatan          \\
+            Sequence Diagrams                  & Yonatan, Michael    &                  \\
+            Class Diagram                      & Yonatan, Michael    &                  \\
+            Data Entity Relationship Diagram   & Yonatan, Michael    &                  \\
+            State Diagrams                     & Michael             & Yonatan          \\
+            Video                              & Yonatan             & Michael          \\
+            Slideshow                          & Michael, Yonatan    &                  \\
+            Report Editing                     & Yonatan             & Michael          \\
+            \bottomrule
+        \end{tabular}
+        \caption{Task Assignment Matrix}\label{tab:table}
+    \end{table}
+
+    \textsl{This table reflects what happened in practice, not what the plan was initially.}
 
     \begin{figure}
         \label{fig:Gant Chart} %GANT CHART
     \end{figure}
+    \pagebreak
 
-    \appendix{Sample of commits on the selected version control system}
+    \section{Sample of commits on the selected version control system}
 
 
-    \appendix{Wants}
 
-    The following were not added to the system.
+    \pagebreak
 
-    \begin{enumerate}
-        \item docker
-        \item gant chart
-        \item Reminder system
-        \item Privacy
-        \item Minutes
-        \item Encryption for data (including for local storage)
-        \begin{itemize}
-            \item Was implemented as part of Android since Android 11.
-        \end{itemize}
-        \item Login system
-        \item Therapist interface
-    \end{enumerate}
 
-    \appendix{Minutes}
+%    \section{Wants}
+%
+%    The following were not added to the system.
+%
+%    \begin{enumerate}
+%        \item docker
+%        \item gant chart
+%        \item Reminder system
+%        \item Privacy
+%        \item Minutes
+%        \item Encryption for data (including for local storage)
+%        \begin{itemize}
+%            \item Was implemented as part of Android since Android 11.
+%        \end{itemize}
+%        \item Login system
+%        \item Therapist interface
+%    \end{enumerate}
+%    \pagebreak
+
+
+    \section{Minutes}
 
     \subsection{26-Sep-’22}\label{subsec:26-sep-22}
 
@@ -591,6 +761,12 @@ Kien Tang Tran, Michael\\
     \begin{itemize}
         \item Yonatan
         \item Michael
+    \end{itemize}
+
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
         \item Yasin
     \end{itemize}
 
@@ -608,11 +784,11 @@ Kien Tang Tran, Michael\\
         \item We want to finish baseline features executed and finished by November 6th.
         \item The list of things we want executed:
         \begin{itemize}
-            \item A basic UI - covered by Yassine
+            \item A basic UI - covered by Yassine (done).
             \item Basic backend - covered by Yonatan
             \item Database integration - covered by Michael
         \end{itemize}
-        \item Significant research must be implemented for any implementation to occur.
+        \item We will need significant research need before implementations.
         \item No meeting will be scheduled for tomorrow.
         \item A few mini-meetings between Friday to Sunday.
     \end{itemize}
@@ -753,6 +929,24 @@ Kien Tang Tran, Michael\\
             \item Another addition of report documents and diagrams.
         \end{itemize}
     \end{itemize}
+
+    \subsection{29-Nov-’22 until completion}\label{subsec:29-nov-22-until-completion}
+
+    \textbf{Present:}
+    \begin{itemize}
+        \item Yonatan
+        \item Michael
+    \end{itemize}
+
+    \textbf{Not Present:}
+
+    \begin{itemize}
+        \item Yasin
+    \end{itemize}
+
+    Completed report, diagrams, and other loose ends.
+
+    Submitted on December 2nd, 2022.
 
 
 \end{document}
