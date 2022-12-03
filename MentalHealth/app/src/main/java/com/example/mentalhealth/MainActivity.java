@@ -13,12 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
-;
+
 
 /**
  * MainActivity is the class that starts the Android app.
  * It sets up the navigation menu and continues the app progress.
- *
+ * References:
  * https://stackoverflow.com/questions/43476261/android-seekbar-coding
  */
 

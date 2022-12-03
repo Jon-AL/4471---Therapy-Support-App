@@ -27,6 +27,10 @@ import java.util.Locale;
  * A simple {@link Fragment} subclass.
  * Use the {@link add_mood_fragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
+ * References:
+ *  1. https://stackoverflow.com/questions/43476261/android-seekbar-coding
+ *  2. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  */
 public class add_mood_fragment extends Fragment {
 

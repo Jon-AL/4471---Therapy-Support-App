@@ -21,6 +21,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * The MoodFragment class will handle the controller and mood for the data.
+ *
+ * MoodFragment will also delete the appropriate data where necessary.
+ * MoodFragment will control and present the view for the mood data.
+ *
  * A simple {@link Fragment} subclass.
  * Use the {@link MoodFragment#newInstance} factory method to
  * create an instance of this fragment.

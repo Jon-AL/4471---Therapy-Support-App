@@ -17,9 +17,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
+ * Medication fragment deals with the add, delete, and update methods.
+ * It controls the data as best as possible.
+ *
  * A simple {@link Fragment} subclass.
  * Use the {@link MedicationFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * References:
+ * https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  */
 public class MedicationFragment extends Fragment {
 

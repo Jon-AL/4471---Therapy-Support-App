@@ -1,8 +1,8 @@
 package com.example.mentalhealth;
 
 /**
- * MoodModal contains the logic for the mood data.
- *
+ * MoodModal stores and gets the logic for the mood data.
+ *  This model class will be accessed by the controller MoodFragment.
  */
 public class MoodModal {
 

@@ -17,7 +17,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Symptom fragment will control the logic for the executed tasks.
+ * Symptom fragment will control and present the logic for the executed tasks to the views.
+ * It will act the controller and view presenter.
+ *
+ * References:
+ * 1. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  */
 public class SymptomFragment extends Fragment {
 

@@ -24,7 +24,9 @@ import java.util.ArrayList;
 /**
  * Medication list fragment
  * A fragment that will present all the medications inside the database.
- *
+ * This controls the view and presents the data from the modal.
+ * References:
+ * https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
  */
 public class MedicationListFragment extends Fragment {
 
