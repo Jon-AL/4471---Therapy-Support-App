@@ -6,8 +6,14 @@ MyMentalHealth app is the app that helps users keep track of their data.
 
 
 Project build details. 
+
 Please build the project inside IntelliJ CE. You will need to install Gradle and an emulator device. A recommended 
 emulator is Pixel 6. 
+
+Please clone the project. 
+
+
+The project runs on openJDK11, SDK 32, gradle 7.2.1, and android 32.
 
 Build References:
 
