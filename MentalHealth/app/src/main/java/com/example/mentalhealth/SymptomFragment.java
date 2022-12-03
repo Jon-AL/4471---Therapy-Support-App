@@ -142,6 +142,7 @@ public class SymptomFragment extends Fragment {
             }
         });
 
+        // add symptom button will add the data and then clear the outputs.
         addSymptomBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Add a new symptom.
@@ -216,11 +217,16 @@ public class SymptomFragment extends Fragment {
             public void onClick(View v){
                 String symptomName = oldsystemNameEdt.getText().toString();
 
+                // check if the output is valid.
                 if (symptomName.isEmpty()){
                     Toast.makeText(view.getContext(), "Please enter the symptom name you want deleted", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                // delete the output
                 SymptomdbHelper.deleteSymptom(symptomName);
+
+                // clear the outputs.
                 userdate.setText("");
                 symptomDescriptionEdt.setText("");
                 symptomNameEdt.setText("");
@@ -228,22 +234,29 @@ public class SymptomFragment extends Fragment {
             }
         });
 
+        // update symptoms.
         updateSymptomBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Update the specific entry and then clear the fields.
              * @param v
              */
             public void onClick(View v){
+
+                // initiate the variables.
                 String symptomDescription = symptomDescriptionEdt.getText().toString();
                 String symptomName = symptomNameEdt.getText().toString();
                 String oldSymptomName = oldsystemNameEdt.getText().toString();
 
+                // check if the input is valid.
                 if (TextUtils.isEmpty(userdate.getText().toString()) || symptomDescription.isEmpty() || symptomName.isEmpty() || oldSymptomName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                // update the db
                 SymptomdbHelper.updateSymptom(symptomName, userdate.getText().toString(), symptomDescription, oldSymptomName);
 
+                // clear the fields.
                 userdate.setText("");
                 symptomDescriptionEdt.setText("");
                 symptomNameEdt.setText("");
@@ -251,7 +264,7 @@ public class SymptomFragment extends Fragment {
             }
         });
 
-
+        // update the adaptor.
         adapter=new Adapter(view.getContext());
 
 

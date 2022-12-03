@@ -142,7 +142,7 @@ public class MoodFragment extends Fragment {
         // and passing our context to it.
         MooddbHelper = new MoodDBHelper(view.getContext());
 
-
+        // Respond to the user clicking the button.
         readMoodBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Read all the data from the mood.
@@ -150,7 +150,7 @@ public class MoodFragment extends Fragment {
              */
             @Override
             public void onClick(View v) {
-                // opening a new activity via a intent.
+
                 ListView l;
 
                 // getting our course array
@@ -177,6 +177,7 @@ public class MoodFragment extends Fragment {
             }
         });
 
+        // Delete the desired mood.;
         deleteAllMoodsBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * delete the specific mood entry.
@@ -186,20 +187,21 @@ public class MoodFragment extends Fragment {
 
                 String moodDescription = userdate.getText().toString();
 
+                // Check if the mooddescription is empty.
                 if (moodDescription.isEmpty()){
                     Toast.makeText(view.getContext(), "Please add the old date you want deleted", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // delete the mood from the database
                 MooddbHelper.deleteMood(moodDescription);
+
+                // clear the fields.
                 userdate.setText("");
             }
         });
 
-
-
-
-       adapter=new Adapter(view.getContext());
+        // Update the adaptor
+        adapter=new Adapter(view.getContext());
 
 
 

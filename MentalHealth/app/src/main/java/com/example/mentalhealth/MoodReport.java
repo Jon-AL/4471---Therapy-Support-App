@@ -107,10 +107,7 @@ public class MoodReport extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        int sum = 0, count =0;
-        float avg;
-        TextView avgvalue;
+
         View view = inflater.inflate(R.layout.fragment_mood_report, container, false);
         MoodDBHelper moodDB = new MoodDBHelper(view.getContext());
         ArrayList<MoodModal> dbData = moodDB.ReadSortByDate();
@@ -127,31 +124,7 @@ public class MoodReport extends Fragment {
             }
         }
         Collections.reverse(entries);
-//        for(int i = 0; i<11;i++){
-//            ratings.put(i, 0);
-//        }
-//
-//        for(MoodModal i: dbData){
-//           sum = i.getMoodRating() + sum;
-//           count++;
-//           int val = i.getMoodRating();
-//           if (ratings.containsKey(val)){
-//               int temp = ratings.get(val)+1;
-//               ratings.put(val,temp);
-//           }
 
-//        }
-//        avg = sum/count;
-//        avgvalue = view.findViewById(R.id.average);
-//        //avgvalue.setText(Integer.toString((int) avg));
-//        ArrayList<BarEntry> entries = new ArrayList<BarEntry>();
-//
-//        for (int i: ratings.keySet()){
-//            int check = 0;
-//            if (check < 7){
-//                BarEntry barEntry = new BarEntry(i, ratings.get(i));
-//                entries.add(barEntry);}
-//        }
 
 
     barChart = view.findViewById(R.id.fragment_verticalbarchart_chart);

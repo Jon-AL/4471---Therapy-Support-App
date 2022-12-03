@@ -194,7 +194,10 @@ public class add_mood_fragment extends Fragment {
                     return;
                 }
 
+                // add the mood data.
                 moodDBHelper.addNewMood(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString());
+
+                // Clear the user inputs
                 userdate.setText("");
                 userInput.setText("");
 
@@ -208,8 +211,8 @@ public class add_mood_fragment extends Fragment {
              * Add to the database and then clear the fields.
              * @param view
              */
-            // validating if the text fields are empty or not.
 
+            // validating if the text fields are empty or not.
             public void onClick(View view){
                 if (TextUtils.isEmpty(userdate.getText().toString())&& TextUtils.isEmpty(userInput.getText().toString())) {
                     Toast.makeText(promptsView.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
@@ -218,7 +221,10 @@ public class add_mood_fragment extends Fragment {
                     Toast.makeText(promptsView.getContext(), "Please choose a date", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                // Update the mood database
                 moodDBHelper.updateMoods(getMoodvalue(), userdate.getText().toString(), userInput.getText().toString(), userdate.getText().toString());
+
+                // Clear the user fields.
                 userdate.setText("");
                 userInput.setText("");
             }
