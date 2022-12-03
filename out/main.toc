@@ -5,36 +5,35 @@
 \contentsline {subsection}{\numberline {3.1}Internal Stakeholders}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}External Stakeholders}{5}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Success/Acceptance Criteria for each Stakeholder}{6}{section.4}%
-\contentsline {section}{\numberline {5}Use case diagram(s)}{7}{section.5}%
-\contentsline {section}{\numberline {6}Use case Descriptions}{8}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Use case Description: Add Medication}{8}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Use case Description: Browse Medication History}{8}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Sequence diagram(s) {for the selected use case for descriptions}}{10}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Sequence Diagram 1: Add Medication}{10}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Sequence Diagram 2: Browse Medication History}{11}{subsection.7.2}%
-\contentsline {section}{\numberline {8}System Architecture}{12}{section.8}%
-\contentsline {section}{\numberline {9}Detailed Class diagram(s)}{13}{section.9}%
-\contentsline {section}{\numberline {10}State-machine diagram}{18}{section.10}%
-\contentsline {section}{\numberline {11}Entity Relationship Diagram (Data modelling)}{19}{section.11}%
-\contentsline {section}{\numberline {12}GitHub Link}{20}{section.12}%
-\contentsline {section}{\numberline {13}Conclusion}{21}{section.13}%
-\contentsline {section}{\numberline {14}References}{22}{section.14}%
-\contentsline {section}{Appendices}{23}{section*.1}%
-\contentsline {section}{\numberline {A}Project WBS}{23}{appendix.A}%
-\contentsline {section}{\numberline {B}Task Assignment Matrix}{29}{appendix.B}%
-\contentsline {section}{\numberline {C}Sample of commits on the selected version control system}{30}{appendix.C}%
-\contentsline {section}{\numberline {D}Wants}{31}{appendix.D}%
-\contentsline {section}{\numberline {E}Minutes}{32}{appendix.E}%
-\contentsline {subsection}{\numberline {E.1}26-Sep-’22}{32}{subsection.E.1}%
-\contentsline {subsection}{\numberline {E.2}30-Sep-’22}{32}{subsection.E.2}%
-\contentsline {subsection}{\numberline {E.3}04-Oct-’22 and 05-Oct-’22}{33}{subsection.E.3}%
-\contentsline {subsection}{\numberline {E.4}14-Oct-’22}{33}{subsection.E.4}%
-\contentsline {subsection}{\numberline {E.5}21-Oct-’22 to 28-Oct-’22}{33}{subsection.E.5}%
-\contentsline {subsection}{\numberline {E.6}01-Nov-’22}{34}{subsection.E.6}%
-\contentsline {subsection}{\numberline {E.7}02-Nov-’22}{34}{subsection.E.7}%
-\contentsline {subsection}{\numberline {E.8}02-Nov-’22}{35}{subsection.E.8}%
-\contentsline {subsection}{\numberline {E.9}14-Nov-’22}{35}{subsection.E.9}%
-\contentsline {subsection}{\numberline {E.10}24-Nov-’22}{36}{subsection.E.10}%
-\contentsline {subsection}{\numberline {E.11}27-Nov-’22}{36}{subsection.E.11}%
-\contentsline {subsection}{\numberline {E.12}28-Nov-’22}{37}{subsection.E.12}%
-\contentsline {subsection}{\numberline {E.13}29-Nov-’22 until completion}{37}{subsection.E.13}%
+\contentsline {section}{\numberline {5}Use case diagrams}{7}{section.5}%
+\contentsline {section}{\numberline {6}Use case Descriptions}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Use case Description: Add Medication}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Use case Description: Browse Medication History}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Sequence diagram(s) {for the selected use case for descriptions}}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Sequence Diagram 1: Add Medication}{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Sequence Diagram 2: Browse Medication History}{12}{subsection.7.2}%
+\contentsline {section}{\numberline {8}System Architecture}{13}{section.8}%
+\contentsline {section}{\numberline {9}Detailed Class diagram(s)}{14}{section.9}%
+\contentsline {section}{\numberline {10}State-machine diagram}{19}{section.10}%
+\contentsline {section}{\numberline {11}Entity Relationship Diagram (Data modelling)}{20}{section.11}%
+\contentsline {section}{\numberline {12}GitHub Link}{21}{section.12}%
+\contentsline {section}{\numberline {13}Conclusion}{22}{section.13}%
+\contentsline {section}{\numberline {14}References}{23}{section.14}%
+\contentsline {section}{Appendices}{24}{section*.1}%
+\contentsline {section}{\numberline {A}Project WBS}{24}{appendix.A}%
+\contentsline {section}{\numberline {B}Task Assignment Matrix}{30}{appendix.B}%
+\contentsline {section}{\numberline {C}Sample of commits on the selected version control system}{31}{appendix.C}%
+\contentsline {section}{\numberline {D}Minutes}{32}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}26-Sep-’22}{32}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}30-Sep-’22}{32}{subsection.D.2}%
+\contentsline {subsection}{\numberline {D.3}04-Oct-’22 and 05-Oct-’22}{33}{subsection.D.3}%
+\contentsline {subsection}{\numberline {D.4}14-Oct-’22}{33}{subsection.D.4}%
+\contentsline {subsection}{\numberline {D.5}21-Oct-’22 to 28-Oct-’22}{33}{subsection.D.5}%
+\contentsline {subsection}{\numberline {D.6}01-Nov-’22}{34}{subsection.D.6}%
+\contentsline {subsection}{\numberline {D.7}02-Nov-’22}{34}{subsection.D.7}%
+\contentsline {subsection}{\numberline {D.8}02-Nov-’22}{35}{subsection.D.8}%
+\contentsline {subsection}{\numberline {D.9}14-Nov-’22}{35}{subsection.D.9}%
+\contentsline {subsection}{\numberline {D.10}24-Nov-’22}{36}{subsection.D.10}%
+\contentsline {subsection}{\numberline {D.11}27-Nov-’22}{36}{subsection.D.11}%
+\contentsline {subsection}{\numberline {D.12}28-Nov-’22}{37}{subsection.D.12}%
+\contentsline {subsection}{\numberline {D.13}29-Nov-’22 until completion}{37}{subsection.D.13}%
