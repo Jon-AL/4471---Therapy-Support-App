@@ -11,12 +11,11 @@ Please clone the project.
 
 git clone https://github.com/Jon-AL/4471---Therapy-Support-App.git
 
-
-Please build the project inside IntelliJ CE. You will need to install Gradle and an emulator device. A recommended 
-emulator is Pixel 5. 
-
+Please build the project inside IntelliJ Community Edition (CE). Please add the android SDK. You will need to install Gradle and an emulator device. A recommended emulator is Pixel 5 API 30. 
 
 The project runs on openJDK11, SDK 32, gradle 7.2.1, and android 11.
+
+Once everything is installed, you can build on the recommended emulator or your choice and then run the application. 
 
 Build References:
 
