@@ -1,16 +1,19 @@
 \babel@toc {english}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Class Diagram: Relationships.}}{10}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Class Diagram: Relationships.}}{11}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Class Diagram: Relationships.}}{13}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Class Diagram: Medication}}{14}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Class Diagram: Mood}}{15}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Class Diagram: Symptoms}}{16}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Class Diagram: Other}}{17}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces State Diagram: Whole System}}{18}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Entity Relationship Diagram}}{19}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces WBS Part 1 out of 5}}{23}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces WBS Part 2 out of 5}}{23}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces WBS Part 3 out of 5}}{23}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces WBS Part 4 out of 5}}{24}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces WBS Part 5 out of 5}}{24}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Gantt Chart}}{25}{figure.15}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Use case Diagram 1: The Mood Subsystem}}{7}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Use case Diagram 2: The Medication Subsystem}}{7}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Use case Diagram 3: The Symptom Subsystem}}{8}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Class Diagram: Relationships.}}{11}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Class Diagram: Relationships.}}{12}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Class Diagram: Relationships.}}{14}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Class Diagram: Medication}}{15}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Class Diagram: Mood}}{16}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Class Diagram: Symptoms}}{17}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Class Diagram: Other}}{18}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces State Diagram: Whole System}}{19}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Entity Relationship Diagram}}{20}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces WBS Part 1 out of 5}}{24}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces WBS Part 2 out of 5}}{24}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces WBS Part 3 out of 5}}{24}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces WBS Part 4 out of 5}}{25}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces WBS Part 5 out of 5}}{25}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Gantt Chart}}{26}{figure.18}%
