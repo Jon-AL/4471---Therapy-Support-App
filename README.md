@@ -6,6 +6,9 @@
 
 ![Logo](NewLogo.svg)
 
+### Our group is NOT ok with sharing our project on YouTube or anywhere else.
+
+
 ### Project Details:
 
 **My Mental Health App** is an android app, made to help users between therapy sessions.
