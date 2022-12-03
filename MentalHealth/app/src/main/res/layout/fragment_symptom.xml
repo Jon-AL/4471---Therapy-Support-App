@@ -17,13 +17,24 @@
         android:orientation="vertical"
         >
 
-        <EditText
-            android:id="@+id/idEdtSymptomdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Enter the date of symptom as mm/dd/yy (Example: 12/01/22)" />
+        <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Choose date:"
+                android:textSize="20sp" />
+
+        <EditText
+                android:id="@+id/date1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false">
+
+        </EditText>
 
         <EditText
             android:id="@+id/idEdtSymptomName"

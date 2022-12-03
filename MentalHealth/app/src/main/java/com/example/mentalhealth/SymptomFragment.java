@@ -1,20 +1,21 @@
 package com.example.mentalhealth;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
+import android.text.TextUtils;
+import android.widget.*;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Symptom fragment will control and present the logic for the executed tasks to the views.
@@ -34,11 +35,11 @@ public class SymptomFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private EditText symptomDateEdt, symptomDescriptionEdt, symptomNameEdt, oldsystemNameEdt;
+    private EditText symptomDescriptionEdt, symptomNameEdt, oldsystemNameEdt;
     private Button addSymptomBtn, readSymptomBtn, deleteSymptomBtn, updateSymptomBtn;
     public SymptomDBHelper SymptomdbHelper;
 
-
+    private final Calendar myCalendar= Calendar.getInstance();
     Adapter adapter;
 
     /**
@@ -91,8 +92,6 @@ public class SymptomFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view=inflater.inflate(R.layout.fragment_symptom, container, false);
 
-        ArrayList<MoodModal> SymptomModalArrayList;
-        symptomDateEdt = view.findViewById(R.id.idEdtSymptomdate);
         symptomDescriptionEdt = view.findViewById(R.id.idEdtSymptomDescription);
         symptomNameEdt = view.findViewById(R.id.idEdtSymptomName);
         oldsystemNameEdt = view.findViewById(R.id.idEdtOldSymptomDescription);
@@ -106,7 +105,43 @@ public class SymptomFragment extends Fragment {
         // and passing our context to it.
         SymptomdbHelper = new SymptomDBHelper(view.getContext());
 
-        // below line is to add on click listener for our add course button.
+        final EditText userdate = (EditText) view.findViewById(R.id.date1);
+
+        // Users can set a specific date that they want.
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+
+            /**
+             * Set the specific date that the user wants.
+             * @param view
+             * @param year
+             * @param month
+             * @param day
+             */
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+
+
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                String myFormat="MM/dd/yy";
+                SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.US);
+                userdate.setText(dateFormat.format(myCalendar.getTime()));
+            }
+        };
+
+        // users can choose the specific date that they want.
+        userdate.setOnClickListener(new View.OnClickListener() {
+            /**
+             * A view is presented to the user.
+             * @param view
+             */
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(view.getContext(),date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         addSymptomBtn.setOnClickListener(new View.OnClickListener() {
             /**
              * Add a new symptom.
@@ -115,26 +150,25 @@ public class SymptomFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                // below line is to get data from all edit text fields.
-                String symptomDate = symptomDateEdt.getText().toString();
+
                 String symptomDescription = symptomDescriptionEdt.getText().toString();
                 String symptomName = symptomNameEdt.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (symptomDate.isEmpty() || symptomName.isEmpty()) {
+                if (TextUtils.isEmpty(userdate.getText().toString()) || symptomName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
-                SymptomdbHelper.addNewSymptom(symptomName,symptomDate ,symptomDescription);
+                SymptomdbHelper.addNewSymptom(symptomName,userdate.getText().toString() ,symptomDescription);
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(view.getContext(), "Symptom has been added.", Toast.LENGTH_SHORT).show();
 
                 // clear the fields
-                symptomDateEdt.setText("");
+                userdate.setText("");
                 symptomDescriptionEdt.setText("");
                 symptomNameEdt.setText("");
                 oldsystemNameEdt.setText("");
@@ -187,7 +221,7 @@ public class SymptomFragment extends Fragment {
                     return;
                 }
                 SymptomdbHelper.deleteSymptom(symptomName);
-                symptomDateEdt.setText("");
+                userdate.setText("");
                 symptomDescriptionEdt.setText("");
                 symptomNameEdt.setText("");
                 oldsystemNameEdt.setText("");
@@ -200,17 +234,17 @@ public class SymptomFragment extends Fragment {
              * @param v
              */
             public void onClick(View v){
-                String symptomDate = symptomDateEdt.getText().toString();
                 String symptomDescription = symptomDescriptionEdt.getText().toString();
                 String symptomName = symptomNameEdt.getText().toString();
                 String oldSymptomName = oldsystemNameEdt.getText().toString();
 
-                if (symptomDate.isEmpty() || symptomDescription.isEmpty() || symptomName.isEmpty() || oldSymptomName.isEmpty()) {
+                if (TextUtils.isEmpty(userdate.getText().toString()) || symptomDescription.isEmpty() || symptomName.isEmpty() || oldSymptomName.isEmpty()) {
                     Toast.makeText(view.getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                SymptomdbHelper.updateSymptom(symptomName, symptomDate, symptomDescription, oldSymptomName);
-                symptomDateEdt.setText("");
+                SymptomdbHelper.updateSymptom(symptomName, userdate.getText().toString(), symptomDescription, oldSymptomName);
+
+                userdate.setText("");
                 symptomDescriptionEdt.setText("");
                 symptomNameEdt.setText("");
                 oldsystemNameEdt.setText("");
