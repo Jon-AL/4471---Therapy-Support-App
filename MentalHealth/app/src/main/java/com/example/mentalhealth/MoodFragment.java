@@ -40,7 +40,6 @@ public class MoodFragment extends Fragment {
 
 
     // creating variables for our edittext, button and dbhandler
-    private EditText  oldDescriptionEdt;
     private Button  readMoodBtn, deleteAllMoodsBtn;
     public MoodDBHelper MooddbHelper;
     private final Calendar myCalendar= Calendar.getInstance();
@@ -135,10 +134,6 @@ public class MoodFragment extends Fragment {
             }
         });
         // initializing all our variables.
-
-        oldDescriptionEdt = view.findViewById(R.id.idEdtOldMoodDescription);
-
-
         readMoodBtn = view.findViewById(R.id.idBtnReadMood);
         deleteAllMoodsBtn = view.findViewById(R.id.idBtnDeleteAllMoods);
 
@@ -157,11 +152,11 @@ public class MoodFragment extends Fragment {
             public void onClick(View v) {
                 // opening a new activity via a intent.
                 ListView l;
+
                 // getting our course array
                 // list from db handler class.
                 ArrayList<MoodModal> MoodModalArrayList;
                 MoodModalArrayList = MooddbHelper.ReadSortByDate();
-
                 ArrayList<String >Mood_list_data = new ArrayList<String>();
 
                 // store it inside an arraylist.
@@ -170,14 +165,15 @@ public class MoodFragment extends Fragment {
 
                     Mood_list_data.add(temp);
                 }
+
+                // Reverse the list order.
                 Collections.reverse(Mood_list_data);
+
                 // Create the view and present the list.
                 l = view.findViewById(R.id.list);
                 ArrayAdapter<String> arr;
                 arr = new ArrayAdapter<String>(view.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, Mood_list_data);
                 l.setAdapter(arr);
-
-
             }
         });
 
@@ -196,7 +192,7 @@ public class MoodFragment extends Fragment {
                 }
 
                 MooddbHelper.deleteMood(moodDescription);
-                oldDescriptionEdt.setText("");
+                userdate.setText("");
             }
         });
 
