@@ -1,5 +1,12 @@
 **CS 4471 December 2nd, 2022**
 
+The repo contains the entire project. If there's something that is not clear in this file you can (probably) find a 2nd copy somewhere in the repo.
+Due to privacy reasons, we opted to keep this project private for the time being.
+Further, we ask that you do NOT share this project's video on YouTube, or any other portion of the course.
+Thank you for your understanding :)
+
+The PDF was produced using TexLive.
+
 ### Group 9 Presents:
 
 # My Mental Health App
@@ -7,7 +14,8 @@
 ![Logo](NewLogo.svg)
 
 ### Our group is NOT ok with sharing our project on YouTube or anywhere else.
-
+Michael took a silent role in the video, but he was present. We decided to go for clarity and have only Yonatan speak in the video.
+Yasin was not present.
 
 ### Project Details:
 
